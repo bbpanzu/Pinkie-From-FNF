@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="cottoncloud3.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="cottoncloud30000" x="0" y="0" width="361" height="1197" frameX="0" frameY="-8" frameWidth="361" frameHeight="1213"/>
+	<SubTexture name="cottoncloud30001" x="362" y="0" width="361" height="1197" frameX="0" frameY="-8" frameWidth="361" frameHeight="1213"/>
+	<SubTexture name="cottoncloud30002" x="724" y="0" width="361" height="1205" frameX="0" frameY="-8" frameWidth="361" frameHeight="1213"/>
+	<SubTexture name="cottoncloud30003" x="1086" y="0" width="358" height="1199" frameX="-1" frameY="-6" frameWidth="361" frameHeight="1213"/>
+	<SubTexture name="cottoncloud30004" x="1445" y="0" width="351" height="1203" frameX="-5" frameY="-2" frameWidth="361" frameHeight="1213"/>
+	<SubTexture name="cottoncloud30005" x="1797" y="0" width="349" height="1213" frameX="-6" frameY="0" frameWidth="361" frameHeight="1213"/>
+	<SubTexture name="cottoncloud30006" x="2147" y="0" width="347" height="1205" frameX="-7" frameY="0" frameWidth="361" frameHeight="1213"/>
+	<SubTexture name="cottoncloud30007" x="2495" y="0" width="347" height="1205" frameX="-7" frameY="0" frameWidth="361" frameHeight="1213"/>
+	<SubTexture name="cottoncloud30008" x="2843" y="0" width="347" height="1213" frameX="-7" frameY="0" frameWidth="361" frameHeight="1213"/>
+	<SubTexture name="cottoncloud30009" x="3191" y="0" width="349" height="1205" frameX="-6" frameY="0" frameWidth="361" frameHeight="1213"/>
+	<SubTexture name="cottoncloud30010" x="3541" y="0" width="351" height="1203" frameX="-5" frameY="-2" frameWidth="361" frameHeight="1213"/>
+	<SubTexture name="cottoncloud30011" x="0" y="1214" width="358" height="1207" frameX="-1" frameY="-6" frameWidth="361" frameHeight="1213"/>
+	<SubTexture name="cottoncloud30012" x="359" y="1214" width="361" height="1197" frameX="0" frameY="-8" frameWidth="361" frameHeight="1213"/>
+	<SubTexture name="cottoncloud30013" x="721" y="1214" width="361" height="1197" frameX="0" frameY="-8" frameWidth="361" frameHeight="1213"/>
+	<SubTexture name="cottoncloud30014" x="1083" y="1214" width="361" height="1205" frameX="0" frameY="-8" frameWidth="361" frameHeight="1213"/>
+</TextureAtlas>

@@ -1,0 +1,4 @@
+pinkie 200 90
+bf 100 90
+gf 100 90
+twilight 100 90

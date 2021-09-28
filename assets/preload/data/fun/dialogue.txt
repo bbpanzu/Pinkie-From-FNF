@@ -1,0 +1,64 @@
+:pinkie:smile: GOLLY! Who knew your boop beeps could sound so BANGIN'!!
+
+:pinkie:wink: But that was only JUST the begining.
+
+:pinkie:whoa: Everypony in this town has had a Welcome to Ponyville party! and it is now your turn, Mr. Human.
+
+:bf:default: it's boyfriend
+
+:pinkie:wink-smile: Alrighty tighty, Mr. boyfriend human! Let's get this par-
+:effect:shake:12
+:text:shake:12
+:twilight:default: HOLD IT! Pinkie are you sure we should just immediately embed these...humans.. into our town? 
+:effect:addY:5
+:twilight:anger:We don't even know their full names yet, let a lone if they're dangerous or not.
+
+:effect:fromY:8
+:pinkie:wink-smile: Twily, if i tried to judge every person i came across, i would have WAY less friends than i have right now.
+
+:pinkie:whoa: Heck! I wouldn't have even befriended YOU!
+
+:effect:toY:5
+:twilight:default: Wow. i guess your right
+
+:gf:default: Plus, you've been a human before. what's so different about us
+
+:effect:fromX:8
+:effect:fromY:-8
+:twilight:wtf: Huh?
+
+:effect:fromX:8
+:twilight:smug: In all my life as an Equestrian unicorn, i think i'd remember if i were a human or not
+
+:gf:default: But...In Equestria Girls...
+
+:effect:fromX:-20
+:pinkie:default: OOHHH Silly Ms. Human boyfriend-
+
+:gf:default: it's girlfriend
+
+:pinkie:wink: Silly Ms. Girlfriend Human boyfriend, You're in a Season One rerun!
+
+:gf:default: Season One?? Really??
+
+:gf:default: So you don't know Tyrek??
+
+:pinkie:smile: Nope
+
+:gf:default: Sunset Shimmer?
+
+:pinkie:wink-smile: Hardly know 'er
+
+:gf:default: Queen Chrysalis?
+
+:pinkie:whoa: No idea
+
+:gf:default: Starlight Glimmer?
+:autoskip:during:0.1
+:pinkie:default:
+:alert:true:Error,Null Object Reference
+
+:pinkie:default: But enough of the gibberish
+
+:effect:toX:12
+:pinkie:smile: Lets get this party started!!!

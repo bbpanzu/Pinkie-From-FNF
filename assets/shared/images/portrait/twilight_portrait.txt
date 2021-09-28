@@ -1,0 +1,8 @@
+indices:default:0
+indices:wtf:1
+indices:prejudice:2,3,4
+indices:yikes:5
+indices:smug:6
+indices:smug-sweat:7
+indices:happy:8
+indices:anger:9,10,11

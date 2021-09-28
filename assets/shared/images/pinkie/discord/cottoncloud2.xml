@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="cottoncloud2.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="cottoncloud20000" x="0" y="0" width="206" height="683" frameX="0" frameY="-5" frameWidth="206" frameHeight="692"/>
+	<SubTexture name="cottoncloud20001" x="207" y="0" width="206" height="683" frameX="0" frameY="-5" frameWidth="206" frameHeight="692"/>
+	<SubTexture name="cottoncloud20002" x="414" y="0" width="206" height="687" frameX="0" frameY="-5" frameWidth="206" frameHeight="692"/>
+	<SubTexture name="cottoncloud20003" x="621" y="0" width="204" height="684" frameX="-1" frameY="-4" frameWidth="206" frameHeight="692"/>
+	<SubTexture name="cottoncloud20004" x="826" y="0" width="201" height="686" frameX="-2" frameY="-2" frameWidth="206" frameHeight="692"/>
+	<SubTexture name="cottoncloud20005" x="1028" y="0" width="199" height="691" frameX="-3" frameY="-1" frameWidth="206" frameHeight="692"/>
+	<SubTexture name="cottoncloud20006" x="1228" y="0" width="198" height="688" frameX="-4" frameY="0" frameWidth="206" frameHeight="692"/>
+	<SubTexture name="cottoncloud20007" x="1427" y="0" width="198" height="688" frameX="-4" frameY="0" frameWidth="206" frameHeight="692"/>
+	<SubTexture name="cottoncloud20008" x="1626" y="0" width="198" height="692" frameX="-4" frameY="0" frameWidth="206" frameHeight="692"/>
+	<SubTexture name="cottoncloud20009" x="1825" y="0" width="199" height="687" frameX="-3" frameY="-1" frameWidth="206" frameHeight="692"/>
+	<SubTexture name="cottoncloud20010" x="0" y="693" width="201" height="686" frameX="-2" frameY="-2" frameWidth="206" frameHeight="692"/>
+	<SubTexture name="cottoncloud20011" x="202" y="693" width="204" height="688" frameX="-1" frameY="-4" frameWidth="206" frameHeight="692"/>
+	<SubTexture name="cottoncloud20012" x="407" y="693" width="206" height="683" frameX="0" frameY="-5" frameWidth="206" frameHeight="692"/>
+	<SubTexture name="cottoncloud20013" x="614" y="693" width="206" height="683" frameX="0" frameY="-5" frameWidth="206" frameHeight="692"/>
+	<SubTexture name="cottoncloud20014" x="821" y="693" width="206" height="687" frameX="0" frameY="-5" frameWidth="206" frameHeight="692"/>
+</TextureAtlas>

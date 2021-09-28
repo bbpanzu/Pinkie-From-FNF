@@ -1,0 +1,9 @@
+prefix idle 24 pinkie idle
+prefix singLEFT 24 pinkie left
+prefix singRIGHT 24 pinkie right
+prefix singUP 24 pinkie up
+prefix singDOWN 24 pinkie down
+prefix hello 24 pinkie hello
+prefix howyadoin 24 pinkie howyadoin
+prefix howdy 24 pinkie howdy
+prefix whatsup 24 pinkie whatsup
