@@ -7,6 +7,7 @@ import flixel.util.FlxColor;
 #if polymod
 import polymod.format.ParseRules.TargetSignatureElement;
 #end
+import openfl.display.BitmapData;
 
 using StringTools;
 

@@ -37,6 +37,7 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
+		TitleState.curDir = "assets";
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);

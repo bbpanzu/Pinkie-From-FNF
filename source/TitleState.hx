@@ -28,7 +28,8 @@ import flixel.util.FlxTimer;
 import io.newgrounds.NG;
 import lime.app.Application;
 import openfl.Assets;
-
+import sys.io.File;
+import sys.FileSystem;
 using StringTools;
 
 class TitleState extends MusicBeatState
@@ -44,12 +45,21 @@ class TitleState extends MusicBeatState
 	var curWacky:Array<String> = [];
 
 	var wackyImage:FlxSprite;
+	
+	public static var curDir = "assets";
+	
+	public static var directories = [];
 
 	override public function create():Void
 	{
-		#if polymod
-		polymod.Polymod.init({modRoot: "mods", dirs: ['introMod']});
-		#end
+	directories = [];
+	
+	for (i in FileSystem.readDirectory("mods")){
+		
+		if(!i.contains(".") && i != "introMod")directories.push(i);
+		trace(i);
+	}
+	
 
 		OptionUtils.bindSave();
 		OptionUtils.loadOptions(OptionUtils.options);

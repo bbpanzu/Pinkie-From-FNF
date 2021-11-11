@@ -5,6 +5,7 @@ import flixel.FlxSprite;
 import flixel.animation.FlxBaseAnimation;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flash.display.BitmapData;
+import sys.FileSystem;
 import sys.io.File;
 
 using StringTools;
@@ -439,7 +440,7 @@ unintAnims = ["new_scene", "gofast"];
 			if(Cache.charFrames[curCharacter]!=null){
 				frames=Cache.charFrames[curCharacter];
 			}else{
-				frames = FlxAtlasFrames.fromSparrow(BitmapData.fromFile("assets/shared/images/characters/"+curCharacter+".png"),File.getContent("assets/shared/images/characters/"+curCharacter+".xml"));
+				frames = FlxAtlasFrames.fromSparrow(BitmapData.fromFile(TitleState.curDir+"/shared/images/characters/"+curCharacter+".png"),File.getContent(TitleState.curDir+"/shared/images/characters/"+curCharacter+".xml"));
 				Cache.charFrames[curCharacter]=frames;
 			}
 			FlxG.bitmap.dumpCache();
@@ -500,7 +501,15 @@ unintAnims = ["new_scene", "gofast"];
 		if(Cache.offsetData[curCharacter]!=null){
 			offsets = CoolUtil.coolTextFile2(Cache.offsetData[curCharacter]);
 		}else{
-			var data = File.getContent("assets/shared/images/characters/"+curCharacter+"Offsets.txt");
+			var data;
+			
+			if (FileSystem.exists(TitleState.curDir + "/shared/images/characters/" + curCharacter + "Offsets.txt")){
+				data = File.getContent(TitleState.curDir + "/shared/images/characters/"+curCharacter+"Offsets.txt");
+			}else{
+				data = File.getContent("assets/shared/images/characters/"+curCharacter+"Offsets.txt");
+			}
+			
+			
 			offsets = CoolUtil.coolTextFile2(data);
 			Cache.offsetData[curCharacter] = data;
 		}
@@ -518,7 +527,14 @@ unintAnims = ["new_scene", "gofast"];
 			if(Cache.offsetData[curCharacter]!=null){
 				anims = CoolUtil.coolTextFile2(Cache.animData[curCharacter]);
 			}else{
-				var data = File.getContent("assets/shared/images/characters/"+curCharacter+"Anims.txt");
+				var data;
+				
+				
+			if (FileSystem.exists(TitleState.curDir + "/shared/images/characters/" + curCharacter + "Anims.txt")){
+				data = File.getContent(TitleState.curDir + "/shared/images/characters/"+curCharacter+"Anims.txt");
+			}else{
+				data = File.getContent("assets/shared/images/characters/"+curCharacter+"Anims.txt");
+			}
 				anims = CoolUtil.coolTextFile2(data);
 				Cache.animData[curCharacter] = data;
 			}
@@ -528,7 +544,9 @@ unintAnims = ["new_scene", "gofast"];
 				var name = stuff.splice(0,1)[0];
 				var fps = Std.parseInt(stuff.splice(0,1)[0]);
 				trace(type,name,stuff.join(" "),fps);
-				if(type.toLowerCase()=='prefix'){
+				if(type.toLowerCase()=='flipx'){
+					flipX = !flipX;
+				}else if(type.toLowerCase()=='prefix'){
 					animation.addByPrefix(name, stuff.join(" "), fps, false);
 				}else if(type.toLowerCase()=='indices'){
 					var shit = stuff.join(" ");

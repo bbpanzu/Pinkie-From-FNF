@@ -1,6 +1,7 @@
 package;
 
 import flixel.FlxSprite;
+import openfl.display.BitmapData;
 
 class HealthIcon extends FlxSprite
 {
@@ -11,7 +12,13 @@ class HealthIcon extends FlxSprite
 
 	public function changeCharacter(char:String){
 		
-		if (char == 'pinkie'){
+		antialiasing = true;
+		if (TitleState.curDir != "assets"){
+			trace(char,TitleState.curDir + '/images/icon-' + char + '.png');
+			loadGraphic(BitmapData.fromFile(TitleState.curDir+'/images/icon-'+char+'.png'), true, 150, 150);
+			animation.add(char, [0, 1], 0, false);
+			
+		}else if (char == 'pinkie'){
 		loadGraphic(Paths.image('icons'), true, 150, 150);
 
 		animation.add('pinkie', [0, 1], 0, false);

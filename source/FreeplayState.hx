@@ -33,7 +33,7 @@ class FreeplayState extends MusicBeatState
 	private var curPlaying:Bool = false;
 
 	private var iconArray:Array<HealthIcon> = [];
-
+	public var dirs = [];
 	override function create()
 	{
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
@@ -43,8 +43,23 @@ class FreeplayState extends MusicBeatState
 			var data = initSonglist[i].split(" ");
 			var icon = data.splice(0,1)[0];
 			songs.push(new SongMetadata(data.join(" "), 1, icon));
+			dirs.push("assets");
 		}
 
+		for (u in TitleState.directories){
+			var bobsongs = CoolUtil.coolTextFile3('mods/' + u + '/data/freeplaySonglist.txt');
+			
+			for (i in 0...bobsongs.length)
+			{
+				var data = bobsongs[i].split(" ");
+				var icon = data.splice(0,1)[0];
+				songs.push(new SongMetadata(data.join(" "), 1, icon));
+				dirs.push('mods/'+u);
+			}
+			TitleState.curDir = "assets";
+		}
+		
+		
 
 			if (FlxG.sound.music != null)
 			{
@@ -80,7 +95,7 @@ class FreeplayState extends MusicBeatState
 			songText.isMenuItem = true;
 			songText.targetY = i;
 			grpSongs.add(songText);
-
+			TitleState.curDir = dirs[i];
 			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
 			icon.sprTracker = songText;
 
@@ -92,7 +107,7 @@ class FreeplayState extends MusicBeatState
 			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
 			// songText.screenCenter(X);
 		}
-
+		TitleState.curDir = "assets";
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
 		// scoreText.autoSize = false;
 		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
@@ -266,6 +281,7 @@ class FreeplayState extends MusicBeatState
 
 		// selector.y = (70 * curSelected) + 30;
 
+		TitleState.curDir = dirs[curSelected];
 		#if !switch
 		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
 		// lerpScore = 0;
@@ -273,7 +289,7 @@ class FreeplayState extends MusicBeatState
 
 		if(OptionUtils.options.freeplayPreview){
 			#if PRELOAD_ALL
-				FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
+				FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName.toLowerCase()), 0);
 			#end
 		}
 
