@@ -1,0 +1,7 @@
+:bg:hidefade:true
+:trixie:default:I, The Great and Powerfull Trixie, got my hands on cool spellbook with window spells.
+:trixie:default:Check this out.
+:window:moveX:-120
+:autoskip:during:1.5
+:trixie:magic:
+:trixie:default:Pretty neat don't you say?

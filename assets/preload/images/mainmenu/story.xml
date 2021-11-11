@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="story.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="storyButton0000" x="0" y="0" width="111" height="92" frameX="-226" frameY="-306" frameWidth="578" frameHeight="434"/>
+	<SubTexture name="storyButton0001" x="112" y="0" width="181" height="231" frameX="-193" frameY="-203" frameWidth="578" frameHeight="434"/>
+	<SubTexture name="storyButton0002" x="112" y="0" width="181" height="231" frameX="-193" frameY="-203" frameWidth="578" frameHeight="434"/>
+	<SubTexture name="storyButton0003" x="294" y="0" width="578" height="434"/>
+	<SubTexture name="storyButton0004" x="294" y="0" width="578" height="434"/>
+	<SubTexture name="storyButton0005" x="873" y="0" width="518" height="361" frameX="-27" frameY="-45" frameWidth="578" frameHeight="434"/>
+	<SubTexture name="storyButton0006" x="873" y="0" width="518" height="361" frameX="-27" frameY="-45" frameWidth="578" frameHeight="434"/>
+	<SubTexture name="storyButton0007" x="1392" y="0" width="518" height="361" frameX="-27" frameY="-45" frameWidth="578" frameHeight="434"/>
+	<SubTexture name="storyButton0008" x="1392" y="0" width="518" height="361" frameX="-27" frameY="-45" frameWidth="578" frameHeight="434"/>
+	<SubTexture name="storyButton0009" x="0" y="435" width="518" height="361" frameX="-28" frameY="-45" frameWidth="578" frameHeight="434"/>
+	<SubTexture name="storyButton0010" x="0" y="435" width="518" height="361" frameX="-28" frameY="-45" frameWidth="578" frameHeight="434"/>
+</TextureAtlas>

@@ -17,13 +17,14 @@ import flixel.util.FlxColor;
 import io.newgrounds.NG;
 import lime.app.Application;
 import haxe.Exception;
+import sys.io.File;
 using StringTools;
 import flixel.util.FlxTimer;
 import Options;
 class MainMenuState extends MusicBeatState
 {
 	var curSelected:Int = 0;
-
+	var india:Bool = false;
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
@@ -34,9 +35,13 @@ class MainMenuState extends MusicBeatState
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
+		var doof:DialogueBox;
 
 	override function create()
 	{
+		
+		doof = new DialogueBox(false, CoolUtil.coolTextFile(Paths.txt("trixiedialogue")));
+		
 		TitleState.curDir = "assets";
 		#if desktop
 		// Updating Discord Rich Presence
@@ -104,11 +109,21 @@ class MainMenuState extends MusicBeatState
 
 		changeItem();
 
+		doof.finishThing = playmus;
+		doof.scrollFactor.set();
 		super.create();
 	}
 
 	var selectedSomethin:Bool = false;
-
+	function diashit(){//tktems look
+		india = true;
+		add(doof);
+	}
+	function playmus(){
+		india = false;
+		
+		FlxG.sound.playMusic(Paths.music('freakyMenu'));
+	}
 	override function update(elapsed:Float)
 	{
 		if (FlxG.sound.music.volume < 0.8)
@@ -116,12 +131,16 @@ class MainMenuState extends MusicBeatState
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
 
-		if (!selectedSomethin)
+		if (!selectedSomethin && !india)
 		{
 			if (controls.UP_P)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 				changeItem(-1);
+			}
+			if (FlxG.keys.justPressed.A)//JUST CUT THIS SHIT OUT
+			{
+				diashit();
 			}
 
 			if (controls.DOWN_P)
