@@ -1,16 +1,12 @@
 package;
 
 import flixel.FlxG;
-import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxAtlasFrames;
-import flixel.graphics.frames.FlxFramesCollection;
 import flixel.system.FlxAssets.FlxSoundAsset;
-import openfl.display.BitmapData;
 import openfl.utils.AssetType;
 import openfl.media.Sound;
 import openfl.utils.Assets as OpenFlAssets;
 import sys.FileSystem;
-import sys.io.File;
 
 using StringTools;
 class Paths
@@ -18,8 +14,7 @@ class Paths
 	inline public static var SOUND_EXT = #if web "mp3" #else "ogg" #end;
 
 	static var currentLevel:String;
-	static var cachedImages:Map<String,FlxGraphic> = new Map<String,FlxGraphic>();
-	static var cachedFrames:Map<String,FlxAtlasFrames> = new Map<String,FlxAtlasFrames>();
+
 	static public function setCurrentLevel(name:String)
 	{
 		currentLevel = name.toLowerCase();
@@ -31,8 +26,7 @@ class Paths
 		{
 			var path = TitleState.curDir + "/" + file;
 			
-			if (FileSystem.exists(path)){
-				
+			if(FileSystem.exists(path)){
 				return path;
 			}
 			
@@ -152,22 +146,11 @@ class Paths
 		return getPath('data/$song/modchart.lua',TEXT,library);
 	}
 
-	inline static public function image(key:String, ?library:String):Any
+	inline static public function image(key:String, ?library:String)
 	{
-		if (cachedImages.exists(key)){
-			return cachedImages.get(key);
-		}else{
-			if(FileSystem.exists(TitleState.curDir +'/images/$key.png') && TitleState.curDir != "assets"){
-			var hoes:BitmapData = BitmapData.fromFile(TitleState.curDir + "/$key.png");
-			
-			cachedImages.set(key, FlxGraphic.fromBitmapData(hoes, false, key));
-			return cachedImages.get(key);
-			}else{
-				return getPath('images/$key.png', IMAGE, library);
-			}
-			
-		}
 		
+		
+		return getPath('images/$key.png', IMAGE, library);
 	}
 
 	inline static public function font(key:String)
@@ -177,30 +160,7 @@ class Paths
 
 	inline static public function getSparrowAtlas(key:String, ?library:String)
 	{
-		var d = '';
-		
-		if (FileSystem.exists(TitleState.curDir +'/images/$key.xml')&& TitleState.curDir != "assets"){
-			d = File.getContent(TitleState.curDir +('/images/$key.xml'));
-		}else{
-			d = file('images/$key.xml', library);
-		}
-		//trace(d);
-		/*
-		if (cachedFrames.exists(key)){
-			return cachedFrames.get(key);
-		}else{
-			var hoes:FlxAtlasFrames = FlxAtlasFrames.fromSparrow(image(key, library),d);
-			
-			cachedFrames.set(key, hoes);
-			return hoes;//getPath('images/$key.png', IMAGE, library);
-			
-		}*/
-		
-		
-		
-		
-		
-		return FlxAtlasFrames.fromSparrow(image(key, library),d);
+		return FlxAtlasFrames.fromSparrow(image(key, library), file('images/$key.xml', library));
 	}
 
 	inline static public function getPackerAtlas(key:String, ?library:String)
