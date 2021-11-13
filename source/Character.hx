@@ -3,6 +3,7 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.animation.FlxBaseAnimation;
+import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flash.display.BitmapData;
 import sys.FileSystem;
@@ -22,7 +23,7 @@ class Character extends FlxSprite
 	public var disabledDance:Bool = false;
 
 	public var holdTimer:Float = 0;
-
+	public static var charsBitmaps:Map<String,FlxGraphic> = new Map<String,FlxGraphic>();
 	public function new(x:Float, y:Float, ?character:String = "bf", ?isPlayer:Bool = false)
 	{
 		super(x, y);
@@ -440,7 +441,7 @@ unintAnims = ["new_scene", "gofast"];
 			if(Cache.charFrames[curCharacter]!=null){
 				frames=Cache.charFrames[curCharacter];
 			}else{
-				frames = FlxAtlasFrames.fromSparrow(BitmapData.fromFile(TitleState.curDir+"/shared/images/characters/"+curCharacter+".png"),File.getContent(TitleState.curDir+"/shared/images/characters/"+curCharacter+".xml"));
+				frames = FlxAtlasFrames.fromSparrow(getbmp(curCharacter),File.getContent(TitleState.curDir + "/shared/images/characters/" + curCharacter + ".xml"));
 				Cache.charFrames[curCharacter]=frames;
 			}
 			FlxG.bitmap.dumpCache();
@@ -494,7 +495,20 @@ unintAnims = ["new_scene", "gofast"];
 		return arr;
 	}
 	
-	
+	public function getbmp(char:String):FlxGraphic{
+		
+		trace(charsBitmaps.get(char));
+		if (!charsBitmaps.exists(char)){
+			var gra:FlxGraphic;
+			var bmp = BitmapData.fromFile(TitleState.curDir + "/shared/images/characters/" + curCharacter + ".png");
+			gra = FlxGraphic.fromBitmapData(bmp, false, char);
+			gra.persist = true;
+			charsBitmaps.set(char, gra);
+		}
+		
+		
+		return charsBitmaps.get(char);
+	}
 	public function loadOffsets(){
 		//var offsets = CoolUtil.coolTextFile(Paths.txtImages('characters/'+curCharacter+"Offsets"));
 		var offsets:Array<String>;
@@ -610,22 +624,22 @@ unintAnims = ["new_scene", "gofast"];
 	/**
 	 * FOR GF DANCING SHIT
 	 */
-	public function dance()
+	public function dance(alt:String="")
 	{
 		if (!debugMode && !disabledDance)
 		{
 			holding=false;
-			if(animation.getByName("idle")!=null)
-				playAnim("idle",true);
-			else if (animation.getByName("danceRight")!=null && animation.getByName("danceLeft")!=null){
+			if(animation.getByName("idle"+alt)!=null)
+				playAnim("idle"+alt,true);
+			else if (animation.getByName("danceRight"+alt)!=null && animation.getByName("danceLeft"+alt)!=null){
 				if (!animation.curAnim.name.startsWith('hair'))
 				{
 					danced = !danced;
 
 					if (danced)
-						playAnim('danceRight',true);
+						playAnim('danceRight'+alt,true);
 					else
-						playAnim('danceLeft',true);
+						playAnim('danceLeft'+alt,true);
 				}
 			}
 		}

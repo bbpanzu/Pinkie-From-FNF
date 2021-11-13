@@ -144,6 +144,7 @@ class PlayState extends MusicBeatState
 	public var botplayHoldTimes:Array<Float> = [0,0,0,0];
 	public var botplayHoldMaxTimes:Array<Float> = [0,0,0,0];
 	public var hasDialogue:Bool = false;
+	public var dadaltAnim:String = "";
 
 	
 	
@@ -1043,7 +1044,7 @@ class PlayState extends MusicBeatState
 
 		add(camFollow);
 
-		FlxG.camera.follow(camFollow, LOCKON, 0.01);
+		FlxG.camera.follow(camFollow, LOCKON, 0.03);
 		// FlxG.camera.setScrollBounds(0, FlxG.width, 0, FlxG.height);
 		FlxG.camera.zoom = defaultCamZoom;
 		FlxG.camera.focusOn(camFollow.getPosition());
@@ -1221,10 +1222,9 @@ class PlayState extends MusicBeatState
 			});*/
 			// put on pause for now
 
-			Lua_helper.add_callback(lua.state,"newSprite", function(?x:Int=0,?y:Int=0,?drawBehind:Bool=false,?spriteName:String,path:String){
+			Lua_helper.add_callback(lua.state,"newSprite", function(?x:Int=0,?y:Int=0,?drawBehind:Bool=false,?spriteName:String){
 				var sprite = new FlxSprite(x,y);
 				var name = "UnnamedSprite"+unnamedLuaSprites;
-				sprite.loadGraphic(BitmapData.fromFile(TitleState.curDir+"/data/" + PlayState.SONG.song.toLowerCase()+"/"+path+".png"));
 				if(spriteName!=null)
 					name=spriteName;
 				else
@@ -2077,7 +2077,7 @@ class PlayState extends MusicBeatState
 
 		svIdx--;
 		var curPos = velocityMarkers[svIdx];
-		curPos += ((strumTime-SONG.sliderVelocities[svIdx].startTime+currentOptions.noteOffset)*(SONG.initialSpeed*SONG.sliderVelocities[svIdx].multiplier));
+		curPos += ((strumTime-SONG.sliderVelocities[svIdx].startTime)*(SONG.initialSpeed*SONG.sliderVelocities[svIdx].multiplier));
 		return curPos;
 	}
 
@@ -2379,8 +2379,8 @@ class PlayState extends MusicBeatState
 
 		if (camZooming)
 		{
-			FlxG.camera.zoom = FlxMath.lerp(FlxG.camera.zoom,defaultCamZoom, 0.05);
-			camHUD.zoom = FlxMath.lerp(camHUD.zoom,1, 0.05);
+			//FlxG.camera.zoom = FlxMath.lerp(FlxG.camera.zoom,defaultCamZoom, 0.05);
+			//camHUD.zoom = FlxMath.lerp(camHUD.zoom,1, 0.05);
 		}
 
 		FlxG.watch.addQuick("beatShit", curBeat);
@@ -2645,8 +2645,7 @@ class PlayState extends MusicBeatState
 						if (SONG.song != 'Tutorial')
 							camZooming = true;
 
-						var altAnim:String = "";
-
+						var altAnim:String = dadaltAnim;
 						if (SONG.notes[Math.floor(curStep / 16)] != null)
 						{
 							if (SONG.notes[Math.floor(curStep / 16)].altAnim)
@@ -2776,6 +2775,11 @@ class PlayState extends MusicBeatState
 			FlxG.sound.music.volume=0;
 			vocals.volume=0;
 		}
+		
+						lua.call("update",[elapsed]);
+		
+		
+		
 		
 		if (FlxG.keys.justPressed.ONE)
 			endSong();
@@ -3683,8 +3687,10 @@ class PlayState extends MusicBeatState
 	}
 
 	public function beatCam(){
-		FlxG.camera.zoom += 0.015;
-		camHUD.zoom += 0.03;
+		FlxG.camera.zoom = defaultCamZoom + 0.015;
+		camHUD.zoom = defaultCamZoom + 0.03;
+		FlxTween.tween(FlxG.camera, {zoom:defaultCamZoom}, Conductor.crochet/1000);
+		FlxTween.tween(camHUD, {zoom:defaultCamZoom}, Conductor.crochet/1000);
 	}
 	
 	
@@ -3741,8 +3747,8 @@ class PlayState extends MusicBeatState
 			// Conductor.changeBPM(SONG.bpm);
 
 			// Dad doesnt interupt his own notes
-			if (!dad.animation.curAnim.name.startsWith("sing") && !dad.animation.curAnim.name.startsWith("h")&& !dad.animation.curAnim.name.startsWith("w") || !dad.unintAnims.contains(dad.animation.curAnim.name) )
-				dad.dance();
+			if (!dad.animation.curAnim.name.startsWith("sing") && !dad.animation.curAnim.name.startsWith("h")&& !dad.animation.curAnim.name.startsWith("w") )
+				if(!dad.unintAnims.contains(dad.animation.curAnim.name))dad.dance(dadaltAnim);
 
 		}
 		if (camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0)
@@ -3763,7 +3769,7 @@ class PlayState extends MusicBeatState
 				case 181:
 					dad.playAnim("hello");
 				case 183:
-					dad.dance();
+					dad.dance(dadaltAnim);
 			}
 		}
 			if (curSong.toLowerCase() == "fun"){
