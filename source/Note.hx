@@ -1,6 +1,7 @@
 package;
 
 import flixel.FlxSprite;
+import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.math.FlxMath;
 import flixel.util.FlxColor;
@@ -8,6 +9,8 @@ import flixel.util.FlxColor;
 import polymod.format.ParseRules.TargetSignatureElement;
 #end
 import openfl.display.BitmapData;
+import sys.FileSystem;
+import sys.io.File;
 
 using StringTools;
 
@@ -15,6 +18,7 @@ class Note extends FlxSprite
 {
 	public var strumTime:Float = 0;
 
+	public static var noteBitmaps:Map<String,FlxGraphic> = new Map<String,FlxGraphic>();
 	public var mustPress:Bool = false;
 	public var noteData:Int = 0;
 	public var canBeHit:Bool = false;
@@ -40,7 +44,6 @@ class Note extends FlxSprite
 	public static var GREEN_NOTE:Int = 2;
 	public static var BLUE_NOTE:Int = 1;
 	public static var RED_NOTE:Int = 3;
-
 	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?initialPos:Float=0, ?beingCharted=false)
 	{
 		super();
@@ -91,7 +94,25 @@ class Note extends FlxSprite
 				updateHitbox();
 
 			default:
-				frames = Paths.getSparrowAtlas('NOTE_assets');
+				
+				
+				
+				
+				
+			var path = "";
+			var balls:Array<String> = [TitleState.curDir,"assets"];
+			for (i in balls){
+				
+				if (FileSystem.exists(i + "/shared/images/NOTE_assets.xml")){
+					path = i + "/shared/images/NOTE_assets.xml";
+					break;
+				}
+				if (FileSystem.exists("mods/"+ i + "/shared/images/NOTE_assets.xml")){
+					path = "mods/" + i + "/shared/images/NOTE_assets.xml";
+					break;
+				}
+			}
+				frames = FlxAtlasFrames.fromSparrow(getbmp("NOTE_assets"), File.getContent(path));//Paths.getSparrowAtlas('NOTE_assets');
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
@@ -163,6 +184,41 @@ class Note extends FlxSprite
 		}
 	}
 
+	
+	
+	
+	public function getbmp(char:String):FlxGraphic{
+		
+		if (!noteBitmaps.exists(char)){
+			
+			var path = "";
+			var balls:Array<String> = [TitleState.curDir,"assets"];
+			for (i in balls){
+				
+				if (FileSystem.exists(i + "/shared/images/NOTE_assets.png")){
+					path = i + "/shared/images/NOTE_assets.png";
+					break;
+				}
+				if (FileSystem.exists("mods/"+ i + "/shared/images/NOTE_assets.png")){
+					path = "mods/" + i + "/shared/images/NOTE_assets.png";
+					break;
+				}
+			}
+			var gra:FlxGraphic;
+			var bmp = BitmapData.fromFile(path);
+			gra = FlxGraphic.fromBitmapData(bmp, false, char);
+			gra.persist = true;
+			noteBitmaps.set(char, gra);
+		}
+		
+		
+		return noteBitmaps.get(char);
+	}
+	
+	
+	
+	
+	
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);

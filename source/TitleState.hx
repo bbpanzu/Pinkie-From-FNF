@@ -56,8 +56,10 @@ class TitleState extends MusicBeatState
 	
 	for (i in FileSystem.readDirectory("mods")){
 		
-		if(!i.contains(".") && i != "introMod")directories.push(i);
-		trace(i);
+		if (!i.contains(".") && i != "introMod"){
+			directories.push(i);
+			trace(i);
+		}
 	}
 
 		OptionUtils.bindSave();

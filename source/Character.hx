@@ -6,6 +6,7 @@ import flixel.animation.FlxBaseAnimation;
 import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flash.display.BitmapData;
+import openfl.Assets;
 import sys.FileSystem;
 import sys.io.File;
 
@@ -441,7 +442,29 @@ unintAnims = ["new_scene", "gofast"];
 			if(Cache.charFrames[curCharacter]!=null){
 				frames=Cache.charFrames[curCharacter];
 			}else{
-				frames = FlxAtlasFrames.fromSparrow(getbmp(curCharacter),File.getContent(TitleState.curDir + "/shared/images/characters/" + curCharacter + ".xml"));
+				
+				
+				var path = "";
+			
+			var piss:Array<String> = ["assets"];
+			var tits:String = piss.join(",") + "," + TitleState.directories.join(",");
+			var balls = tits.split(",");
+			for (i in balls){
+				var boobs = i + "/shared/images/characters/" + curCharacter + ".xml";
+				trace(boobs);
+				if (FileSystem.exists(boobs)){
+					path = boobs;
+					break;
+				}
+				boobs = "mods/" + i + "/shared/images/characters/" + curCharacter + ".xml";
+				if (FileSystem.exists(boobs)){
+					path = boobs;
+					break;
+				}
+			}
+				
+			trace(curCharacter + ":" + path);
+				frames = FlxAtlasFrames.fromSparrow(getbmp(curCharacter),File.getContent(path));
 				Cache.charFrames[curCharacter]=frames;
 			}
 			FlxG.bitmap.dumpCache();
@@ -499,8 +522,26 @@ unintAnims = ["new_scene", "gofast"];
 		
 		trace(charsBitmaps.get(char));
 		if (!charsBitmaps.exists(char)){
+			
+			var path = "";
+			var piss:Array<String> = ["assets"];
+			var tits:String = piss.join(",") + "," + TitleState.directories.join(",");
+			var balls = tits.split(",");
+			for (i in balls){
+				
+				if (FileSystem.exists(i + "/shared/images/characters/" + curCharacter + ".png")){
+					path = i + "/shared/images/characters/" + curCharacter + ".png";
+					break;
+				}
+				if (FileSystem.exists("mods/"+ i + "/shared/images/characters/" + curCharacter + ".png")){
+					path = "mods/" + i + "/shared/images/characters/" + curCharacter + ".png";
+					break;
+				}
+			}
+			trace(curCharacter + ":" + path);
+			
 			var gra:FlxGraphic;
-			var bmp = BitmapData.fromFile(TitleState.curDir + "/shared/images/characters/" + curCharacter + ".png");
+			var bmp = BitmapData.fromFile(path);
 			gra = FlxGraphic.fromBitmapData(bmp, false, char);
 			gra.persist = true;
 			charsBitmaps.set(char, gra);

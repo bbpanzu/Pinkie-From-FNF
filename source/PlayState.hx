@@ -59,6 +59,7 @@ import llua.Lua;
 import llua.State;
 import llua.LuaL;
 #end
+import sys.io.File;
 
 using StringTools;
 class PlayState extends MusicBeatState
@@ -146,7 +147,10 @@ class PlayState extends MusicBeatState
 	public var hasDialogue:Bool = false;
 	public var dadaltAnim:String = "";
 
+	public var camZoomTween:FlxTween;
+	public var camBoomTween:FlxTween;
 	
+	public var camMoveTween:FlxTween;
 	
 	
 	public var playerNoteOffsets:Array<Array<Float>> = [
@@ -242,6 +246,8 @@ class PlayState extends MusicBeatState
 
 	var defaultCamZoom:Float = 1.05;
 
+	var cz = 1.00;
+		
 	// how big to stretch the pixel art assets
 	public static var daPixelZoom:Float = 6;
 	public var camStep:Array<Float> = [];
@@ -1204,6 +1210,9 @@ class PlayState extends MusicBeatState
 			Lua_helper.add_callback(lua.state,"getOption", function(variable:String){
 				return Reflect.field(currentOptions,variable);
 			});
+			Lua_helper.add_callback(lua.state,"beatCam", function(z1:Float,z2:Float){
+				beatCam(z1,z2);
+			});
 
 			/*
 			Lua_helper.add_callback(lua.state,"newShader", function(shaderType:String, ?shaderName:String){
@@ -1385,6 +1394,7 @@ class PlayState extends MusicBeatState
 			}
 		}
 
+		cz = FlxG.camera.zoom;
 		super.create();
 	}
 
@@ -1862,7 +1872,36 @@ class PlayState extends MusicBeatState
 					}
 
 				default:
-					babyArrow.frames = Paths.getSparrowAtlas('NOTE_assets');
+					
+						
+			var path = "";
+			var balls:Array<String> = [TitleState.curDir,"assets"];
+			for (i in balls){
+				
+				if (FileSystem.exists(i + "/shared/images/NOTE_assets.xml")){
+					path = i + "/shared/images/NOTE_assets.xml";
+					break;
+				}
+				if (FileSystem.exists("mods/"+ i + "/shared/images/NOTE_assets.xml")){
+					path = "mods/" + i + "/shared/images/NOTE_assets.xml";
+					break;
+				}
+			}
+			
+			
+			
+			
+			
+				babyArrow.frames = FlxAtlasFrames.fromSparrow(Paths.getbmp("NOTE_assets"), File.getContent(path));//Paths.getSparrowAtlas('NOTE_assets');
+
+				
+				
+					
+					
+					
+					
+					
+					
 
 					babyArrow.antialiasing = true;
 					babyArrow.setGraphicSize(Std.int(babyArrow.width * 0.7));
@@ -2382,6 +2421,12 @@ class PlayState extends MusicBeatState
 			//FlxG.camera.zoom = FlxMath.lerp(FlxG.camera.zoom,defaultCamZoom, 0.05);
 			//camHUD.zoom = FlxMath.lerp(camHUD.zoom,1, 0.05);
 		}
+		if (cz != defaultCamZoom){
+			cz = defaultCamZoom;
+			if (camMoveTween != null) camMoveTween.cancel();
+			camMoveTween = FlxTween.tween(FlxG.camera, {zoom:defaultCamZoom}, 0.4);
+			
+		}
 
 		FlxG.watch.addQuick("beatShit", curBeat);
 		FlxG.watch.addQuick("stepShit", curStep);
@@ -2776,7 +2821,9 @@ class PlayState extends MusicBeatState
 			vocals.volume=0;
 		}
 		
-						lua.call("update",[elapsed]);
+						if(luaModchartExists && lua!=null){
+							lua.call("update", [elapsed]);
+						}
 		
 		
 		
@@ -3686,11 +3733,16 @@ class PlayState extends MusicBeatState
 		
 	}
 
-	public function beatCam(){
-		FlxG.camera.zoom = defaultCamZoom + 0.015;
-		camHUD.zoom = defaultCamZoom + 0.03;
-		FlxTween.tween(FlxG.camera, {zoom:defaultCamZoom}, Conductor.crochet/1000);
-		FlxTween.tween(camHUD, {zoom:defaultCamZoom}, Conductor.crochet/1000);
+	public function beatCam(z1:Float=0.015,z2:Float = 0.03){
+		FlxG.camera.zoom = defaultCamZoom + z1;
+		camHUD.zoom = 1 + z2;
+		
+		
+		if (camZoomTween != null) camZoomTween.cancel();
+		if (camBoomTween != null) camZoomTween.cancel();
+		
+		camZoomTween = FlxTween.tween(FlxG.camera, {zoom:defaultCamZoom}, Conductor.crochet/1000);
+		camBoomTween = FlxTween.tween(camHUD, {zoom:1}, Conductor.crochet/1000);
 	}
 	
 	

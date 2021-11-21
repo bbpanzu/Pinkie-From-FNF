@@ -1,8 +1,10 @@
 package;
 
 import flixel.FlxG;
+import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.system.FlxAssets.FlxSoundAsset;
+import openfl.display.BitmapData;
 import openfl.utils.AssetType;
 import openfl.media.Sound;
 import openfl.utils.Assets as OpenFlAssets;
@@ -14,7 +16,7 @@ class Paths
 	inline public static var SOUND_EXT = #if web "mp3" #else "ogg" #end;
 
 	static var currentLevel:String;
-
+	static var imgCache:Map<String,FlxGraphic> = new Map<String,FlxGraphic>();
 	static public function setCurrentLevel(name:String)
 	{
 		currentLevel = name.toLowerCase();
@@ -157,9 +159,43 @@ class Paths
 	{
 		return 'assets/fonts/$key';
 	}
+	
+	
+	
+	static public function getbmp(key:String):FlxGraphic{
+		
+		if (!imgCache.exists(key)){
+			
+			var path = "";
+			var balls:Array<String> = [TitleState.curDir,"assets"];
+			for (i in balls){
+				
+				if (FileSystem.exists(i + "/shared/images/"+key+".png")){
+					path = i + "/shared/images/"+key+".png";
+					break;
+				}
+				if (FileSystem.exists("mods/"+ i + "/shared/images/"+key+".png")){
+					path = "mods/" + i + "/shared/images/"+key+".png";
+					break;
+				}
+			}
+			var gra:FlxGraphic;
+			var bmp = BitmapData.fromFile(path);
+			gra = FlxGraphic.fromBitmapData(bmp, false, key);
+			gra.persist = true;
+			imgCache.set(key, gra);
+		}
+		return imgCache.get(key);
+	}
+	
 
 	inline static public function getSparrowAtlas(key:String, ?library:String)
 	{
+		
+		
+		
+		
+
 		return FlxAtlasFrames.fromSparrow(image(key, library), file('images/$key.xml', library));
 	}
 
