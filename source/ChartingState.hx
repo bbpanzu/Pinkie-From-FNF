@@ -60,9 +60,12 @@ class ChartingState extends MusicBeatState
 
 	var GRID_SIZE:Int = 40;
 
+	var mSpeed = 1.0;
+	
 	var dummyArrow:FlxSprite;
 	var useHitSounds = false;
 	var curRenderedNotes:FlxTypedGroup<Note>;
+	var curRenderedTexts:FlxTypedGroup<AttachedFlxText>;
 	var curRenderedSustains:FlxTypedGroup<Note>;
 	var curRenderedMarkers:FlxTypedGroup<FlxSprite>;
 
@@ -108,6 +111,7 @@ class ChartingState extends MusicBeatState
 		add(gridBlackLine);
 
 		curRenderedNotes = new FlxTypedGroup<Note>();
+		curRenderedTexts = new FlxTypedGroup<AttachedFlxText>();
 		curRenderedSustains = new FlxTypedGroup<Note>();
 		curRenderedMarkers = new FlxTypedGroup<FlxSprite>();
 
@@ -178,6 +182,7 @@ class ChartingState extends MusicBeatState
 		add(curRenderedNotes);
 		add(curRenderedSustains);
 		add(curRenderedMarkers);
+		add(curRenderedTexts);
 		curSection = 0;
 		updateSectionUI();
 
@@ -349,7 +354,7 @@ class ChartingState extends MusicBeatState
 		tab_group_marker.name = 'Marker';
 
 		markerScrollMult = new FlxUINumericStepper(10, 10, .1, 0, 0, 10, 1);
-		markerScrollMult.value = 1;
+		markerScrollMult.value = mSpeed;
 		markerScrollMult.name = 'marker_scrollVel';
 
 		markerSnap = new FlxUICheckBox(10, 35, null, null, "Snap to mouse", 100);
@@ -361,6 +366,7 @@ class ChartingState extends MusicBeatState
 	}
 
 	var stepperSusLength:FlxUINumericStepper;
+	var stepperNoteType:FlxUINumericStepper;
 
 
 	function addNoteUI():Void
@@ -372,10 +378,15 @@ class ChartingState extends MusicBeatState
 		stepperSusLength.value = 0;
 		stepperSusLength.name = 'note_susLength';
 
+		stepperNoteType = new FlxUINumericStepper(10, 40, 1, 0, 0,999);
+		stepperNoteType.value = 0;
+		stepperNoteType.name = 'note_type';
+
 
 		var applyLength:FlxButton = new FlxButton(100, 10, 'Apply');
 
 		tab_group_note.add(stepperSusLength);
+		tab_group_note.add(stepperNoteType);
 		tab_group_note.add(applyLength);
 
 		UI_box.addGroup(tab_group_note);
@@ -472,6 +483,11 @@ class ChartingState extends MusicBeatState
 				curSelectedNote[2] = nums.value;
 				updateGrid();
 			}
+			else if (wname == 'note_type')
+			{
+				curSelectedNote[3] = nums.value;
+				updateGrid();
+			}
 			else if (wname == 'section_bpm')
 			{
 				_song.notes[curSection].bpm = Std.int(nums.value);
@@ -479,7 +495,8 @@ class ChartingState extends MusicBeatState
 			}
 			else if (wname == 'marker_scrollVel')
 			{
-				curSelectedMarker.multiplier=nums.value;
+				mSpeed = curSelectedMarker.multiplier = nums.value;
+				
 				updateGrid();
 			}
 		}
@@ -930,6 +947,10 @@ class ChartingState extends MusicBeatState
 		{
 			curRenderedNotes.remove(curRenderedNotes.members[0], true);
 		}
+		while (curRenderedTexts.members.length > 0)
+		{
+			curRenderedTexts.remove(curRenderedTexts.members[0], true);
+		}
 
 		while (curRenderedSustains.members.length > 0)
 		{
@@ -973,8 +994,9 @@ class ChartingState extends MusicBeatState
  			var daNoteInfo = i[1];
  			var daStrumTime = i[0];
  			var daSus = i[2];
-
- 			var note:Note = new Note(daStrumTime, daNoteInfo % 4, null, false,0,true);
+ 			var daType = i[3];
+			
+ 			var note:Note = new Note(daStrumTime, daNoteInfo % 4, null, false,0,true,daType);
 			note.wasGoodHit = daStrumTime<Conductor.songPosition;
  			note.rawNoteData = daNoteInfo;
  			note.sustainLength = daSus;
@@ -985,7 +1007,13 @@ class ChartingState extends MusicBeatState
  			note.x = Math.floor(daNoteInfo * GRID_SIZE);
  			note.y = getYfromStrum((daStrumTime - sectionStartTime()) % (Conductor.stepCrochet * _song.notes[curSection].lengthInSteps));
 
+			var datext:AttachedFlxText = new AttachedFlxText(note.x, note.y, 0, daType + "", 16);
+			datext.xAdd = 10;
+			datext.yAdd = 2;
+			datext.blend = "invert";
+			datext.sprTracker = note;
  			curRenderedNotes.add(note);
+			curRenderedTexts.add(datext);
 
  			if (daSus > 0)
  			{
@@ -1148,7 +1176,7 @@ class ChartingState extends MusicBeatState
 		}
 		velChanges.push({
 			startTime:noteStrum,
-			multiplier:1,
+			multiplier:mSpeed,
 		});
 		curSelectedMarker=velChanges[velChanges.length-1];
 
@@ -1162,12 +1190,13 @@ class ChartingState extends MusicBeatState
 		var noteStrum = getStrumTime(dummyArrow.y) + sectionStartTime();
 		var noteData = Math.floor(FlxG.mouse.x / GRID_SIZE);
 		var noteSus = 0;
-		_song.notes[curSection].sectionNotes.push([noteStrum, noteData, noteSus]);
+		var noteType = stepperNoteType.value;
+		_song.notes[curSection].sectionNotes.push([noteStrum, noteData, noteSus,noteType]);
 
 		curSelectedNote = _song.notes[curSection].sectionNotes[_song.notes[curSection].sectionNotes.length - 1];
 
 		if(FlxG.keys.pressed.CONTROL){
-			_song.notes[curSection].sectionNotes.push([noteStrum, (noteData+4)%8, noteSus]);
+			_song.notes[curSection].sectionNotes.push([noteStrum, (noteData+4)%8, noteSus,noteType]);
 		}
 
 		updateGrid();
@@ -1298,5 +1327,27 @@ class ChartingState extends MusicBeatState
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onSaveError);
 		_file = null;
 		FlxG.log.error("Problem saving Level data");
+	}
+}
+
+class AttachedFlxText extends FlxText
+{
+	public var sprTracker:FlxSprite;
+	public var xAdd:Float = 0;
+	public var yAdd:Float = 0;
+
+	public function new(X:Float = 0, Y:Float = 0, FieldWidth:Float = 0, ?Text:String, Size:Int = 8, EmbeddedFont:Bool = true) {
+		super(X, Y, FieldWidth, Text, Size, EmbeddedFont);
+	}
+
+	override function update(elapsed:Float)
+	{
+		super.update(elapsed);
+
+		if (sprTracker != null) {
+			setPosition(sprTracker.x + xAdd, sprTracker.y + yAdd);
+			angle = sprTracker.angle;
+			alpha = sprTracker.alpha;
+		}
 	}
 }

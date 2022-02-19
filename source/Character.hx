@@ -22,8 +22,9 @@ class Character extends FlxSprite
 	public var curCharacter:String = 'bf';
 	public var holding:Bool=false;
 	public var disabledDance:Bool = false;
-
+	public var curAnim:String = "";
 	public var holdTimer:Float = 0;
+	public var camOffset:Array<Int> = [0,0];
 	public static var charsBitmaps:Map<String,FlxGraphic> = new Map<String,FlxGraphic>();
 	public function new(x:Float, y:Float, ?character:String = "bf", ?isPlayer:Bool = false)
 	{
@@ -223,26 +224,60 @@ class Character extends FlxSprite
 				flipX = true;
 
 			case 'bf':
-				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND','shared');
-				frames = tex;
-				animation.addByPrefix('idle', 'BF idle dance', 24, false);
-				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
-				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
-				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
-				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
-				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
-				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
-				animation.addByPrefix('hey', 'BF HEY', 24, false);
+				if (PlayState.isPony){
+					var tex = FlxAtlasFrames.fromSparrow('mods/introMod/_append/data/bfpone.png', 'mods/introMod/_append/data/bfpone.xml');
+					frames = tex;
+					animation.addByPrefix('idle', 'BF idle', 24, false);
+					animation.addByPrefix('singUP', 'BF up', 24, false);
+					animation.addByPrefix('singLEFT', 'BF left', 24, false);
+					animation.addByPrefix('singRIGHT', 'BF right', 24, false);
+					animation.addByPrefix('singDOWN', 'BF down', 24, false);
+					animation.addByPrefix('singUPmiss', 'BF miss up', 24, false);
+					animation.addByPrefix('singLEFTmiss', 'BF miss left', 24, false);
+					animation.addByPrefix('singRIGHTmiss', 'BF miss right', 24, false);
+					animation.addByPrefix('singDOWNmiss', 'BF miss down', 24, false);
 
-				animation.addByPrefix('firstDeath', "BF dies", 24, false);
-				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
-				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
+					animation.addByPrefix('firstDeath', "BF deathstart", 24, false);
+					animation.addByPrefix('deathLoop', "BF deathloop", 24, true);
+					animation.addByPrefix('deathConfirm', "BF deathend", 24, false);
 
-				animation.addByPrefix('scared', 'BF idle shaking', 24);
+					animation.addByPrefix('scared', 'BF idle shaking', 24);
+					
+					
+					var offsets:Array<String>;
+			var data = File.getContent("mods/introMod/_append/data/bfPonyOffsets.txt");
+			
+			
+			offsets = CoolUtil.coolTextFile2(data);
+			Cache.offsetData[curCharacter] = data;
+		for(s in offsets){
+			var stuff:Array<String> = s.split(" ");
+			addOffset(stuff[0],Std.parseFloat(stuff[1]),Std.parseFloat(stuff[2]));
+		}
+					
+					
+				}else{
+					var tex = Paths.getSparrowAtlas('characters/BOYFRIEND','shared');
+					frames = tex;
+					animation.addByPrefix('idle', 'BF idle dance', 24, false);
+					animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+					animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+					animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+					animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+					animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
+					animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
+					animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
+					animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
+					animation.addByPrefix('hey', 'BF HEY', 24, false);
 
-				loadOffsets();
+					animation.addByPrefix('firstDeath', "BF dies", 24, false);
+					animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+					animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
+
+					animation.addByPrefix('scared', 'BF idle shaking', 24);
+
+					loadOffsets();
+				}
 				playAnim('idle');
 
 				flipX = true;
@@ -508,7 +543,7 @@ unintAnims = ["new_scene", "gofast"];
 		}
 	}
 
-	public function numArr(min:Int, max:Int):Array<Int>{
+	public static function numArr(min:Int, max:Int):Array<Int>{
 		var arr:Array<Int> = [];
 		var len = max - min;
 		for (i in 0...len){
@@ -601,6 +636,11 @@ unintAnims = ["new_scene", "gofast"];
 				trace(type,name,stuff.join(" "),fps);
 				if(type.toLowerCase()=='flipx'){
 					flipX = !flipX;
+				}else if(type.toLowerCase()=='camofs'){
+					var c = name.split(',');
+					camOffset[0] = Std.parseInt(c[0]);
+					camOffset[1] = Std.parseInt(c[1]);
+					//camOffset = c;
 				}else if(type.toLowerCase()=='prefix'){
 					animation.addByPrefix(name, stuff.join(" "), fps, false);
 				}else if(type.toLowerCase()=='indices'){
@@ -691,10 +731,11 @@ unintAnims = ["new_scene", "gofast"];
 		if(AnimName.endsWith("miss") && animation.getByName(AnimName)==null ){
 			AnimName = AnimName.substring(0,AnimName.length-4);
 		}
-
+		
 		//animation.getByName(AnimName).frameRate=animation.getByName(AnimName).frameRate;
+		
 		animation.play(AnimName, Force, Reversed, Frame);
-
+		curAnim = AnimName;
 		var daOffset = animOffsets.get(AnimName);
 		if (animOffsets.exists(AnimName))
 		{

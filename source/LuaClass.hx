@@ -1063,6 +1063,19 @@ class LuaCharacter extends LuaSprite {
       getter:GetBoolProperty,
       setter:SetBoolProperty
     });
+    properties.set("curAnim",{
+      defaultValue:character.curAnim,
+      getter:GetStringProperty,
+      setter:function(l:State){
+        LuaL.error(l,"animName is read-only. Try calling 'playAnim'");
+        return 0;
+      }
+    });
+    properties.set("holdTimer",{
+      defaultValue:character.holdTimer,
+      getter:GetNumProperty,
+      setter:SetNumProperty
+    });
     properties.set("changeCharacter",{
       defaultValue:0,
       getter:function(l:State,data:Any){

@@ -38,16 +38,17 @@ class Note extends FlxSprite
 	public var initialPos:Float = 0;
 
 	public var noteScore:Float = 1;
+	public var noAnim:Bool = false;
 
 	public static var swagWidth:Float = 160 * 0.7;
 	public static var PURP_NOTE:Int = 0;
 	public static var GREEN_NOTE:Int = 2;
 	public static var BLUE_NOTE:Int = 1;
 	public static var RED_NOTE:Int = 3;
-	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?initialPos:Float=0, ?beingCharted=false)
+	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?initialPos:Float=0, ?beingCharted=false,noteType:Int=0)
 	{
 		super();
-
+		this.noteType = noteType;
 		this.initialPos=initialPos;
 		this.beingCharted=beingCharted;
 		if (prevNote == null)
@@ -101,18 +102,17 @@ class Note extends FlxSprite
 				
 			var path = "";
 			var balls:Array<String> = [TitleState.curDir,"assets"];
+			var stopLookin = false;
 			for (i in balls){
-				
-				if (FileSystem.exists(i + "/shared/images/NOTE_assets.xml")){
-					path = i + "/shared/images/NOTE_assets.xml";
-					break;
-				}
-				if (FileSystem.exists("mods/"+ i + "/shared/images/NOTE_assets.xml")){
-					path = "mods/" + i + "/shared/images/NOTE_assets.xml";
-					break;
+				if(!stopLookin){
+					if (FileSystem.exists(i + "/shared/images/NOTE_assets.xml")){
+						path = i + "/shared/images/NOTE_assets.xml";
+						stopLookin = true;
+						break;
+					}
 				}
 			}
-				frames = FlxAtlasFrames.fromSparrow(getbmp("NOTE_assets"), File.getContent(path));//Paths.getSparrowAtlas('NOTE_assets');
+				frames = FlxAtlasFrames.fromSparrow(Paths.getbmp("NOTE_assets"), File.getContent(path));//Paths.getSparrowAtlas('NOTE_assets');
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');

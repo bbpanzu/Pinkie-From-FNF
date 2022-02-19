@@ -42,7 +42,7 @@ class Alphabet extends FlxSpriteGroup
 	var splitWords:Array<String> = [];
 
 	var isBold:Bool = false;
-
+//STOLE SHIT FROM PSYCH <333
 	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = false, typed:Bool = false)
 	{
 		super(x, y);
@@ -105,9 +105,21 @@ class Alphabet extends FlxSpriteGroup
 				// var letter:AlphaCharacter = new AlphaCharacter(30 * loopNum, 0);
 				var letter:AlphaCharacter = new AlphaCharacter(xPos, 0);
 
-				if (isBold && !isNumber && !isSymbol)
+				if (isBold)
 				{
-					letter.createBold(character);
+					
+					if (isNumber)
+					{
+						letter.createBoldNumber(character);
+					}
+					else if (isSymbol)
+					{
+						letter.createBoldSymbol(character);
+					}
+					else
+					{
+						letter.createBoldLetter(character);
+					}
 				}
 				else
 				{
@@ -206,7 +218,18 @@ class Alphabet extends FlxSpriteGroup
 				letter.row = curRow;
 				if (isBold)
 				{
-					letter.createBold(splitWords[loopNum]);
+					if (isNumber)
+					{
+						letter.createBoldNumber(splitWords[loopNum]);
+					}
+					else if (isSymbol)
+					{
+						letter.createBoldSymbol(splitWords[loopNum]);
+					}
+					else
+					{
+						letter.createBoldLetter(splitWords[loopNum]);
+					}
 				}
 				else
 				{
@@ -297,6 +320,62 @@ class AlphaCharacter extends FlxSprite
 		antialiasing = true;
 	}
 
+	public function createBoldNumber(letter:String):Void
+	{
+		animation.addByPrefix(letter, "bold" + letter, 24);
+		animation.play(letter);
+		updateHitbox();
+	}
+
+	public function createBoldSymbol(letter:String)
+	{
+		switch (letter)
+		{
+			case '.':
+				animation.addByPrefix(letter, 'PERIOD bold', 24);
+			case "'":
+				animation.addByPrefix(letter, 'APOSTRAPHIE bold', 24);
+			case "?":
+				animation.addByPrefix(letter, 'QUESTION MARK bold', 24);
+			case "!":
+				animation.addByPrefix(letter, 'EXCLAMATION POINT bold', 24);
+			case "(":
+				animation.addByPrefix(letter, 'bold (', 24);
+			case ")":
+				animation.addByPrefix(letter, 'bold )', 24);
+			default:
+				animation.addByPrefix(letter, 'bold ' + letter, 24);
+		}
+		animation.play(letter);
+		updateHitbox();
+		switch (letter)
+		{
+			case "'":
+				y -= 20 * 1;
+			case '-':
+				//x -= 35 - (90 * (1.0 - 1));
+				y += 20 * 1;
+			case '(':
+				x -= 65 * 1;
+				y -= 5 * 1;
+				offset.x = -58 * 1;
+			case ')':
+				x -= 20 / 1;
+				y -= 5 * 1;
+				offset.x = 12 * 1;
+			case '.':
+				y += 45 * 1;
+				x += 5 * 1;
+				offset.x += 3 * 1;
+		}
+	}
+
+	public function createBoldLetter(letter:String)
+	{
+		animation.addByPrefix(letter, letter.toUpperCase() + " bold", 24);
+		animation.play(letter);
+		updateHitbox();
+	}
 	public function createBold(letter:String)
 	{
 		animation.addByPrefix(letter, letter.toUpperCase() + " bold", 24);
@@ -312,6 +391,7 @@ class AlphaCharacter extends FlxSprite
 			letterCase = 'capital';
 		}
 
+		trace(letter + "," + letter + " " + letterCase);
 		animation.addByPrefix(letter, letter + " " + letterCase, 24);
 		animation.play(letter);
 		updateHitbox();

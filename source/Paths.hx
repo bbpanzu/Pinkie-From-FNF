@@ -16,7 +16,7 @@ class Paths
 	inline public static var SOUND_EXT = #if web "mp3" #else "ogg" #end;
 
 	static var currentLevel:String;
-	static var imgCache:Map<String,FlxGraphic> = new Map<String,FlxGraphic>();
+	public static var imgCache:Map<String,FlxGraphic> = new Map<String,FlxGraphic>();
 	static public function setCurrentLevel(name:String)
 	{
 		currentLevel = name.toLowerCase();
@@ -134,10 +134,13 @@ class Paths
 	}
 	inline static private function returnSongFile(file:String):Sound
 	{
-		if(FileSystem.exists(file)) {
-			return Sound.fromFile(file);
+		var DASHIT = null;
+		if(TitleState.curDir != "assets"){
+			if(FileSystem.exists(file)) {
+				DASHIT = Sound.fromFile(file);
+			}
 		}
-		return null;
+		return DASHIT;
 	}
 	
 	inline static public function lua(script:String,?library:String){
@@ -167,20 +170,29 @@ class Paths
 		if (!imgCache.exists(key)){
 			
 			var path = "";
-			var balls:Array<String> = [TitleState.curDir,"assets"];
+			var pulllfromAssets:Bool = false;
+			var balls:Array<String> = [TitleState.curDir, "assets"];
+			var foundshit = false;
 			for (i in balls){
-				
-				if (FileSystem.exists(i + "/shared/images/"+key+".png")){
-					path = i + "/shared/images/"+key+".png";
-					break;
-				}
-				if (FileSystem.exists("mods/"+ i + "/shared/images/"+key+".png")){
-					path = "mods/" + i + "/shared/images/"+key+".png";
-					break;
+				if(!foundshit){
+					if (FileSystem.exists(i + "/shared/images/" + key + ".png")){
+						if(i == "assets")pulllfromAssets = true;
+						foundshit = true;
+						path = i + "/shared/images/" + key + ".png";
+						trace(path);
+					}
 				}
 			}
 			var gra:FlxGraphic;
-			var bmp = BitmapData.fromFile(path);
+			var bmp:BitmapData;
+			
+						trace(TitleState.curDir);
+						trace(pulllfromAssets);
+			if (pulllfromAssets){
+				bmp = OpenFlAssets.getBitmapData("shared:"+path);
+			}else{
+				bmp = BitmapData.fromFile(path);
+			}
 			gra = FlxGraphic.fromBitmapData(bmp, false, key);
 			gra.persist = true;
 			imgCache.set(key, gra);

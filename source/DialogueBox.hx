@@ -93,12 +93,12 @@ class DialogueBox extends FlxSpriteGroup
 	var inAutoText:Bool = false;
 	
 	var timeBeforeSkip:FlxTimer;
-	
+	var fadeMusic:Bool = true;
 
-	public function new(talkingRight:Bool = true, ?dialogueList:Array<String>)
+	public function new(talkingRight:Bool = true, ?dialogueList:Array<String>,fadeMusic:Bool=true)
 	{
 		super();
-		
+		this.fadeMusic = fadeMusic;
 		arrow = new FlxSprite(1191.1, 641.75);
 		arrow.frames = Paths.getSparrowAtlas("pinkie/arrow", "shared");
 		arrow.animation.addByIndices("arrow", "arrow", [0,1,2,3], "", 8);
@@ -316,14 +316,14 @@ class DialogueBox extends FlxSpriteGroup
 		FlxTween.tween(blackBG, {alpha: 0}, 1.2, {ease: FlxEase.linear});
 		FlxTween.tween(dropText, {alpha: 0}, 1.2, {ease: FlxEase.linear});
 		FlxTween.tween(skipText, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxG.sound.music.fadeOut(1.2, 0);
+		if(fadeMusic)FlxG.sound.music.fadeOut(1.2, 0);
 
 
 		new FlxTimer().start(1.2, function(tmr:FlxTimer)
 		{
 			finishThing();
 			kill();
-			FlxG.sound.music.stop();
+			if(fadeMusic)FlxG.sound.music.stop();
 		});
 
 	}
