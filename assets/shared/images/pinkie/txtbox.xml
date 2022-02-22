@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="txtbox.png">
-	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="textbox0000" x="0" y="0" width="1280" height="285"/>
-	<SubTexture name="textbox0001" x="1281" y="0" width="1280" height="285"/>
-	<SubTexture name="textbox0002" x="2562" y="0" width="1280" height="285"/>
-	<SubTexture name="textbox0003" x="0" y="286" width="1280" height="285"/>
-	<SubTexture name="textbox0004" x="1281" y="286" width="1280" height="285"/>
-	<SubTexture name="textbox0005" x="2562" y="286" width="1280" height="285"/>
-	<SubTexture name="textbox0006" x="0" y="572" width="1280" height="285"/>
-	<SubTexture name="textbox0007" x="1281" y="572" width="1280" height="285"/>
-	<SubTexture name="textbox0008" x="2562" y="572" width="1280" height="285"/>
-	<SubTexture name="textbox0009" x="0" y="858" width="1280" height="285"/>
-	<SubTexture name="textbox0010" x="1281" y="858" width="1280" height="285"/>
-	<SubTexture name="textbox0011" x="2562" y="858" width="1280" height="285"/>
-	<SubTexture name="textbox0012" x="0" y="1144" width="1280" height="285"/>
-	<SubTexture name="textbox0013" x="1281" y="1144" width="1280" height="285"/>
-	<SubTexture name="textbox0014" x="2562" y="1144" width="1280" height="285"/>
-	<SubTexture name="textbox0015" x="0" y="1430" width="1280" height="285"/>
+	<SubTexture name="textbox0000" x="0" y="0" width="1024" height="297" frameX="-14" frameY="-4" frameWidth="1052" frameHeight="305"/>
+	<SubTexture name="textbox0001" x="0" y="299" width="1032" height="299" frameX="-10" frameY="-3" frameWidth="1052" frameHeight="305"/>
+	<SubTexture name="textbox0002" x="0" y="600" width="1042" height="303" frameX="-5" frameY="-1" frameWidth="1052" frameHeight="305"/>
+	<SubTexture name="textbox0003" x="0" y="905" width="1052" height="305"/>
+	<SubTexture name="textbox0004" x="0" y="905" width="1052" height="305"/>
+	<SubTexture name="textbox0005" x="0" y="905" width="1052" height="305"/>
+	<SubTexture name="textbox0006" x="0" y="905" width="1052" height="305"/>
+	<SubTexture name="textbox0007" x="0" y="905" width="1052" height="305"/>
+	<SubTexture name="textbox0008" x="0" y="905" width="1052" height="305"/>
+	<SubTexture name="textbox0009" x="0" y="905" width="1052" height="305"/>
+	<SubTexture name="textbox0010" x="0" y="905" width="1052" height="305"/>
+	<SubTexture name="textbox0011" x="0" y="905" width="1052" height="305"/>
+	<SubTexture name="textbox0012" x="0" y="905" width="1052" height="305"/>
+	<SubTexture name="textbox0013" x="0" y="905" width="1052" height="305"/>
+	<SubTexture name="textbox0014" x="0" y="905" width="1052" height="305"/>
+	<SubTexture name="textbox0015" x="0" y="905" width="1052" height="305"/>
 </TextureAtlas>

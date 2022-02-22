@@ -8,6 +8,8 @@ import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
+import openfl.Lib;
+import openfl.desktop.Clipboard;
 
 /**
 	*DEBUG MODE
@@ -24,7 +26,7 @@ class AnimationDebug extends FlxState
 	var isDad:Bool = true;
 	var daAnim:String = 'spooky';
 	var camFollow:FlxObject;
-
+	var texto:String = '';
 	public function new(daAnim:String = 'spooky')
 	{
 		super();
@@ -85,14 +87,17 @@ class AnimationDebug extends FlxState
 	function genBoyOffsets(pushList:Bool = true):Void
 	{
 		var daLoop:Int = 0;
-
+		texto = '';
 		for (anim => offsets in char.animOffsets)
 		{
-			var text:FlxText = new FlxText(10, 20 + (18 * daLoop), 0, anim + ": " + offsets, 15);
+			var text:FlxText = new FlxText(10, 20 + (18 * daLoop), 0, anim + " " + offsets, 15);
 			text.scrollFactor.set();
 			text.color = FlxColor.BLUE;
+			var b = StringTools.replace(text.text, '[', '');
+			var c = StringTools.replace(b, ']', '');
+			var d = StringTools.replace(c, ',', ' ');
 			dumbTexts.add(text);
-
+			texto += d + '\n';
 			if (pushList)
 				animList.push(anim);
 
@@ -147,6 +152,10 @@ class AnimationDebug extends FlxState
 		if (FlxG.keys.justPressed.W)
 		{
 			curAnim -= 1;
+		}
+		if (FlxG.keys.justPressed.C && FlxG.keys.pressed.CONTROL)
+		{
+			openfl.system.System.setClipboard(texto);
 		}
 
 		if (FlxG.keys.justPressed.S)

@@ -1,10 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="arrow.png">
-	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="arrow0000" x="0" y="0" width="64" height="33" frameX="0" frameY="0" frameWidth="64" frameHeight="55"/>
-	<SubTexture name="arrow0001" x="0" y="0" width="64" height="33" frameX="0" frameY="-11" frameWidth="64" frameHeight="55"/>
-	<SubTexture name="arrow0002" x="0" y="0" width="64" height="33" frameX="0" frameY="-22" frameWidth="64" frameHeight="55"/>
-	<SubTexture name="arrow0003" x="0" y="0" width="64" height="33" frameX="0" frameY="-11" frameWidth="64" frameHeight="55"/>
-	<SubTexture name="arrow0004" x="0" y="34" width="64" height="4" frameX="0" frameY="0" frameWidth="64" frameHeight="55"/>
+	<SubTexture name="arrow0000" x="0" y="0" width="12" height="9" frameX="0" frameY="0" frameWidth="59" frameHeight="10"/>
+	<SubTexture name="arrow0001" x="14" y="0" width="35" height="9" frameX="0" frameY="0" frameWidth="59" frameHeight="10"/>
+	<SubTexture name="arrow0002" x="0" y="11" width="59" height="10"/>
 </TextureAtlas>

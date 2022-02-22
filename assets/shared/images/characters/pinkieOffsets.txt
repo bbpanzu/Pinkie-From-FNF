@@ -4,3 +4,7 @@ singUP -30 12
 singRIGHT -10 -4
 singLEFT -129 -160
 singDOWN -30 12
+hello -40 -145
+howyadoin -123 -121
+howdy -100 -145
+whatsup -40 -145

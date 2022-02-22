@@ -82,16 +82,22 @@ class MainMenuState extends MusicBeatState
 		add(bg);
 		trixie = new FlxSprite( 675.65, 300.8);
 		trixie.frames = Paths.getSparrowAtlas('mainmenu/trixie');
-		trixie.animation.addByIndices('idle', 'trixie', [0], '', 24, false);
-		var rr = Character.numArr(0, 40);
+		trixie.animation.addByIndices('idle', 'trixie', Character.numArr(0, 5), '', 24, false);
+		var rr = Character.numArr(6, 46);
 		rr.push(0);
 		trixie.animation.addByIndices('read', 'trixie',rr , '', 24,false);
-		trixie.animation.addByIndices('notice', 'trixie', Character.numArr(41, 52), '', 24, false);
+		trixie.animation.addByIndices('notice', 'trixie', Character.numArr(47, 58), '', 24, false);
 		trixie.animation.play('read');
+		trixie.animation.finishCallback = function(name){
+			if (name == 'read'){
+				trixie.animation.play('idle');
+			}
+		}
 		trixie.antialiasing = true;
 		add(trixie);
 		
 		
+Conductor.changeBPM(110);
 		add(menuItems);
 		
 
@@ -117,9 +123,9 @@ class MainMenuState extends MusicBeatState
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
 
-				new FlxTimer().start(8, function(e:FlxTimer){
+				new FlxTimer().start(12, function(e:FlxTimer){
 					
-					if(trixie.animation.curAnim.name == 'read')trixie.animation.play('read');
+					if(trixie.animation.curAnim.name != 'notice')trixie.animation.play('read');
 					
 				},0);
 		// NG.core.calls.event.logEvent('swag').send();
@@ -145,8 +151,15 @@ class MainMenuState extends MusicBeatState
 		selectedSomethin = false;
 		FlxG.sound.playMusic(Paths.music('freakyMenu'));
 	}
+	override public function beatHit():Void 
+	{
+		super.beatHit();
+		
+		if(trixie.animation.curAnim.name == 'idle')trixie.animation.play('idle');
+	}
 	override function update(elapsed:Float)
 	{
+Conductor.songPosition = FlxG.sound.music.time;
 		FlxG.mouse.visible = true;
 		if (FlxG.sound.music.volume < 0.8)
 		{

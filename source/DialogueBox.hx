@@ -101,7 +101,7 @@ class DialogueBox extends FlxSpriteGroup
 		this.fadeMusic = fadeMusic;
 		arrow = new FlxSprite(1191.1, 641.75);
 		arrow.frames = Paths.getSparrowAtlas("pinkie/arrow", "shared");
-		arrow.animation.addByIndices("arrow", "arrow", [0,1,2,3], "", 8);
+		arrow.animation.addByIndices("arrow", "arrow", [0,1,2], "", 8);
 		arrow.animation.play("arrow",true);
 
 		timeBeforeSkip = new FlxTimer();
@@ -176,11 +176,12 @@ class DialogueBox extends FlxSpriteGroup
 			// box.flipX = true;
 		}
 
-		dropText = new FlxText(242, 502, Std.int(FlxG.width ), "", 32);
-		dropText.font = 'Pixel Arial 11 Bold';
-		dropText.setFormat(Paths.font("PressStart2P.ttf"), 48);
+		dropText = new FlxText(190, 484, 900, "", 48);
+		dropText.font = 'Equestria';
+		//dropText.setFormat(Paths.font("Equestria.otf"), 48);
 		dropText.color = 0x00000000;
 		dropText.alpha = 0;
+		dropText.alignment = 'center';
 		add(dropText);
 		skipText = new FlxText(5, 695, 640, "Press SPACE to skip the dialogue.\n", 40);
 		skipText.scrollFactor.set(0, 0);
@@ -189,10 +190,11 @@ class DialogueBox extends FlxSpriteGroup
 		skipText.borderQuality = 1;
 		add(skipText);
 
-		swagDialogue = new FlxTypeText(8, 440, Std.int(FlxG.width ), "", 32);
-		swagDialogue.font = 'Pixel Arial 11 Bold';
-		swagDialogue.setFormat(Paths.font("PressStart2P.ttf"), 48);
+		swagDialogue = new FlxTypeText(188, 482,900, "", 48);
+		swagDialogue.font = 'Equestria';
+		//swagDialogue.setFormat(Paths.font("PressStart2P.ttf"), 48);
 		swagDialogue.color = 0xFF3F2021;
+		swagDialogue.alignment = 'center';
 		swagDialogue.finishSounds = true;
 		swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
 		add(swagDialogue);
@@ -211,7 +213,7 @@ class DialogueBox extends FlxSpriteGroup
 	{
 		// HARD CODING CUZ IM STUPDI
 		
-		arrow.visible =  canAdvance;//keep it on hide frame till can advance
+		arrow.visible =  !canAdvance;//keep it on hide frame till can advance
 		
 		
 		dropText.text = swagDialogue.text;
