@@ -1,0 +1,155 @@
+:bg:0:
+:hideCharacters::
+:effect:hidden:
+:bg:1:
+:camEffect:flash:1
+:hideCharacters:
+:bg:shake:-2
+:effect:hidden:
+:bg:2:
+:hideCharacters:
+:text:shake:-3
+:noChar:default:AAAAAHHH!!!!
+:text:shake:0
+:bg:3:
+:bg:shake:0
+:music:damnshit:1
+:bf:what:WAIT STOP!!! I SWEAR I WAS ONLY TOUCHING THE HIPS
+:bg:4:
+:effect:hidden:
+:effect:shake:8
+:bg:5:
+:text:shake:8
+:bf:fuck:FUCK YOU. PURPLE FUCK
+:gf:anger:watch your mouth. thats my dad
+:bg:hide:
+:bf:upset:Why can't he just punish me like a normal dad. Idk like kicking me out or something.
+:gf:default:Well he isn't really a normal dad.
+:bf:wtf:Where are we anyway
+:gf:default:Looks like some wacky forest.
+:bg:6:
+:effect:addX:400
+:bf:upset:Hmm. left or right?
+:effect:addY:-10
+:effect:addX:400
+:gf:default:Huh. Idk boyfriend
+:effect:addX:100
+:gf:default:Should we pick the path leading to unending darkness,
+:effect:flip:
+:effect:addX:600
+:effect:addY:10
+:gf:default:or the path leading to the end of the damn thing?
+:autoskip:during:0.4
+:bf:yikes:Hmm
+:autoskip:during:1
+:text:speed:0.07
+:text:pretext:`current
+:text:speed:0.3
+:bf:yikes:...
+:text:pretext:`current
+:text:speed:0.04
+:bf:yikes:this is a tricky one.
+:effect:addY:-10
+:gf:sad:Just- lets go.
+:bg:7:
+:music:ponyville:1
+:effect:hidden:
+:bf:default:There seems to be an abundance of colorful quadrupeds
+:effect:shake:5
+:text:shake:5
+:effect:addY:-10
+:gf:whoa:*GASP*
+:effect:shake:5
+:text:shake:-2
+:gf:whoa:Y-
+:effect:shake:-5
+:text:shake:-5
+:sound:wobble:1
+:effect:addY:50
+:gf:omg:BF OMG
+:effect:shake:-8
+:text:shake:-8
+:effect:addY:-20
+:autoskip:during:1
+:gf:stim:THIS SHIT IS F
+:autoskip:during:0.4
+:effect:flip:
+:text:pretext:`current
+:gf:stim:
+:autoskip:during:1
+:effect:flip:
+:text:pretext:`current
+:gf:stim:
+:effect:shake:-8
+:text:shake:-12
+:effect:addY:-30
+:gf:stim:THIS IS FUCKING MY LITTLE PONYGMMGOMHOMGHOFMGOMOHOLLYYYSHITTTTTTT!!!!!!!!!
+:effect:shake:0
+:sound:stop:
+:text:shake:0
+:bf:default:Whaoh. 
+:bf:wtf:WAIT. You're a brony???
+:gf:default:Well some prefer the term pegasister.
+:bf:upset:Sounds dumb. Gotta say your dad knows how to torture a man
+:bf:upset:i'd rather have me burning by the edge of a trident then be stuck in Candyland
+:gf:sad:It is NOT "Candyland" it's Ponyville.
+:bf:default:You seem to be quite knowledgeable about this toy-marketing TV show
+:gf:whoa:Quite indeed. In about a few seconds a funny character is going to show up and introduce us to the town
+:text:speed:0.08
+:effect:addY:20
+:gf:omg:Riiight...
+:effect:addY:20
+:effect:addX:-20
+:text:speed:0.2
+:gf:omg:Abouuut 
+:effect:addY:-10
+:text:speed:0.04
+:effect:addY:-20
+:autoskip:during:0.4
+:effect:flip:
+:effect:addX:30
+:gf:omg:NOW!!!!
+:effect:flip:
+:effect:addY:-10
+:text:speed:0.2
+:music:stop:
+:gf:anger:oh...
+:text:speed:0.04
+:text:speed:0.6
+:autoskip:during:3
+:twilight:wtf:...
+:text:speed:0.04
+:effect:shake:-4
+:text:shake:-4
+:effect:addY:-20
+:effect:addX:-20
+:music:racist_twilight:1
+:autoskip:during:0.1
+:twilight:prejudice: WHAT THE FUCK. MONSTER!!! HOLY SHIT!!!!
+:music:score_cmc:1
+:effect:shake:0
+:text:shake:0
+:twilight:happy:Heyy!! You must be new here! I'm Twilight Sparkle.
+:effect:shake:12
+:text:shake:12
+:pinkie:whoa:HOLY MOLY-!!!
+:autoskip:during:0.9
+:text:shake:12
+:pinkie:whoa:REAL
+:autoskip:during:0.9
+:text:shake:12
+:text:pretext:`current
+:pinkie:default:! ACTUAL
+:text:shake:-12
+:text:pretext:`current
+:pinkie:smile: !! HUMANS!!!
+:text:shake:0
+:gf:omg: AHA That's what im talking about
+:pinkie:default: So Lyra WASN'T being all coo coo in the brain! You must be new here!
+:bf:default: Well considering you haven't seen actual humans before, yea.
+:pinkie:wink-smile: Ooohh You know what that means ;D
+:autoskip:during:1
+:bf:default:
+:bf:default:...no
+:pinkie:smile: A "Welcome to ponyville" Song, of course!!!
+:gf:stim: OOH IM SO EXCITED
