@@ -1871,7 +1871,7 @@ class PlayState extends MusicBeatState
 					gottaHitNote = !section.mustHitSection;
 				}
 
-				if(gottaHitNote)daStrumTime += currentOptions.noteOffset;
+				daStrumTime += currentOptions.noteOffset;
 
 				var oldNote:Note;
 				if (unspawnNotes.length > 0)
@@ -3867,8 +3867,8 @@ class PlayState extends MusicBeatState
 	}
 
 	public function beatCam(z1:Float=0.015,z2:Float = 0.03){
-		FlxG.camera.zoom = defaultCamZoom + z1;
-		camHUD.zoom = 1 + z2;
+		FlxG.camera.zoom +=  z1;
+		camHUD.zoom += z2;
 		
 		
 		if (camZoomTween != null) camZoomTween.cancel();

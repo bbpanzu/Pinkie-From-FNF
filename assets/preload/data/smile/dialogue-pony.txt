@@ -14,22 +14,22 @@
 :bg:3:
 :bg:shake:0
 :music:damnshit:1
-:bf:what:WAIT STOP!!! I SWEAR I WAS ONLY TOUCHING THE HIPS
+:bfpone:what:WAIT STOP!!! I SWEAR I WAS ONLY TOUCHING THE HIPS
 :bg:4:
 :effect:hidden:
 :effect:shake:8
 :bg:5:
 :text:shake:8
-:bf:fuck:FUCK YOU. PURPLE FUCK
+:bfpone:fuck:FUCK YOU. PURPLE FUCK
 :gf:anger:watch your mouth. thats my dad
 :bg:hide:
-:bf:upset:Why can't he just punish me like a normal dad. Idk like kicking me out or something.
+:bfpone:upset:Why can't he just punish me like a normal dad. Idk like kicking me out or something.
 :gf:default:Well he isn't really a normal dad.
-:bf:wtf:Where are we anyway
+:bfpone:wtf:Where are we anyway
 :gf:default:Looks like some wacky forest.
 :bg:6:
 :effect:addX:400
-:bf:upset:Hmm. left or right?
+:bfpone:upset:Hmm. left or right?
 :effect:addY:-10
 :effect:addX:400
 :gf:default:Huh. Idk boyfriend
@@ -40,21 +40,21 @@
 :effect:addY:10
 :gf:default:or the path leading to the end of the damn thing?
 :autoskip:during:0.4
-:bf:yikes:Hmm
+:bfpone:yikes:Hmm
 :autoskip:during:1
 :text:speed:0.07
 :text:pretext:`current
 :text:speed:0.3
-:bf:yikes:...
+:bfpone:yikes:...
 :text:pretext:`current
 :text:speed:0.04
-:bf:yikes:this is a tricky one.
+:bfpone:yikes:this is a tricky one.
 :effect:addY:-10
 :gf:sad:Just- lets go.
 :bg:7:
 :music:ponyville:1
 :effect:hidden:
-:bf:default:There seems to be an abundance of colorful quadrupeds
+:bfpone:default:There seems to be an abundance of colorful quadrupeds
 :effect:shake:5
 :text:shake:5
 :effect:addY:-10
@@ -87,13 +87,13 @@
 :effect:shake:0
 :sound:stop:
 :text:shake:0
-:bf:default:Whaoh. 
-:bf:wtf:WAIT. You're a brony???
+:bfpone:default:Whaoh. 
+:bfpone:wtf:WAIT. You're a brony???
 :gf:default:Well some prefer the term pegasister.
-:bf:upset:Sounds dumb. Gotta say your dad knows how to torture a man
-:bf:upset:i'd rather have me burning by the edge of a trident then be stuck in Candyland
+:bfpone:upset:Sounds dumb. Gotta say your dad knows how to torture a man
+:bfpone:upset:i'd rather have me burning by the edge of a trident then be stuck in Candyland
 :gf:sad:It is NOT "Candyland" it's Ponyville.
-:bf:default:You seem to be quite knowledgeable about this toy-marketing TV show
+:bfpone:default:You seem to be quite knowledgeable about this toy-marketing TV show
 :gf:whoa:Quite indeed. In about a few seconds a funny character is going to show up and introduce us to the town
 :text:speed:0.08
 :effect:addY:20
@@ -146,10 +146,10 @@
 :text:shake:0
 :gf:omg: AHA That's what im talking about
 :pinkie:default: So Lyra WASN'T being all coo coo in the brain! You must be new here!
-:bf:default: Well considering you haven't seen actual humans before, yea.
+:bfpone:default: Well considering you haven't seen actual humans before, yea.
 :pinkie:wink-smile: Ooohh You know what that means ;D
 :autoskip:during:1
-:bf:default:
-:bf:default:...no
+:bfpone:default:
+:bfpone:default:...no
 :pinkie:smile: A "Welcome to ponyville" Song, of course!!!
 :gf:stim: OOH IM SO EXCITED

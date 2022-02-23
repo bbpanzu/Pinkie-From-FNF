@@ -1,0 +1,8 @@
+indices:default:0
+indices:yea:1
+indices:what:2
+indices:yikes:3
+indices:wtf:3
+indices:yea:4
+indices:fuck:5
+indices:upset:6

@@ -135,7 +135,7 @@ class DialogueBox extends FlxSpriteGroup
 				box.frames = Paths.getSparrowAtlas('pinkie/txtbox', 'shared');
 				box.animation.addByPrefix('normalOpen', 'textbox', 24, false);
 				box.animation.addByIndices('normal', 'textbox',[15],"", 24, true);
-				box.y = 435.9;
+				box.y = 415.9;
 				box.x = 0;
 				//trace("loaded "+)
 		this.dialogueList = dialogueList;
