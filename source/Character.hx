@@ -41,6 +41,33 @@ class Character extends FlxSprite
 		{
 			case 'gf':
 				// GIRLFRIEND CODE
+				
+				
+				if (PlayState.isPony){
+				
+					var tex = FlxAtlasFrames.fromSparrow('mods/introMod/_append/data/gfpone.png', 'mods/introMod/_append/data/gfpone.xml');
+					frames = tex;
+					
+					
+					
+				animation.addByIndices('sad', 'gf sad', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "", 24, false);
+				animation.addByIndices('danceLeft', 'GF Dancing Beat', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+				animation.addByIndices('danceRight', 'GF Dancing Beat', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				
+					
+					
+					var offsets:Array<String>;
+			var data = File.getContent("mods/introMod/_append/data/gfPonyOffsets.txt");
+			
+			
+			offsets = CoolUtil.coolTextFile2(data);
+			Cache.offsetData[curCharacter] = data;
+		for(s in offsets){
+			var stuff:Array<String> = s.split(" ");
+			addOffset(stuff[0],Std.parseFloat(stuff[1]),Std.parseFloat(stuff[2]));
+		}
+				
+				}else{
 				tex = Paths.getSparrowAtlas('characters/GF_assets','shared');
 				frames = tex;
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
@@ -56,6 +83,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('scared', 'GF FEAR', 24);
 
 				loadOffsets();
+		}
 				playAnim('danceRight');
 			case 'lizzy':
 				// GIRLFRIEND CODE

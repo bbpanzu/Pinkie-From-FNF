@@ -137,7 +137,7 @@ class DialogueBox extends FlxSpriteGroup
 				box.animation.addByIndices('normal', 'textbox',[15],"", 24, true);
 				box.y = 415.9;
 				box.x = 0;
-				//trace("loaded "+)
+				////trace("loaded "+)
 		this.dialogueList = dialogueList;
 
 		if (!hasDialog)
@@ -146,7 +146,7 @@ class DialogueBox extends FlxSpriteGroup
 			portraitList = CoolUtil.coolTextFile(Paths.txt("portraitList"));
 			for (i in portraitList){
 				var shit:Array<String> = i.split(" ");
-				trace(shit);
+				//trace(shit);
 				var name = shit[0];
 				var xx = Std.parseInt(shit[1]);
 				var yy = Std.parseInt(shit[2]);
@@ -342,7 +342,7 @@ class DialogueBox extends FlxSpriteGroup
 		box.flipX = true;
 		swagDialogue.visible = true;
 		dropText.visible = true;
-		trace(curCharacter,curAnim,dialogueList[0]);
+		//trace(curCharacter,curAnim,dialogueList[0]);
 		if (portraitNameList.contains(curCharacter)){// if the first thing is a character in the list
 				//changeSound('beat',0.6);
 				portraits[portraitNameList.indexOf(curCharacter)].playFrame(curAnim);
@@ -473,7 +473,7 @@ class DialogueBox extends FlxSpriteGroup
 									
 								});
 						case "after":
-								trace("doesn't work currently");
+								//trace("doesn't work currently");
 								new FlxTimer().start(Std.parseFloat(dialogueList[0]), function(e:FlxTimer){
 									inAutoText = false;
 									canAdvance = true;
@@ -499,7 +499,7 @@ class DialogueBox extends FlxSpriteGroup
 					}
 					
 				default:
-					trace("default dialogue event");
+					//trace("default dialogue event");
 					//portraitBF.playFrame();
 			}
 		}

@@ -62,7 +62,7 @@ class Portrait extends FlxSprite
 				
 				for (i in data){
 					var thing = i.split(":");
-							trace("DATA: " + thing);
+							//trace("DATA: " + thing);
 					
 					switch(thing[0]){
 						case "indices":

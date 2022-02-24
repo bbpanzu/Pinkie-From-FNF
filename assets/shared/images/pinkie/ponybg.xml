@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="ponybg.png">
-	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="ponybg_polka0000" x="0" y="0" width="1593" height="308" frameX="-14" frameY="-15" frameWidth="1614" frameHeight="323"/>
-	<SubTexture name="ponybg_polka0001" x="1594" y="0" width="1600" height="323" frameX="0" frameY="0" frameWidth="1614" frameHeight="323"/>
-	<SubTexture name="ponybg_polka0002" x="0" y="0" width="1593" height="308" frameX="-14" frameY="-15" frameWidth="1614" frameHeight="323"/>
-	<SubTexture name="ponybg_polka0003" x="0" y="324" width="1589" height="321" frameX="-25" frameY="-2" frameWidth="1614" frameHeight="323"/>
-	<SubTexture name="ponybg_porche0000" x="1590" y="324" width="1593" height="322"/>
-	<SubTexture name="ponybg_porche0001" x="0" y="647" width="1593" height="321" frameX="0" frameY="-1" frameWidth="1593" frameHeight="322"/>
-	<SubTexture name="ponybg_porche0002" x="1594" y="647" width="1593" height="314" frameX="0" frameY="-8" frameWidth="1593" frameHeight="322"/>
-	<SubTexture name="ponybg_porche0003" x="0" y="969" width="1593" height="313" frameX="0" frameY="-9" frameWidth="1593" frameHeight="322"/>
+	<SubTexture name="ponybg_polka0000" x="0" y="1272" width="1832" height="421" frameX="0" frameY="0" frameWidth="1839" frameHeight="422"/>
+	<SubTexture name="ponybg_polka0001" x="0" y="2541" width="1827" height="421" frameX="0" frameY="0" frameWidth="1839" frameHeight="422"/>
+	<SubTexture name="ponybg_polka0002" x="0" y="1272" width="1832" height="421" frameX="0" frameY="0" frameWidth="1839" frameHeight="422"/>
+	<SubTexture name="ponybg_polka0003" x="0" y="0" width="1839" height="422"/>
+	<SubTexture name="ponybg_porche0000" x="0" y="424" width="1832" height="422"/>
+	<SubTexture name="ponybg_porche0001" x="0" y="1695" width="1832" height="421" frameX="0" frameY="0" frameWidth="1832" frameHeight="422"/>
+	<SubTexture name="ponybg_porche0002" x="0" y="2118" width="1832" height="421" frameX="0" frameY="0" frameWidth="1832" frameHeight="422"/>
+	<SubTexture name="ponybg_porche0003" x="0" y="848" width="1832" height="422"/>
 </TextureAtlas>

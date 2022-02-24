@@ -233,6 +233,12 @@ class ChartingState extends MusicBeatState
 			saveLevel();
 		});
 
+
+		var saveSliderButton:FlxButton = new FlxButton(110, 38, "Save Sliders", function()
+		{
+			saveSliders();
+		});
+
 		var reloadSong:FlxButton = new FlxButton(saveButton.x + saveButton.width + 10, saveButton.y, "Reload Audio", function()
 		{
 			loadSong(_song.song);
@@ -285,6 +291,7 @@ class ChartingState extends MusicBeatState
 		tab_group_song.add(saveButton);
 		tab_group_song.add(reloadSong);
 		tab_group_song.add(reloadSongJson);
+		tab_group_song.add(saveSliderButton);
 		tab_group_song.add(loadAutosaveBtn);
 		tab_group_song.add(stepperBPM);
 		tab_group_song.add(stepperSpeed);
@@ -1273,11 +1280,12 @@ class ChartingState extends MusicBeatState
 	function loadJson(song:String):Void
 	{
 		PlayState.SONG = Song.loadFromJson(song.toLowerCase(), song.toLowerCase());
-		FlxG.resetState();
-		/*
-		if (FileSystem.exists(Paths.json(song.toLowerCase() + '/sliders'))){
+		if (FileSystem.exists(Paths.getPath('data/'+song.toLowerCase() + '/sliders',TEXT,null))){
+			PlayState.SONG.sliderVelocities = Song.loadFromJson('sliders', song.toLowerCase()).sliderVelocities;
 			
-		}*/
+		}
+		FlxG.resetState();
+		
 	}
 
 	function loadAutosave():Void
@@ -1300,7 +1308,7 @@ class ChartingState extends MusicBeatState
 		//var rr:Character;
 		var json = {
 			"song": _song,
-			"sliderVelocities": velChanges,
+			"sliderVelocities": [],
 		};
 //add(rr);//pssstttt hey you didn't implement saving events yet
 		var data:String = Json.stringify(json);
@@ -1308,11 +1316,28 @@ class ChartingState extends MusicBeatState
 		if ((data != null) && (data.length > 0))
 		{
 			_file = new FileReference();
-			_file.addEventListener(Event.COMPLETE, onSaveComplete);
+			_file.addEventListener(Event.COMPLETE,onSaveComplete);
 			_file.addEventListener(Event.CANCEL, onSaveCancel);
 			_file.addEventListener(IOErrorEvent.IO_ERROR, onSaveError);
 			_file.save(data.trim(), _song.song.toLowerCase() + ".json");
 		}
+	}
+	private function saveSliders()
+	{
+		//var rr:Character;
+		
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 		var json2 = {
 			"song": {
 				noBG: false,
@@ -1338,6 +1363,11 @@ class ChartingState extends MusicBeatState
 			_file.addEventListener(IOErrorEvent.IO_ERROR, onSaveError);
 			_file.save(data.trim(), "sliders.json");
 		}
+				
+				
+				
+				
+				
 	}
 
 	function onSaveComplete(_):Void
