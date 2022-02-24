@@ -23,7 +23,7 @@ import flixel.util.FlxTimer;
 import Options;
 class MainMenuState extends MusicBeatState
 {
-	var curSelected:Int = 0;
+	var curSelected:Int = 1;
 	var india:Bool = false;
 	var menuItems:FlxTypedGroup<FlxSprite>;
 

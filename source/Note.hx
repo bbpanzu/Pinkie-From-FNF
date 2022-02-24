@@ -23,6 +23,7 @@ class Note extends FlxSprite
 	public var noteData:Int = 0;
 	public var canBeHit:Bool = false;
 	public var tooLate:Bool = false;
+	public var endHold:Bool = false;
 	public var wasGoodHit:Bool = false;
 	public var prevNote:Note;
 	public var hit:Bool = false;
@@ -151,7 +152,7 @@ class Note extends FlxSprite
 			var off = -width/4;
 			//x+=width/2;
 			lastSustainPiece=true;
-
+			endHold = true;
 			animation.play('${colors[noteData]}holdend');
 			updateHitbox();
 
@@ -172,6 +173,7 @@ class Note extends FlxSprite
 
 			if (prevNote.isSustainNote)
 			{
+				endHold = false;
 				prevNote.lastSustainPiece=false;
 				var offset = prevNote.offset.x;
 				prevNote.animation.play('${colors[noteData]}hold');

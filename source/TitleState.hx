@@ -43,7 +43,7 @@ class TitleState extends MusicBeatState
 	var ngSpr:FlxSprite;
 
 	var curWacky:Array<String> = [];
-
+	var introSong:openfl.media.Sound;
 	var wackyImage:FlxSprite;
 	
 	public static var curDir = "assets";
@@ -96,13 +96,13 @@ class TitleState extends MusicBeatState
 			if (!StoryMenuState.weekUnlocked[0])
 				StoryMenuState.weekUnlocked[0] = true;
 		}
-
+introSong = openfl.media.Sound.fromFile(Paths.music('freakyMenu'));
 		#if FREEPLAY
 		FlxG.switchState(new FreeplayState());
 		#elseif CHARTING
 		FlxG.switchState(new ChartingState());
 		#else
-		new FlxTimer().start(1, function(tmr:FlxTimer)
+		new FlxTimer().start(3, function(tmr:FlxTimer)
 		{
 			startIntro();
 		});
@@ -146,9 +146,9 @@ class TitleState extends MusicBeatState
 			// music.loadStream(Paths.music('freakyMenu'));
 			// FlxG.sound.list.add(music);
 			// music.play();
-			FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+			FlxG.sound.playMusic(introSong, 1);
 
-			FlxG.sound.music.fadeIn(4, 0, 0.7);
+			//FlxG.sound.music.fadeIn(4, 0, 0.7);
 		}
 
 		Conductor.changeBPM(110);
@@ -302,7 +302,7 @@ class TitleState extends MusicBeatState
 			transitioning = true;
 			// FlxG.sound.music.stop();
 
-			new FlxTimer().start(2, function(tmr:FlxTimer)
+			new FlxTimer().start(0.5, function(tmr:FlxTimer)
 			{
 				// Check if version is outdated
 

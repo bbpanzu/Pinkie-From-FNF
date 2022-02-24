@@ -1,14 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="pinkie.png">
-	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="pinkie_portrait0000" x="0" y="0" width="402" height="402"/>
-	<SubTexture name="pinkie_portrait0001" x="403" y="0" width="402" height="402"/>
-	<SubTexture name="pinkie_portrait0002" x="806" y="0" width="402" height="402"/>
-	<SubTexture name="pinkie_portrait0003" x="1209" y="0" width="402" height="402"/>
-	<SubTexture name="pinkie_portrait0004" x="1612" y="0" width="402" height="402"/>
-	<SubTexture name="pinkie_portrait0005" x="0" y="403" width="402" height="402"/>
-	<SubTexture name="pinkie_portrait0006" x="403" y="403" width="402" height="402"/>
-	<SubTexture name="pinkie_portrait0007" x="806" y="403" width="402" height="402"/>
-	<SubTexture name="pinkie_portrait0008" x="1209" y="403" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0001" x="0" y="404" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0002" x="0" y="808" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0003" x="0" y="1212" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0004" x="0" y="1616" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0005" x="404" y="0" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0006" x="404" y="404" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0007" x="404" y="808" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0008" x="404" y="1212" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0009" x="404" y="1616" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0010" x="808" y="0" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0011" x="808" y="404" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0012" x="808" y="808" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0013" x="808" y="1212" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0014" x="808" y="1616" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0015" x="1212" y="0" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0016" x="1212" y="404" width="402" height="402"/>
+	<SubTexture name="pinkie_portrait0017" x="1212" y="808" width="402" height="402"/>
 </TextureAtlas>

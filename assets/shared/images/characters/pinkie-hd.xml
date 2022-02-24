@@ -1,80 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="pinkie-hd.png">
-	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="pinkie hd down0000" x="0" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd down0001" x="0" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd down0002" x="880" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd down0003" x="880" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd down0004" x="1760" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd down0005" x="1760" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd down0006" x="2640" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd down0007" x="2640" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd down0008" x="3520" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd down0009" x="3520" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd down0010" x="4400" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd down0011" x="4400" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd down0012" x="5280" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd down0013" x="5280" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd down0014" x="5280" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0000" x="6160" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0001" x="6160" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0002" x="7040" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0003" x="7040" y="0" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0004" x="0" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0005" x="0" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0006" x="880" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0007" x="880" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0008" x="1760" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0009" x="1760" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0010" x="2640" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0011" x="2640" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0012" x="3520" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0013" x="3520" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd idle0014" x="4400" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0000" x="5280" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0001" x="5280" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0002" x="6160" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0003" x="6160" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0004" x="7040" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0005" x="7040" y="778" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0006" x="0" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0007" x="0" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0008" x="880" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0009" x="880" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0010" x="1760" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0011" x="1760" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0012" x="2640" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0013" x="2640" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd left0014" x="3520" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0000" x="4400" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0001" x="4400" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0002" x="5280" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0003" x="5280" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0004" x="6160" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0005" x="6160" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0006" x="7040" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0007" x="7040" y="1556" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0008" x="0" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0009" x="0" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0010" x="880" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0011" x="880" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0012" x="1760" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0013" x="1760" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd right0014" x="1760" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0000" x="2640" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0001" x="2640" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0002" x="3520" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0003" x="3520" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0004" x="4400" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0005" x="4400" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0006" x="5280" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0007" x="5280" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0008" x="6160" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0009" x="6160" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0010" x="7040" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0011" x="7040" y="2334" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0012" x="0" y="3112" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0013" x="0" y="3112" width="879" height="777"/>
-	<SubTexture name="pinkie hd up0014" x="0" y="3112" width="879" height="777"/>
+	<SubTexture name="pinkie hd down0001" x="881" y="0" width="879" height="777"/>
+	<SubTexture name="pinkie hd down0002" x="881" y="0" width="879" height="777"/>
+	<SubTexture name="pinkie hd idle0000" x="2384" y="779" width="600" height="523" frameX="-9" frameY="-43" frameWidth="620" frameHeight="567"/>
+	<SubTexture name="pinkie hd idle0001" x="1762" y="779" width="620" height="511" frameX="0" frameY="-55" frameWidth="620" frameHeight="567"/>
+	<SubTexture name="pinkie hd idle0002" x="2298" y="1304" width="559" height="534" frameX="-23" frameY="-33" frameWidth="620" frameHeight="567"/>
+	<SubTexture name="pinkie hd idle0003" x="2298" y="1304" width="559" height="534" frameX="-23" frameY="-33" frameWidth="620" frameHeight="567"/>
+	<SubTexture name="pinkie hd idle0004" x="1762" y="1292" width="534" height="560" frameX="-35" frameY="-7" frameWidth="620" frameHeight="567"/>
+	<SubTexture name="pinkie hd idle0005" x="1762" y="1292" width="534" height="560" frameX="-35" frameY="-7" frameWidth="620" frameHeight="567"/>
+	<SubTexture name="pinkie hd idle0006" x="3524" y="0" width="550" height="567" frameX="-29" frameY="0" frameWidth="620" frameHeight="567"/>
+	<SubTexture name="pinkie hd idle0007" x="3524" y="0" width="550" height="567" frameX="-29" frameY="0" frameWidth="620" frameHeight="567"/>
+	<SubTexture name="pinkie hd idle0008" x="3524" y="569" width="550" height="564" frameX="-27" frameY="-3" frameWidth="620" frameHeight="567"/>
+	<SubTexture name="pinkie hd idle0009" x="3524" y="569" width="550" height="564" frameX="-27" frameY="-3" frameWidth="620" frameHeight="567"/>
+	<SubTexture name="pinkie hd idle0010" x="3534" y="1135" width="545" height="563" frameX="-31" frameY="-4" frameWidth="620" frameHeight="567"/>
+	<SubTexture name="pinkie hd idle0011" x="3534" y="1135" width="545" height="563" frameX="-31" frameY="-4" frameWidth="620" frameHeight="567"/>
+	<SubTexture name="pinkie hd idle0012" x="2986" y="1135" width="546" height="564" frameX="-31" frameY="-3" frameWidth="620" frameHeight="567"/>
+	<SubTexture name="pinkie hd left0000" x="0" y="1558" width="336" height="581" frameX="0" frameY="-1" frameWidth="346" frameHeight="582"/>
+	<SubTexture name="pinkie hd left0001" x="338" y="1558" width="331" height="582" frameX="-15" frameY="0" frameWidth="346" frameHeight="582"/>
+	<SubTexture name="pinkie hd left0002" x="338" y="1558" width="331" height="582" frameX="-15" frameY="0" frameWidth="346" frameHeight="582"/>
+	<SubTexture name="pinkie hd right0000" x="1762" y="0" width="879" height="777"/>
+	<SubTexture name="pinkie hd right0001" x="2643" y="0" width="879" height="777"/>
+	<SubTexture name="pinkie hd right0002" x="2643" y="0" width="879" height="777"/>
+	<SubTexture name="pinkie hd up0000" x="0" y="779" width="879" height="777"/>
+	<SubTexture name="pinkie hd up0001" x="881" y="779" width="879" height="777"/>
+	<SubTexture name="pinkie hd up0002" x="881" y="779" width="879" height="777"/>
 </TextureAtlas>

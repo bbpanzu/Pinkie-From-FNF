@@ -32,6 +32,8 @@ import openfl.events.IOErrorEvent;
 import openfl.media.Sound;
 import openfl.net.FileReference;
 import openfl.utils.ByteArray;
+import sys.FileSystem;
+import sys.io.File;
 
 using StringTools;
 
@@ -72,6 +74,7 @@ class ChartingState extends MusicBeatState
 	var gridBG:FlxSprite;
 
 	var _song:SwagSong;
+	var _sliders:SwagSong;
 	var velChanges:Array<VelocityChange> = [];
 	var typingShit:FlxInputText;
 	/*
@@ -114,7 +117,6 @@ class ChartingState extends MusicBeatState
 		curRenderedTexts = new FlxTypedGroup<AttachedFlxText>();
 		curRenderedSustains = new FlxTypedGroup<Note>();
 		curRenderedMarkers = new FlxTypedGroup<FlxSprite>();
-
 		if (PlayState.SONG != null){
 			_song = PlayState.SONG;
 			velChanges=_song.sliderVelocities;
@@ -122,6 +124,17 @@ class ChartingState extends MusicBeatState
 		}else
 		{
 			_song = {
+				noBG: false,
+				song: 'Test',
+				notes: [],
+				bpm: 150,
+				needsVoices: true,
+				player1: 'bf',
+				player2: 'dad',
+				speed: 1,
+				validScore: false
+			};
+			_sliders = {
 				noBG: false,
 				song: 'Test',
 				notes: [],
@@ -1261,6 +1274,10 @@ class ChartingState extends MusicBeatState
 	{
 		PlayState.SONG = Song.loadFromJson(song.toLowerCase(), song.toLowerCase());
 		FlxG.resetState();
+		/*
+		if (FileSystem.exists(Paths.json(song.toLowerCase() + '/sliders'))){
+			
+		}*/
 	}
 
 	function loadAutosave():Void
@@ -1280,11 +1297,12 @@ class ChartingState extends MusicBeatState
 
 	private function saveLevel()
 	{
+		//var rr:Character;
 		var json = {
 			"song": _song,
 			"sliderVelocities": velChanges,
 		};
-
+//add(rr);//pssstttt hey you didn't implement saving events yet
 		var data:String = Json.stringify(json);
 
 		if ((data != null) && (data.length > 0))
@@ -1294,6 +1312,31 @@ class ChartingState extends MusicBeatState
 			_file.addEventListener(Event.CANCEL, onSaveCancel);
 			_file.addEventListener(IOErrorEvent.IO_ERROR, onSaveError);
 			_file.save(data.trim(), _song.song.toLowerCase() + ".json");
+		}
+		var json2 = {
+			"song": {
+				noBG: false,
+				song: 'Test',
+				notes: [],
+				bpm: 150,
+				needsVoices: true,
+				player1: 'bf',
+				player2: 'dad',
+				speed: 1,
+				validScore: false,
+			},
+			"sliderVelocities": velChanges,
+		};
+
+		var data:String = Json.stringify(json2);
+
+		if ((data != null) && (data.length > 0))
+		{
+			_file = new FileReference();
+			_file.addEventListener(Event.COMPLETE, onSaveComplete);
+			_file.addEventListener(Event.CANCEL, onSaveCancel);
+			_file.addEventListener(IOErrorEvent.IO_ERROR, onSaveError);
+			_file.save(data.trim(), "sliders.json");
 		}
 	}
 
