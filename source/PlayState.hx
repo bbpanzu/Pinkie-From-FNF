@@ -192,7 +192,7 @@ class PlayState extends MusicBeatState
 	var halloweenBG:FlxSprite;
 	var isHalloween:Bool = false;
 	static public var isPony:Bool = false;
-
+	var hd_tree:FlxSprite;
 	var phillyCityLights:FlxTypedGroup<FlxSprite>;
 	var lightFadeShader:BuildingEffect;
 	var vcrDistortionHUD:VCRDistortionEffect;
@@ -210,6 +210,8 @@ class PlayState extends MusicBeatState
 	var bottomBoppers:FlxSprite;
 	var santa:FlxSprite;
 	var ponybg:FlxSprite;
+	var hd_dash:FlxSprite;
+	var treeexplode:FlxSprite;
 
 	var bgGirls:BackgroundGirls;
 	var wiggleShit:WiggleEffect = new WiggleEffect();
@@ -473,9 +475,33 @@ class PlayState extends MusicBeatState
 						  //defaultHudZoom = 0.8;
 						  addSprite( -54, -172, "pinkie/hd/sky",0);
 						  addSprite( -49, -48, "pinkie/hd/mountains",0.2);
-						  addSprite( -266.25, -79.45, "pinkie/hd/bg",0.5);
+						  addSprite( -266.25, -79.45, "pinkie/hd/bg2",0.5);
+						  hd_tree = addSprite( -266.25, -79.45, "pinkie/hd/bg",0.5);
 						  addSprite( 477.1, 178.35, "pinkie/hd/ponies",0.5);
-						  addSprite( -385.8, 279.3, "pinkie/hd/grass",1);
+						  addSprite( -385.8, 279.3, "pinkie/hd/grass", 1);
+						  
+						  
+		                  hd_dash = new FlxSprite( 1487, -55);
+						  hd_dash.frames = Paths.getSparrowAtlas('pinkie/hd/dash');
+		                  hd_dash.antialiasing = true;
+						  hd_dash.animation.addByIndices("dashing", "rainbow dash", [0], '',24,false );
+						  hd_dash.animation.addByIndices("ouch", "rainbow dash", [1], '',24,false );
+						  hd_dash.animation.play("dashing");
+						//  hd_dash.setGraphicSize(21);
+						  add(hd_dash);
+						  hd_dash.visible = false;
+						  
+		                  treeexplode = new FlxSprite( 644.4, 51);
+						  treeexplode.frames = Paths.getSparrowAtlas('pinkie/hd/treeexplode');
+		                  treeexplode.antialiasing = true;
+						  treeexplode.animation.addByPrefix("boom", "treeexplode",24,false );
+						  treeexplode.animation.play("boom");
+						  add(treeexplode);
+						  treeexplode.scrollFactor.set(0.5, 0.5);
+						  treeexplode.visible = false;
+						  
+						  
+						  
 						 // camHUD.zoom = 0.8;
 						  camHUD.scroll.y -= 150;
 						}
@@ -484,7 +510,6 @@ class PlayState extends MusicBeatState
 		                  curStage = 'discord';
 		                  defaultCamZoom = 0.7;
 						  
-						  ponyvilleBG = addSprite( -908.45, -125.35, "pinkie/bg");
 		                 // bgColor = 0xFFA2E9AD;
 				addSprite( -908.45, -125.35, "pinkie/discord/hills",0.2);
 				addSprite( -378.85, -879.85, "pinkie/discord/bigcloud",0.25);
@@ -509,6 +534,7 @@ class PlayState extends MusicBeatState
 				addSprite( -447.8, 355.05, "pinkie/discord/discordground", 1);
 				
 				
+						  ponyvilleBG = addSprite( -908.45, -125.35, "pinkie/bg");
 						}
 						  
 					  
@@ -885,6 +911,9 @@ class PlayState extends MusicBeatState
 				else
 					anotherPoint = false;
 				
+			});
+			Lua_helper.add_callback(lua.state, "changeBPM", function(bpm:Int){
+				Conductor.changeBPM(bpm);
 			});
 		Lua_helper.add_callback(lua.state, "getVar", function(variable:String) {
 			var killMe:Array<String> = variable.split('.');
@@ -1263,7 +1292,28 @@ class PlayState extends MusicBeatState
 		inCutscene = true;
 		add(dialogueBox);
 	}
-
+	function kickcutscene(){
+		hd_dash.visible = true;
+		dad.disabledDance = true;
+		dad.playAnim('kick', true);
+		FlxTween.tween(hd_dash, {x:757.45, y:57, width:449.9, height:391}, 9 / 24, {ease:FlxEase.linear,onComplete:function(e:FlxTween=null){
+			
+			hd_dash.animation.play('ouch', true);
+			beatCam(0.03,0.03);
+			FlxG.camera.shake(0.01, 8 / 24, function(){
+				
+				dad.disabledDance = false;
+				hd_dash.visible = false;
+				hd_tree.visible = false;
+				treeexplode.visible = false;
+				treeexplode.animation.play('boom');
+				FlxG.camera.shake(0.01, 5 / 24);
+				beatCam(0.02,0.03);
+				
+			});
+			
+		}});
+	}
 	function schoolIntro(?dialogueBox:DialogueBox):Void
 	{
 		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
@@ -3598,6 +3648,13 @@ class PlayState extends MusicBeatState
 		}
 		
 		
+			if (curSong.toLowerCase() == "smile-hd"){
+				
+				switch(curStep){
+					case 1034:
+						kickcutscene();
+				}
+			}
 		
 			//if (camStep.contains(curStep)){
 			//}

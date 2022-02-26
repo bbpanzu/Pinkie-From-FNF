@@ -3,3 +3,4 @@ prefix singLEFT 24 pinkie hd left
 prefix singRIGHT 24 pinkie hd right
 prefix singUP 24 pinkie hd up
 prefix singDOWN 24 pinkie hd down
+prefix kick 24 pinkie hd kick

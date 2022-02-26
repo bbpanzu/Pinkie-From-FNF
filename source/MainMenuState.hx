@@ -149,7 +149,7 @@ Conductor.changeBPM(110);
 		india = false;
 		
 		selectedSomethin = false;
-		FlxG.sound.playMusic(Paths.music('freakyMenu'));
+		//FlxG.sound.playMusic(Paths.music('freakyMenu'));
 	}
 	override public function beatHit():Void 
 	{

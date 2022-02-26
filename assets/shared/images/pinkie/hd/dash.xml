@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="dash.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="rainbow dash0000" x="0" y="394" width="452" height="375" frameX="-24" frameY="-11" frameWidth="476" frameHeight="392"/>
+	<SubTexture name="rainbow dash0001" x="0" y="0" width="450" height="392" frameX="0" frameY="0" frameWidth="476" frameHeight="392"/>
+</TextureAtlas>
