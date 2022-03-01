@@ -59,10 +59,10 @@ class Portrait extends FlxSprite
 				
 				var rawdata:String = File.getContent(filepath);
 				var data = rawdata.split("\n");
-				
 				for (i in data){
 					var thing = i.split(":");
 							//trace("DATA: " + thing);
+				var loop = true;
 					
 					switch(thing[0]){
 						case "indices":
@@ -71,11 +71,11 @@ class Portrait extends FlxSprite
 							for (d in 0...framess.length){
 								frames[d] = Std.parseInt(framess[d]);//converts stringed numbers to integers
 							}
-							addAnim2(thing[1], frames);
+							addAnim2(thing[1], frames,loop);
 						case "prefix":
-							addAnim(thing[1], thing[2]);
+							addAnim(thing[1], thing[2],loop);
 						case "resize":
-							addAnim(thing[1], thing[2]);
+							addAnim(thing[1], thing[2],loop);
 							setGraphicSize(Std.int(width * Std.parseFloat(thing[1])));
 							updateHitbox();
 					}
@@ -100,11 +100,11 @@ class Portrait extends FlxSprite
 		
 	}
     
-    public function addAnim(anim:String, prefix:String){
-        animation.addByPrefix(anim,prefix, 24, true);
+    public function addAnim(anim:String, prefix:String,loop=true){
+        animation.addByPrefix(anim,prefix, 24, loop);
     }    
-    public function addAnim2(anim:String, frames:Array<Int>){
-        animation.addByIndices(anim,char+"_portrait",frames,"", 24, true);
+    public function addAnim2(anim:String, frames:Array<Int>,loop=true){
+        animation.addByIndices(anim,char+"_portrait",frames,"", 24, loop);
     }    
 
     public function playFrame(?_frame:String = "default"){

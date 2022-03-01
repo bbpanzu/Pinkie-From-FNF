@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="pinkie_rap.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="pinkie rap down0000" x="3296" y="0" width="630" height="723" frameX="-17" frameY="-20" frameWidth="647" frameHeight="743"/>
+	<SubTexture name="pinkie rap down0001" x="3296" y="0" width="630" height="723" frameX="-17" frameY="-20" frameWidth="647" frameHeight="743"/>
+	<SubTexture name="pinkie rap down0002" x="842" y="780" width="645" height="728" frameX="0" frameY="0" frameWidth="647" frameHeight="743"/>
+	<SubTexture name="pinkie rap down0003" x="842" y="780" width="645" height="728" frameX="0" frameY="0" frameWidth="647" frameHeight="743"/>
+	<SubTexture name="pinkie rap down0004" x="842" y="780" width="645" height="728" frameX="0" frameY="0" frameWidth="647" frameHeight="743"/>
+	<SubTexture name="pinkie rap down0005" x="842" y="780" width="645" height="728" frameX="0" frameY="0" frameWidth="647" frameHeight="743"/>
+	<SubTexture name="pinkie rap down0006" x="842" y="780" width="645" height="728" frameX="0" frameY="0" frameWidth="647" frameHeight="743"/>
+	<SubTexture name="pinkie rap down0007" x="842" y="780" width="645" height="728" frameX="0" frameY="0" frameWidth="647" frameHeight="743"/>
+	<SubTexture name="pinkie rap down0008" x="842" y="780" width="645" height="728" frameX="0" frameY="0" frameWidth="647" frameHeight="743"/>
+	<SubTexture name="pinkie rap down0009" x="842" y="780" width="645" height="728" frameX="0" frameY="0" frameWidth="647" frameHeight="743"/>
+	<SubTexture name="pinkie rap idle0000" x="842" y="1510" width="604" height="737" frameX="-29" frameY="-19" frameWidth="633" frameHeight="756"/>
+	<SubTexture name="pinkie rap idle0001" x="842" y="1510" width="604" height="737" frameX="-29" frameY="-19" frameWidth="633" frameHeight="756"/>
+	<SubTexture name="pinkie rap idle0002" x="0" y="1540" width="601" height="739" frameX="-31" frameY="-17" frameWidth="633" frameHeight="756"/>
+	<SubTexture name="pinkie rap idle0003" x="0" y="1540" width="601" height="739" frameX="-31" frameY="-17" frameWidth="633" frameHeight="756"/>
+	<SubTexture name="pinkie rap idle0004" x="1489" y="1507" width="603" height="745" frameX="-15" frameY="-8" frameWidth="633" frameHeight="756"/>
+	<SubTexture name="pinkie rap idle0005" x="1489" y="1507" width="603" height="745" frameX="-15" frameY="-8" frameWidth="633" frameHeight="756"/>
+	<SubTexture name="pinkie rap idle0006" x="2463" y="763" width="604" height="749" frameX="-1" frameY="-1" frameWidth="633" frameHeight="756"/>
+	<SubTexture name="pinkie rap idle0007" x="2463" y="763" width="604" height="749" frameX="-1" frameY="-1" frameWidth="633" frameHeight="756"/>
+	<SubTexture name="pinkie rap idle0008" x="3296" y="725" width="604" height="750" frameX="0" frameY="0" frameWidth="633" frameHeight="756"/>
+	<SubTexture name="pinkie rap idle0009" x="3296" y="725" width="604" height="750" frameX="0" frameY="0" frameWidth="633" frameHeight="756"/>
+	<SubTexture name="pinkie rap left0000" x="0" y="768" width="840" height="770" frameX="0" frameY="-2" frameWidth="840" frameHeight="772"/>
+	<SubTexture name="pinkie rap left0001" x="0" y="768" width="840" height="770" frameX="0" frameY="-2" frameWidth="840" frameHeight="772"/>
+	<SubTexture name="pinkie rap left0002" x="2517" y="0" width="777" height="761" frameX="-31" frameY="0" frameWidth="840" frameHeight="772"/>
+	<SubTexture name="pinkie rap left0003" x="2517" y="0" width="777" height="761" frameX="-31" frameY="0" frameWidth="840" frameHeight="772"/>
+	<SubTexture name="pinkie rap left0004" x="2517" y="0" width="777" height="761" frameX="-31" frameY="0" frameWidth="840" frameHeight="772"/>
+	<SubTexture name="pinkie rap left0005" x="2517" y="0" width="777" height="761" frameX="-31" frameY="0" frameWidth="840" frameHeight="772"/>
+	<SubTexture name="pinkie rap left0006" x="2517" y="0" width="777" height="761" frameX="-31" frameY="0" frameWidth="840" frameHeight="772"/>
+	<SubTexture name="pinkie rap left0007" x="2517" y="0" width="777" height="761" frameX="-31" frameY="0" frameWidth="840" frameHeight="772"/>
+	<SubTexture name="pinkie rap left0008" x="2517" y="0" width="777" height="761" frameX="-31" frameY="0" frameWidth="840" frameHeight="772"/>
+	<SubTexture name="pinkie rap left0009" x="2517" y="0" width="777" height="761" frameX="-31" frameY="0" frameWidth="840" frameHeight="772"/>
+	<SubTexture name="pinkie rap right0000" x="1706" y="0" width="809" height="751" frameX="0" frameY="-8" frameWidth="809" frameHeight="759"/>
+	<SubTexture name="pinkie rap right0001" x="1706" y="0" width="809" height="751" frameX="0" frameY="-8" frameWidth="809" frameHeight="759"/>
+	<SubTexture name="pinkie rap right0002" x="1706" y="753" width="755" height="752" frameX="-39" frameY="0" frameWidth="809" frameHeight="759"/>
+	<SubTexture name="pinkie rap right0003" x="1706" y="753" width="755" height="752" frameX="-39" frameY="0" frameWidth="809" frameHeight="759"/>
+	<SubTexture name="pinkie rap right0004" x="1706" y="753" width="755" height="752" frameX="-39" frameY="0" frameWidth="809" frameHeight="759"/>
+	<SubTexture name="pinkie rap right0005" x="1706" y="753" width="755" height="752" frameX="-39" frameY="0" frameWidth="809" frameHeight="759"/>
+	<SubTexture name="pinkie rap right0006" x="1706" y="753" width="755" height="752" frameX="-39" frameY="0" frameWidth="809" frameHeight="759"/>
+	<SubTexture name="pinkie rap right0007" x="1706" y="753" width="755" height="752" frameX="-39" frameY="0" frameWidth="809" frameHeight="759"/>
+	<SubTexture name="pinkie rap right0008" x="1706" y="753" width="755" height="752" frameX="-39" frameY="0" frameWidth="809" frameHeight="759"/>
+	<SubTexture name="pinkie rap right0009" x="1706" y="753" width="755" height="752" frameX="-39" frameY="0" frameWidth="809" frameHeight="759"/>
+	<SubTexture name="pinkie rap up0000" x="864" y="0" width="840" height="778" frameX="-11" frameY="0" frameWidth="862" frameHeight="788"/>
+	<SubTexture name="pinkie rap up0001" x="864" y="0" width="840" height="778" frameX="-11" frameY="0" frameWidth="862" frameHeight="788"/>
+	<SubTexture name="pinkie rap up0002" x="0" y="0" width="862" height="766" frameX="0" frameY="-22" frameWidth="862" frameHeight="788"/>
+	<SubTexture name="pinkie rap up0003" x="0" y="0" width="862" height="766" frameX="0" frameY="-22" frameWidth="862" frameHeight="788"/>
+	<SubTexture name="pinkie rap up0004" x="0" y="0" width="862" height="766" frameX="0" frameY="-22" frameWidth="862" frameHeight="788"/>
+	<SubTexture name="pinkie rap up0005" x="0" y="0" width="862" height="766" frameX="0" frameY="-22" frameWidth="862" frameHeight="788"/>
+	<SubTexture name="pinkie rap up0006" x="0" y="0" width="862" height="766" frameX="0" frameY="-22" frameWidth="862" frameHeight="788"/>
+	<SubTexture name="pinkie rap up0007" x="0" y="0" width="862" height="766" frameX="0" frameY="-22" frameWidth="862" frameHeight="788"/>
+	<SubTexture name="pinkie rap up0008" x="0" y="0" width="862" height="766" frameX="0" frameY="-22" frameWidth="862" frameHeight="788"/>
+</TextureAtlas>

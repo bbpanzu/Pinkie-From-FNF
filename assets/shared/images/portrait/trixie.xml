@@ -1,72 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="trixie.png">
-	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="trixie_portrait0000" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0001" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0002" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0003" x="505" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0004" x="505" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0005" x="505" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0006" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0007" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0008" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0009" x="1515" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0010" x="1515" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0011" x="1515" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0012" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0013" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0014" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0015" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0016" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0017" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0018" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0019" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0020" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0021" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0022" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0023" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0024" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0025" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0026" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0027" x="1515" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0028" x="1515" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0029" x="1515" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0030" x="0" y="529" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0031" x="0" y="529" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0032" x="0" y="529" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0033" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0034" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0035" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0036" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0037" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0038" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0039" x="1515" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0040" x="1515" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0041" x="1515" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0042" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0043" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0044" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0045" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0046" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0047" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0048" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0049" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0050" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0051" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0052" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0053" x="0" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0054" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0055" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0056" x="1010" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0057" x="1515" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0058" x="1515" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0059" x="1515" y="0" width="504" height="528"/>
-	<SubTexture name="trixie_portrait0060" x="0" y="529" width="504" height="528"/>
-	<SubTexture name="trixie_portraitmagic0000" x="505" y="529" width="504" height="528"/>
-	<SubTexture name="trixie_portraitmagic0001" x="505" y="529" width="504" height="528"/>
-	<SubTexture name="trixie_portraitmagic0002" x="505" y="529" width="504" height="528"/>
-	<SubTexture name="trixie_portraitmagic0003" x="1010" y="529" width="504" height="528"/>
-	<SubTexture name="trixie_portraitmagic0004" x="1010" y="529" width="504" height="528"/>
-	<SubTexture name="trixie_portraitmagic0005" x="1010" y="529" width="504" height="528"/>
+	<SubTexture name="trixie_portrait0000" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0001" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0002" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0003" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0004" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0005" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0006" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0007" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0008" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0009" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0010" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0011" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0012" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0013" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0014" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0015" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0016" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0017" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0018" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0019" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0020" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0021" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0022" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0023" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0024" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0025" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0026" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0027" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0028" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0029" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0030" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0031" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0032" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0033" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0034" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0035" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0036" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0037" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0038" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0039" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0040" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0041" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0042" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0043" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0044" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0045" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0046" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0047" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0048" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0049" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0050" x="958" y="547" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0051" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0052" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0053" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0054" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0055" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0056" x="0" y="548" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0057" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0058" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0059" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portrait0060" x="958" y="0" width="477" height="545"/>
+	<SubTexture name="trixie_portraitmagic0000" x="0" y="0" width="477" height="546"/>
+	<SubTexture name="trixie_portraitmagic0001" x="0" y="0" width="477" height="546"/>
+	<SubTexture name="trixie_portraitmagic0002" x="479" y="548" width="477" height="545" frameX="0" frameY="-1" frameWidth="477" frameHeight="546"/>
+	<SubTexture name="trixie_portraitmagic0003" x="479" y="548" width="477" height="545" frameX="0" frameY="-1" frameWidth="477" frameHeight="546"/>
+	<SubTexture name="trixie_portraitmagic0004" x="958" y="1094" width="477" height="545" frameX="0" frameY="-1" frameWidth="477" frameHeight="546"/>
+	<SubTexture name="trixie_portraitmagic0005" x="958" y="1094" width="477" height="545" frameX="0" frameY="-1" frameWidth="477" frameHeight="546"/>
+	<SubTexture name="trixie_portraitmagic0006" x="479" y="0" width="477" height="546"/>
+	<SubTexture name="trixie_portraitmagic0007" x="479" y="0" width="477" height="546"/>
+	<SubTexture name="trixie_portraitmagic0008" x="0" y="1095" width="477" height="545" frameX="0" frameY="-1" frameWidth="477" frameHeight="546"/>
+	<SubTexture name="trixie_portraitmagic0009" x="0" y="1095" width="477" height="545" frameX="0" frameY="-1" frameWidth="477" frameHeight="546"/>
+	<SubTexture name="trixie_portraitmagic0010" x="479" y="1095" width="477" height="545" frameX="0" frameY="-1" frameWidth="477" frameHeight="546"/>
+	<SubTexture name="trixie_portraitmagic0011" x="479" y="1095" width="477" height="545" frameX="0" frameY="-1" frameWidth="477" frameHeight="546"/>
 </TextureAtlas>

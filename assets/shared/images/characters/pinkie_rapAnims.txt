@@ -1,0 +1,5 @@
+prefix idle 24 pinkie rap idle
+prefix singLEFT 24 pinkie rap left
+prefix singRIGHT 24 pinkie rap right
+prefix singUP 24 pinkie rap up
+prefix singDOWN 24 pinkie rap down

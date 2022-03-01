@@ -534,6 +534,16 @@ class LuaSprite extends LuaClass {
     return 0;
   }
 
+  private static function setCamera(l:StatePointer){
+      // 1 = self
+      // 2 = camname
+      var name:String = LuaL.checkstring(state,2);
+      Lua.getfield(state,1,"spriteName");
+      var spriteName = Lua.tostring(state,-1);
+      var sprite = PlayState.currentPState.luaSprites[spriteName];
+	  trace(sprite.cameras);
+      return 0;
+  }
   private static function tween(l:StatePointer):Int{
     // 1 = self
     // 2 = properties
@@ -564,6 +574,7 @@ class LuaSprite extends LuaClass {
   private static var setFramesC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(setFrames);
   private static var playAnimSpriteC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(playAnimSprite);
   private static var tweenC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(tween);
+  private static var setCameraC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(setCamera);
 
   public function new(sprite:FlxSprite,name:String,?addToGlobal:Bool=true){
     super();
@@ -683,6 +694,7 @@ class LuaSprite extends LuaClass {
           return 0;
         }
       },
+	  
       "screenCenter"=>{
         defaultValue:0,
         getter:function(l:State,data:Any){
@@ -709,6 +721,17 @@ class LuaSprite extends LuaClass {
         defaultValue:0,
         getter:function(l:State,data:Any){
           Lua.pushcfunction(l,setFramesC);
+          return 1;
+        },
+        setter:function(l:State){
+          LuaL.error(l,"setFrames is read-only.");
+          return 0;
+        }
+      },
+      "setCamera"=>{
+        defaultValue:0,
+        getter:function(l:State,data:Any){
+          Lua.pushcfunction(l,setCameraC);
           return 1;
         },
         setter:function(l:State){
@@ -835,6 +858,25 @@ class LuaCam extends LuaClass {
       return 1;
   }
 
+  private static function tween(l:StatePointer):Int{
+    // 1 = self
+    // 2 = properties
+    // 3 = time
+    // 4 = easing-style
+    LuaL.checktable(state,2);
+    var properties:DynamicAccess<Any> = Convert.fromLua(state,2);
+    var time = LuaL.checknumber(state,3);
+    var style = LuaL.checkstring(state,4);
+    Lua.getfield(state,1,"className");
+    var objName = Lua.tostring(state,-1);
+    var cam = PlayState.currentPState.luaObjects[objName];
+    FlxTween.tween(cam,properties,time,{
+      ease: Reflect.field(FlxEase,style),
+    });
+    return 1;
+
+  }
+
   private function SetBoolProperty(l:State){
       // 1 = self
       // 2 = key
@@ -894,6 +936,7 @@ class LuaCam extends LuaClass {
   }
 
   private static var shakeC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(shake);
+  private static var tweenC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(tween);
   private static var setShadersC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(setShaders);
 
   public function new(cam:FlxCamera,name:String,?addToGlobal:Bool=true){
@@ -967,6 +1010,17 @@ class LuaCam extends LuaClass {
         },
         setter:function(l:State){
           LuaL.error(l,"shake is read-only.");
+          return 0;
+        }
+      },
+      "tween"=>{
+        defaultValue:0,
+        getter:function(l:State,data:Any){
+          Lua.pushcfunction(l,tweenC);
+          return 1;
+        },
+        setter:function(l:State){
+          LuaL.error(l,"tween is read-only.");
           return 0;
         }
       },

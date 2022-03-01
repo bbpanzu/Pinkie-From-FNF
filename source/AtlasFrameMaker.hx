@@ -16,6 +16,7 @@ import animateatlas.displayobject.SpriteMovieClip;
 import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxFramesCollection;
 import flixel.graphics.frames.FlxFrame;
+using StringTools;
 class AtlasFrameMaker extends FlxFramesCollection{
 
 
@@ -41,7 +42,7 @@ class AtlasFrameMaker extends FlxFramesCollection{
                 var frameCollection:FlxFramesCollection;
                 var frameArray:Array<Array<FlxFrame>> = [];
                 var animationData:AnimationData = Json.parse(File.getContent(key + "/Animation.json"));
-                var atlasData:AtlasData = Json.parse(File.getContent(key + "/spritemap.json"));
+                var atlasData:AtlasData = Json.parse(File.getContent(key + "/spritemap.json").replace("\uFEFF", ""));
                 var bitmapData:BitmapData = BitmapData.fromFile(key + "/spritemap.png");
                 var ss = new SpriteAnimationLibrary(animationData, atlasData, bitmapData);
                 var t = ss.createAnimation();

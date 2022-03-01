@@ -8,3 +8,5 @@ prefix hello 24 pinkie hello
 prefix howyadoin 24 pinkie howyadoin
 prefix howdy 24 pinkie howdy
 prefix whatsup 24 pinkie whatsup
+prefix duck 24 pinkie duck
+prefix fall 24 pinkie fall

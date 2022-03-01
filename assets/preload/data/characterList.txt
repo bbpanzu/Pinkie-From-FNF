@@ -4,3 +4,4 @@ gf
 pinkie
 discord
 discord-atlas
+pinkie_rap

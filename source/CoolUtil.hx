@@ -1,5 +1,6 @@
 package;
 
+import flixel.FlxCamera;
 import lime.utils.Assets;
 import sys.io.File;
 
@@ -26,6 +27,14 @@ class CoolUtil
 		return daList;
 	}
 
+
+	public static function cameraFromString(cam:String):FlxCamera {
+		trace(cam);
+		switch(cam.toLowerCase()) {
+			case 'camhud' | 'hud': return PlayState.instance.camHUD;
+		}
+		return PlayState.instance.camGame;
+	}
 
 	public static function coolTextFile3(path:String):Array<String>
 	{

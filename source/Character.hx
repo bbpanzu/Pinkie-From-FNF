@@ -506,30 +506,59 @@ unintAnims = ["new_scene", "gofast"];
 				frames=Cache.charFrames[curCharacter];
 			}else{
 				
-				
 				var path = "";
 			
 			var piss:Array<String> = ["assets"];
 			var tits:String = piss.join(",") + "," + TitleState.directories.join(",");
 			var balls = tits.split(",");
-			for (i in balls){
-				var boobs = i + "/shared/images/characters/" + curCharacter + ".xml";
-				trace(boobs);
-				if (FileSystem.exists(boobs)){
-					path = boobs;
-					break;
-				}
-				boobs = "mods/" + i + "/shared/images/characters/" + curCharacter + ".xml";
-				if (FileSystem.exists(boobs)){
-					path = boobs;
-					break;
-				}
-			}
+			
+			
+			
+			
+				if (StringTools.contains(character, '_atlas')){
+					for (i in balls){
+						var boobs = i + "/shared/images/characters/" + curCharacter + "/spritemap.png";
+						trace(boobs);
+						if (FileSystem.exists(boobs)){
+							path = boobs;
+							break;
+						}
+						boobs = "mods/" + i + "/shared/images/characters/" + curCharacter + "/spritemap.png";
+						if (FileSystem.exists(boobs)){
+							path = boobs;
+							break;
+						}
+					}
+						
+					trace(curCharacter + ":" + path);
+						frames = AtlasFrameMaker.construct(StringTools.replace(path,'/spritemap.png',''));//FlxAtlasFrames.fromSparrow(getbmp(curCharacter),File.getContent(path));
+						Cache.charFrames[curCharacter]=frames;
+
+				}else{
 				
-			trace(curCharacter + ":" + path);
-				frames = FlxAtlasFrames.fromSparrow(getbmp(curCharacter),File.getContent(path));
-				Cache.charFrames[curCharacter]=frames;
+			
+			
+					for (i in balls){
+						var boobs = i + "/shared/images/characters/" + curCharacter + ".xml";
+						trace(boobs);
+						if (FileSystem.exists(boobs)){
+							path = boobs;
+							break;
+						}
+						boobs = "mods/" + i + "/shared/images/characters/" + curCharacter + ".xml";
+						if (FileSystem.exists(boobs)){
+							path = boobs;
+							break;
+						}
+					}
+						
+					trace(curCharacter + ":" + path);
+						frames = FlxAtlasFrames.fromSparrow(getbmp(curCharacter),File.getContent(path));
+						Cache.charFrames[curCharacter]=frames;
+					}
+			
 			}
+			
 			FlxG.bitmap.dumpCache();
 
 

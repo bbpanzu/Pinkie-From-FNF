@@ -141,9 +141,9 @@ class PlayState extends MusicBeatState
 
 	private var iconP1:HealthIcon;
 	private var iconP2:HealthIcon;
-	private var camHUD:FlxCamera;
-	private var pauseHUD:FlxCamera;
-	private var camGame:FlxCamera;
+	public var camHUD:FlxCamera;
+	public var pauseHUD:FlxCamera;
+	public var camGame:FlxCamera;
 	public var modchart:ModChart;
 	public var botplayPressTimes:Array<Float> = [0,0,0,0];
 	public var botplayHoldTimes:Array<Float> = [0,0,0,0];
@@ -452,7 +452,7 @@ class PlayState extends MusicBeatState
 						  addSprite( 143.4, -291, "pinkie/backhouses", 0.5);
 						  addSprite( -646, -502, "pinkie/house2", 0.7);
 						  addSprite( 455.8, -526, "pinkie/house", 0.9);
-						  addSprite( -488.2, 478, "pinkie/floor", 0.9);
+						  addSprite( -488.2, 438, "pinkie/floor", 0.9);
 						  
 		                  var sh:FlxSprite = new FlxSprite(168.05, 556.1).loadGraphic(Paths.image('pinkie/shadow'));
 		                  sh.antialiasing = true;
@@ -510,6 +510,7 @@ class PlayState extends MusicBeatState
 		                  curStage = 'discord';
 		                  defaultCamZoom = 0.7;
 						  
+						  ponyvilleBG = addSprite( -908.45, -125.35, "pinkie/bg");
 		                 // bgColor = 0xFFA2E9AD;
 				addSprite( -908.45, -125.35, "pinkie/discord/hills",0.2);
 				addSprite( -378.85, -879.85, "pinkie/discord/bigcloud",0.25);
@@ -534,7 +535,6 @@ class PlayState extends MusicBeatState
 				addSprite( -447.8, 355.05, "pinkie/discord/discordground", 1);
 				
 				
-						  ponyvilleBG = addSprite( -908.45, -125.35, "pinkie/bg");
 						}
 						  
 					  
@@ -904,6 +904,9 @@ class PlayState extends MusicBeatState
 			Lua_helper.add_callback(lua.state,"skipCountdown", function(){
 				skipCountdown = true;
 			});
+			Lua_helper.add_callback(lua.state,"playSound", function(snd:String,vol:Float=1,loop:Bool=false){
+				FlxG.sound.play(Paths.sound(snd),vol,loop);
+			});
 			Lua_helper.add_callback(lua.state, "setCamPos", function(xx:Float=0, yy:Float=0){
 				anotherPoint = true;
 				if(xx != 9999 && yy != 9999)
@@ -1004,7 +1007,10 @@ class PlayState extends MusicBeatState
 			// put on pause for now
 
 			Lua_helper.add_callback(lua.state,"newCharacter", function(xx:Float,yy:Float,name:String,isPlayer:Bool=false,drawBehind:Bool=false){
-				addNewCharacter(xx, yy, name, isPlayer,drawBehind);
+				addNewCharacter(xx, yy, name, isPlayer,drawBehind,'camGame');
+			});
+			Lua_helper.add_callback(lua.state,"newCharacterHUD", function(xx:Float,yy:Float,name:String,isPlayer:Bool=false,drawBehind:Bool=false){
+				addNewCharacter(xx, yy, name, isPlayer,drawBehind,'camHUD');
 			});
 			Lua_helper.add_callback(lua.state,"newSprite", function(?x:Int=0,?y:Int=0,?drawBehind:Bool=false,?spriteName:String){
 				var sprite = new FlxSprite(x,y);
@@ -1082,7 +1088,6 @@ class PlayState extends MusicBeatState
 
 			var luaGameCam = new LuaCam(FlxG.camera,"gameCam");
 			var luaHUDCam = new LuaCam(camHUD, "HUDCam");
-			
 			
 			
 			for(i in [luaModchart,leftPlayerNote,downPlayerNote,upPlayerNote,rightPlayerNote,leftDadNote,downDadNote,upDadNote,rightDadNote,window,bfLua,gfLua,dadLua,bfIcon,dadIcon,luaGameCam,luaHUDCam])
@@ -1182,10 +1187,10 @@ class PlayState extends MusicBeatState
 		trace(reg1.replace(reg2.replace(a,""),""));
 		return reg1.replace(reg2.replace(a,""),"");
 	}
-	function addNewCharacter(x,y,name,isplayer,drawBehind){
+	function addNewCharacter(x,y,name,isplayer,drawBehind,cam:String=''){
 			var sprite = new Character(x, y, name, isplayer);
 			
-			
+			sprite.cameras = [CoolUtil.cameraFromString(cam)];
 			
 			
 				if(drawBehind){
@@ -2625,7 +2630,14 @@ class PlayState extends MusicBeatState
 			vocals.volume=0;
 		}
 		
-						if(luaModchartExists && lua!=null){
+		
+		
+	
+		
+		
+						if (luaModchartExists && lua != null){
+							lua.setGlobalVar('stepCrochet', Conductor.stepCrochet);
+							lua.setGlobalVar('crochet', Conductor.crochet);
 							lua.call("update", [elapsed]);
 						}
 		
