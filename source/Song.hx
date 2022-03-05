@@ -25,9 +25,13 @@ typedef SwagSong =
 	var player2:String;
 	var validScore:Bool;
 	var noBG:Bool;
+	@:optional var pixelStage:Bool;
 	@:optional var sliderVelocities:Array<VelocityChange>;
 	@:optional var camBeats:Array<Float>;
 	@:optional var initialSpeed:Float;
+	@:optional var noteskin:String;
+	@:optional var strumskin:String;
+	@:optional var notescale:Float;
 }
 
 class Song
@@ -37,7 +41,11 @@ class Song
 	public var bpm:Int;
 	public var needsVoices:Bool = true;
 	public var noBG:Bool = false;
+	public var pixelStage:Bool = false;
+	public var noteskin:String = 'NOTE_assets';
+	public var strumskin:String = 'NOTE_assets';
 	public var speed:Float = 1;
+	public var noteccale:Float = 0.7;
 	public var initialSpeed:Float = 1;
 	public var sliderVelocities:Array<VelocityChange>=[];
 	public var camBeats:Array<Float>=[];
@@ -49,6 +57,7 @@ class Song
 		this.song = song;
 		this.notes = notes;
 		this.bpm = bpm;
+		
 	}
 
 	public static function loadFromJson(jsonInput:String, ?folder:String):SwagSong
@@ -84,6 +93,10 @@ class Song
 			];
 		}
 		swagShit.validScore = true;
+		
+		if (swagShit.noteskin == null) swagShit.noteskin = 'NOTE_assets';
+		if (swagShit.strumskin== null) swagShit.strumskin = 'NOTE_assets';
+		if (swagShit.notescale == null) swagShit.notescale = 0.7;
 		return swagShit;
 	}
 }

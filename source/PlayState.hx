@@ -28,6 +28,7 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
+import flixel.system.FlxAssets.FlxSoundAsset;
 import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
@@ -342,7 +343,7 @@ class PlayState extends MusicBeatState
 			SONG = Song.loadFromJson('tutorial');
 
 		SONG.initialSpeed = SONG.speed*.45;
-
+		
 		SONG.sliderVelocities.sort((a,b)->Std.int(a.startTime-b.startTime));
 		mapVelocityChanges();
 
@@ -904,6 +905,25 @@ class PlayState extends MusicBeatState
 			Lua_helper.add_callback(lua.state,"skipCountdown", function(){
 				skipCountdown = true;
 			});
+			Lua_helper.add_callback(lua.state,"vcr", function(on:Bool=true,mod:Float=0.2){
+				
+											if(currentOptions.senpaiShaders){
+												if (vcrDistortionHUD != null){
+													if(on){
+														
+													vcrDistortionGame.setGlitchModifier(mod);
+													vcrDistortionHUD.setGlitchModifier(mod);
+													vcrDistortionHUD.setDistortion(false);
+													modchart.addCamEffect(vcrDistortionGame);
+													modchart.addHudEffect(vcrDistortionHUD);
+													}else{
+														
+													modchart.removeCamEffect(vcrDistortionGame);
+													modchart.removeHudEffect(vcrDistortionHUD);
+													}
+												}
+											}
+			});
 			Lua_helper.add_callback(lua.state,"playSound", function(snd:String,vol:Float=1,loop:Bool=false){
 				FlxG.sound.play(Paths.sound(snd),vol,loop);
 			});
@@ -1012,7 +1032,7 @@ class PlayState extends MusicBeatState
 			Lua_helper.add_callback(lua.state,"newCharacterHUD", function(xx:Float,yy:Float,name:String,isPlayer:Bool=false,drawBehind:Bool=false){
 				addNewCharacter(xx, yy, name, isPlayer,drawBehind,'camHUD');
 			});
-			Lua_helper.add_callback(lua.state,"newSprite", function(?x:Int=0,?y:Int=0,?drawBehind:Bool=false,?spriteName:String){
+			Lua_helper.add_callback(lua.state,"newSprite", function(?x:Int=0,?y:Int=0,?drawBehind:Bool=false,?spriteName:String,camera:String='game'){
 				var sprite = new FlxSprite(x,y);
 				var name = "UnnamedSprite"+unnamedLuaSprites;
 				if(spriteName!=null)
@@ -1063,6 +1083,8 @@ class PlayState extends MusicBeatState
 				}else{
 					add(sprite);
 				};
+				
+				sprite.cameras = [CoolUtil.cameraFromString(camera)];
 			});
 
 			var leftPlayerNote = new LuaNote(0,true);
@@ -1424,8 +1446,12 @@ class PlayState extends MusicBeatState
 		{
 			dad.dance();
 			gf.dance();
-			boyfriend.playAnim('idle',true);
-
+			boyfriend.playAnim('idle', true);
+			
+			if(luaModchartExists && lua!=null){
+				lua.call("countdown", [swagCounter]);
+				lua.call("beatHit",[0]);
+			}
 			var introAssets:Map<String, Array<String>> = new Map<String, Array<String>>();
 			introAssets.set('default', ['ready', "set", "go"]);
 			introAssets.set('school', ['weeb/pixelUI/ready-pixel', 'weeb/pixelUI/set-pixel', 'weeb/pixelUI/date-pixel']);
@@ -1452,7 +1478,7 @@ class PlayState extends MusicBeatState
 					var ready:FlxSprite = new FlxSprite().loadGraphic(Paths.image(introAlts[0]));
 					ready.scrollFactor.set();
 					ready.updateHitbox();
-
+					ready.cameras = [camHUD];
 					if (curStage.startsWith('school'))
 						ready.setGraphicSize(Std.int(ready.width * daPixelZoom));
 
@@ -1470,6 +1496,7 @@ class PlayState extends MusicBeatState
 					var set:FlxSprite = new FlxSprite().loadGraphic(Paths.image(introAlts[1]));
 					set.scrollFactor.set();
 
+					set.cameras = [camHUD];
 					if (curStage.startsWith('school'))
 						set.setGraphicSize(Std.int(set.width * daPixelZoom));
 
@@ -1488,6 +1515,7 @@ class PlayState extends MusicBeatState
 						var go:FlxSprite = new FlxSprite().loadGraphic(Paths.image(introAlts[2]));
 						go.scrollFactor.set();
 
+					go.cameras = [camHUD];
 						if (curStage.startsWith('school'))
 							go.setGraphicSize(Std.int(go.width * daPixelZoom));
 
@@ -1518,15 +1546,16 @@ class PlayState extends MusicBeatState
 
 	function startSong():Void
 	{
+		
+		
 		startingSong = false;
-
-		
-		
 
 		if(luaModchartExists && lua!=null){
 			lua.call("startSong",[]);
 		}
-		
+		if(luaModchartExists && lua!=null){
+			lua.call("beatHit",[0]);
+		}
 		if(luaModchartExists && lua!=null){
 			lua.call("songStart",[]);
 		}
@@ -1747,8 +1776,8 @@ class PlayState extends MusicBeatState
 			var stopLookin = false;
 			for (i in balls){
 				if(!stopLookin){
-					if (FileSystem.exists(i + "/shared/images/NOTE_assets.xml")){
-						path = i + "/shared/images/NOTE_assets.xml";
+					if (FileSystem.exists(i + "/shared/images/"+SONG.strumskin+".xml")){
+						path = i + "/shared/images/"+SONG.strumskin+".xml";
 						stopLookin = true;
 						break;
 					}
@@ -1759,7 +1788,7 @@ class PlayState extends MusicBeatState
 			
 			
 			
-				babyArrow.frames = FlxAtlasFrames.fromSparrow(Paths.getbmp("NOTE_assets"), File.getContent(path));//Paths.getSparrowAtlas('NOTE_assets');
+				babyArrow.frames = FlxAtlasFrames.fromSparrow(Paths.getbmp(SONG.strumskin), File.getContent(path));//Paths.getSparrowAtlas('NOTE_assets');
 
 				
 				
@@ -1771,7 +1800,7 @@ class PlayState extends MusicBeatState
 					
 
 					babyArrow.antialiasing = true;
-					babyArrow.setGraphicSize(Std.int(babyArrow.width * 0.7));
+					babyArrow.setGraphicSize(Std.int(babyArrow.width * SONG.notescale));
 
 					var idx = Std.int(Math.abs(i));
 					var dir = dirs[idx];
@@ -2020,7 +2049,6 @@ class PlayState extends MusicBeatState
 			rainShader.update(elapsed);
 		}
 		modchart.update(elapsed);
-
 		if (FlxG.keys.justPressed.NINE)
 		{
 			if (iconP1.animation.curAnim.name == 'bf-old')
@@ -2223,7 +2251,7 @@ class PlayState extends MusicBeatState
 		if (camZooming)
 		{
 			FlxG.camera.zoom = FlxMath.lerp(FlxG.camera.zoom,defaultCamZoom, 0.05);
-			camHUD.zoom = FlxMath.lerp(camHUD.zoom,1, 0.05);
+			camHUD.zoom = FlxMath.lerp(camHUD.zoom,defaultHudZoom, 0.05);
 		}
 		if (cz != defaultCamZoom){
 			//cz = defaultCamZoom;
@@ -2604,11 +2632,10 @@ class PlayState extends MusicBeatState
 				spr.centerOffsets();
 			}
 
+				spr.centerOrigin();
 			if (spr.animation.curAnim.name == 'confirm' && !curStage.startsWith('school'))
 			{
 				spr.centerOffsets();
-				spr.offset.x -= 13;
-				spr.offset.y -= 13;
 			}
 			else
 				spr.centerOffsets();
@@ -2622,7 +2649,8 @@ class PlayState extends MusicBeatState
 
 		}
 
-		if(Conductor.songPosition-currentOptions.noteOffset>=FlxG.sound.music.length){
+		if (Conductor.songPosition - currentOptions.noteOffset >= FlxG.sound.music.length){
+			trace('song ending?????');
 			if(FlxG.sound.music.volume>0 || vocals.volume>0)
 				endSong();
 
@@ -3197,6 +3225,7 @@ class PlayState extends MusicBeatState
 
 		playerStrums.forEach(function(spr:FlxSprite)
 		{
+				spr.centerOrigin();
 			if(controlArray[spr.ID] && spr.animation.curAnim.name!="confirm")
 				spr.animation.play("pressed");
 
@@ -3206,8 +3235,6 @@ class PlayState extends MusicBeatState
 			if (spr.animation.curAnim.name == 'confirm' && !curStage.startsWith('school'))
 			{
 				spr.centerOffsets();
-				spr.offset.x -= 13;
-				spr.offset.y -= 13;
 			}
 			else
 				spr.centerOffsets();

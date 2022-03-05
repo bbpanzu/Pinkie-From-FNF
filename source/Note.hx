@@ -41,6 +41,7 @@ class Note extends FlxSprite
 	public var noteScore:Float = 1;
 	public var noAnim:Bool = false;
 
+	public var notescale:Float = 0.7;
 	public static var swagWidth:Float = 160 * 0.7;
 	public static var PURP_NOTE:Int = 0;
 	public static var GREEN_NOTE:Int = 2;
@@ -57,7 +58,7 @@ class Note extends FlxSprite
 
 		this.prevNote = prevNote;
 		isSustainNote = sustainNote;
-
+		notescale = PlayState.SONG.notescale;
 		x += 50;
 		// MAKE SURE ITS DEFINITELY OFF SCREEN?
 		y -= 2000;
@@ -105,15 +106,15 @@ class Note extends FlxSprite
 			var balls:Array<String> = [TitleState.curDir,"assets"];
 			var stopLookin = false;
 			for (i in balls){
-				if(!stopLookin){
-					if (FileSystem.exists(i + "/shared/images/NOTE_assets.xml")){
-						path = i + "/shared/images/NOTE_assets.xml";
+				if (!stopLookin){
+					if (FileSystem.exists(i + "/shared/images/"+PlayState.SONG.noteskin+".xml")){
+						path = i + "/shared/images/"+PlayState.SONG.noteskin+".xml";
 						stopLookin = true;
 						break;
 					}
 				}
 			}
-				frames = FlxAtlasFrames.fromSparrow(Paths.getbmp("NOTE_assets"), File.getContent(path));//Paths.getSparrowAtlas('NOTE_assets');
+				frames = FlxAtlasFrames.fromSparrow(Paths.getbmp(PlayState.SONG.noteskin), File.getContent(path));//Paths.getSparrowAtlas('NOTE_assets');
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
@@ -130,7 +131,7 @@ class Note extends FlxSprite
 				animation.addByPrefix('redhold', 'red hold piece');
 				animation.addByPrefix('bluehold', 'blue hold piece');
 
-				setGraphicSize(Std.int(width * 0.7));
+				setGraphicSize(Std.int(width * notescale),Std.int(height * notescale));
 				updateHitbox();
 				antialiasing = true;
 		}

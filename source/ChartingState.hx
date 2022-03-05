@@ -201,11 +201,16 @@ class ChartingState extends MusicBeatState
 
 		super.create();
 	}
-
+var UI_noteskin:FlxUIInputText;
+var UI_strumskin:FlxUIInputText;
+var UI_notescale:FlxUINumericStepper;
 	function addSongUI():Void
 	{
 		var UI_songTitle = new FlxUIInputText(10, 10, 70, _song.song, 8);
 		typingShit = UI_songTitle;
+		 UI_noteskin = new FlxUIInputText(10, 130, 70, _song.noteskin, 8);
+		 UI_strumskin = new FlxUIInputText(10, 160, 70, _song.strumskin, 8);
+		 UI_notescale = new FlxUINumericStepper(110, 160, 0.1, _song.notescale,0.1,160,1);
 
 		var check_voices = new FlxUICheckBox(10, 25, null, null, "Has voice track", 100);
 		check_voices.checked = _song.needsVoices;
@@ -284,6 +289,9 @@ class ChartingState extends MusicBeatState
 		var tab_group_song = new FlxUI(null, UI_box);
 		tab_group_song.name = "Song";
 		tab_group_song.add(UI_songTitle);
+		tab_group_song.add(UI_noteskin);
+		tab_group_song.add(UI_strumskin);
+		tab_group_song.add(UI_notescale);
 
 		tab_group_song.add(check_voices);
 		tab_group_song.add(check_mute_inst);
@@ -569,7 +577,9 @@ class ChartingState extends MusicBeatState
 
 		Conductor.songPosition = FlxG.sound.music.time;
 		_song.song = typingShit.text;
-
+		_song.noteskin = UI_noteskin.text;
+		_song.strumskin = UI_strumskin.text;
+		_song.notescale = UI_notescale.value;
 		strumLine.y = getYfromStrum((Conductor.songPosition - sectionStartTime()) % (Conductor.stepCrochet * _song.notes[curSection].lengthInSteps));
 
 		if (curBeat % 4 == 0 && curStep >= 16 * (curSection + 1))
@@ -806,7 +816,11 @@ class ChartingState extends MusicBeatState
 			+ " / "
 			+ Std.string(FlxMath.roundDecimal(FlxG.sound.music.length / 1000, 2))
 			+ "\nSection: "
-			+ curSection;
+			+ curSection
+			+ "\nBeat: "
+			+ curBeat
+			+ "\nStep: "
+			+ curStep;
 		super.update(elapsed);
 	}
 
@@ -1348,6 +1362,9 @@ class ChartingState extends MusicBeatState
 				player1: 'bf',
 				player2: 'dad',
 				speed: 1,
+				noteskin: 'NOTE_assets',
+				strumskin:'NOTE_assets',
+				pixelStage:false,
 				validScore: false,
 			},
 			"sliderVelocities": velChanges,
