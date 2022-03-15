@@ -1,11 +1,13 @@
 package animateatlas.displayobject;
 
+import flixel.util.FlxColor;
+import openfl.filters.GlowFilter;
+import openfl.filters.BlurFilter;
 import openfl.display.PixelSnapping;
 import openfl.geom.Point;
 import openfl.display.BitmapData;
 import openfl.display.Bitmap;
 import openfl.display.Sprite;
-import animateatlas.JSONData.PointData;
 import openfl.errors.ArgumentError;
 import openfl.geom.Rectangle;
 import openfl.errors.Error;
@@ -22,7 +24,7 @@ import animateatlas.JSONData.LayerFrameData;
 import animateatlas.JSONData.ColorData;
 import openfl.geom.Matrix;
 import openfl.geom.ColorTransform;
-import openfl.display.DisplayObjectContainer;
+import animateatlas.JSONData.FilterData;
 
 class SpriteSymbol extends Sprite {
 	public var currentLabel(get, never):String;
@@ -38,6 +40,7 @@ class SpriteSymbol extends Sprite {
 	private var _symbolName:String;
 	private var _type:String;
 	private var _loopMode:String;
+	
 	private var _currentFrame:Int;
 	private var _composedFrame:Int;
 	private var _bitmap:Bitmap;
@@ -49,7 +52,7 @@ class SpriteSymbol extends Sprite {
 	private var _texture:BitmapData;
 	private var _tempRect = new Rectangle();
 	private var _zeroPoint = new Point(0, 0);
-
+	private var filterHelper:BitmapData;
 	public var smoothing:Bool = true;
 
 	private static var sMatrix:Matrix = new Matrix();
@@ -177,9 +180,12 @@ class SpriteSymbol extends Sprite {
 
 			newSymbol.setTransformationMatrix(elementData.Matrix3D);
 			newSymbol.setBitmap(elementData.bitmap);
+			newSymbol.setFilterData(elementData.filters);
 			newSymbol.setColor(elementData.color);
 			newSymbol.setLoop(elementData.loop);
 			newSymbol.setType(elementData.symbolType);
+			
+		
 
 			if (newSymbol.type == SymbolType.GRAPHIC) {
 				var firstFrame:Int = elementData.firstFrame;
@@ -193,6 +199,7 @@ class SpriteSymbol extends Sprite {
 					newSymbol.currentFrame = firstFrame + frameAge;
 				}
 			}
+			
 		}
 
 		var numObsoleteSymbols:Int = (layer.numChildren - numElements);
@@ -234,17 +241,15 @@ class SpriteSymbol extends Sprite {
 				_bitmap = new Bitmap(new BitmapData(1, 1), PixelSnapping.AUTO, smoothing);
 				addChild(_bitmap);
 			}
-			
-			//if (data.Position == null){
-			//	data.Position = {x:0,y:0};
-			//}
-			
+
 			if (_tempRect.x != spriteData.x || _tempRect.y != spriteData.y || _tempRect.width != spriteData.w || _tempRect.height != spriteData.h) {
 				var clippedTexture = new BitmapData(spriteData.w, spriteData.h);
 				_tempRect.setTo(spriteData.x, spriteData.y, spriteData.w, spriteData.h);
 				clippedTexture.copyPixels(_texture, _tempRect, _zeroPoint);
 				_bitmap.bitmapData = clippedTexture;
 				_bitmap.smoothing = smoothing;
+				
+	
 			}
 			// aditional checks for rotation
 			if (spriteData.rotated) {
@@ -263,7 +268,40 @@ class SpriteSymbol extends Sprite {
 				_bitmap.parent.removeChild(_bitmap);
 		}
 	}
+	@:access(animateatlas)
+	private function setFilterData(data:FilterData):Void{
+		var blur:BlurFilter;
+		var glow:GlowFilter;
+		if (data != null){
+			if (data.BlurFilter != null){
+				blur = new BlurFilter();
+				blur.blurX = data.BlurFilter.blurX;
+				blur.blurY = data.BlurFilter.blurY;
+				blur.quality = data.BlurFilter.quality;
+				//_bitmap.bitmapData.applyFilter(_bitmap.bitmapData,new Rectangle(0,0,_bitmap.bitmapData.width,_bitmap.bitmapData.height),new Point(0,0),blur);
+				//filters.push(blur);
+			}
+			if (data.GlowFilter != null){
+				//trace('GLOW' + data.GlowFilter);
+				//glow = new GlowFilter();
+				//glow.blurX = data.GlowFilter.blurX;
+				//glow.blurY = data.GlowFilter.blurY;
+				//glow.color = data.GlowFilter.color;
+				//glow.alpha = data.GlowFilter.alpha;
+				//glow.quality = data.GlowFilter.quality;
+				//glow.strength = data.GlowFilter.strength;
+				//glow.knockout = data.GlowFilter.knockout;
+				//glow.inner = data.GlowFilter.inner;
+				//filters.push(glow);
 
+
+
+
+			}
+
+		}
+		
+	}
 
 	private function setTransformationMatrix(data:Matrix3DData):Void {
 		sMatrix.setTo(data.m00, data.m01, data.m10, data.m11, data.m30, data.m31);
@@ -284,8 +322,23 @@ class SpriteSymbol extends Sprite {
 			newTransform.greenMultiplier = (data.greenMultiplier == null ? 1 : data.greenMultiplier);
 			newTransform.blueMultiplier = (data.blueMultiplier == null ? 1 : data.blueMultiplier);
 			newTransform.alphaMultiplier = (data.alphaMultiplier == null ? 1 : data.alphaMultiplier);
+			
+			
+			if (data.mode == "Tint"){//Tint color effect
+				var color:FlxColor = Std.parseInt(StringTools.replace(data.tintColor, "#", "0xFF"));
+				
+				
+				newTransform.redMultiplier = 0;
+				newTransform.greenMultiplier = 0;//(data.greenMultiplier == null ? 1 : data.greenMultiplier);
+				newTransform.blueMultiplier = 0;//(data.blueMultiplier == null ? 1 : data.blueMultiplier);
+				newTransform.redOffset = color.red*data.tintMultiplier;
+				newTransform.greenOffset = color.green * data.tintMultiplier;//(data.greenMultiplier == null ? 1 : data.greenMultiplier);
+				newTransform.blueOffset = color.blue * data.tintMultiplier;//(data.blueMultiplier == null ? 1 : data.blueMultiplier);
+			}
+			
 		}
 		transform.colorTransform = newTransform;
+		
 	}
 
 	private function setLoop(data:String):Void {

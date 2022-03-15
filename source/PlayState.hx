@@ -63,7 +63,7 @@ import llua.State;
 import llua.LuaL;
 #end
 import sys.io.File;
-
+import animateatlas.AtlasFrameMaker;
 using StringTools;
 class PlayState extends MusicBeatState
 {
@@ -133,6 +133,8 @@ class PlayState extends MusicBeatState
 	private var previousHealth:Float = 1;
 	private var combo:Int = 0;
 	private var highestCombo:Int = 0;
+	private var assetSuffix:String = '';
+	private var assetPrefix:String = '';
 
 	private var healthBarBG:FlxSprite;
 	private var healthBar:FlxBar;
@@ -150,7 +152,9 @@ class PlayState extends MusicBeatState
 	public var botplayHoldTimes:Array<Float> = [0,0,0,0];
 	public var botplayHoldMaxTimes:Array<Float> = [0,0,0,0];
 	public var hasDialogue:Bool = false;
+	public var hasEndDialogue:Bool = false;
 	public var dadaltAnim:String = "";
+	public var bfaltAnim:String = "";
 
 	public var camZoomTween:FlxTween;
 	public var camBoomTween:FlxTween;
@@ -188,6 +192,7 @@ class PlayState extends MusicBeatState
 	];
 	var lua:LuaVM;
 
+				var lighting:FlxSprite;
 	var dialogue:Array<String> = ['blah blah blah', 'coolswag'];
 
 	var halloweenBG:FlxSprite;
@@ -202,7 +207,7 @@ class PlayState extends MusicBeatState
 	var vcrDistortionGame:VCRDistortionEffect;
 	var phillyTrain:FlxSprite;
 	var trainSound:FlxSound;
-
+	var doof:DialogueBox;
 	var limo:FlxSprite;
 	var grpLimoDancers:FlxTypedGroup<BackgroundDancer>;
 	var fastCar:FlxSprite;
@@ -266,10 +271,14 @@ class PlayState extends MusicBeatState
 	public var ponyvilleBG:FlxSprite;
 	public var daInst:openfl.media.Sound;
 	public var camBoomSpeed:Int = 4;
+	public var SKY:FlxSprite;
 	//public var daVoices:openfl.media.Sound;
 
 	var inCutscene:Bool = false;
-
+	var cloudo1:FlxSprite;
+	var cloudo2:FlxSprite;
+	var cloudo3:FlxSprite;
+	var cloudo4:FlxSprite;
 	#if desktop
 	// Discord RPC variables
 	var storyDifficultyText:String = "";
@@ -383,6 +392,15 @@ class PlayState extends MusicBeatState
 				} catch(e){
 					trace("epic style " + e.message);
 				}
+				try {
+					
+					
+					
+					hasEndDialogue = FileSystem.exists(Paths.txt(SONG.song.toLowerCase() + "/dialogueEnd" + (isPony?"-pony":"")));
+					trace(Paths.txt(SONG.song.toLowerCase() + "/dialogueEnd" + (isPony?"-pony":"")));
+				} catch(e){
+					trace("epic style " + e.message);
+				}
 		}
 
 		#if desktop
@@ -448,8 +466,16 @@ class PlayState extends MusicBeatState
 		                  curStage = 'ponyville';
 		                  defaultCamZoom = 0.9;
 		                  
-						  addSprite( -364.05, -376, "pinkie/skyy", 0);
+						 SKY = addSprite( -364.05, -376, "pinkie/skyy", 0);
 						  addSprite( -169.5, -130, "pinkie/clouds", 0.1);
+						  lighting = addSprite( 62.95, -809, "pinkie/lightning", 1);
+				lighting.alpha = 0;
+				cloudo1 = addAnimPrefix( 355.3, 89.5, "pinkie/discord/cottoncloud1","cottoncloud1",0.2);
+				cloudo2 = addAnimPrefix( 894.65, -38.05, "pinkie/discord/cottoncloud2","cottoncloud2",0.6);
+				cloudo3 = addAnimPrefix( -148.6, -103.5, "pinkie/discord/cottoncloud3", "cottoncloud3", 0.7);
+				cloudo1.alpha = 0;
+				cloudo2.alpha = 0;
+				cloudo3.alpha = 0;
 						  addSprite( 143.4, -291, "pinkie/backhouses", 0.5);
 						  addSprite( -646, -502, "pinkie/house2", 0.7);
 						  addSprite( 455.8, -526, "pinkie/house", 0.9);
@@ -507,11 +533,10 @@ class PlayState extends MusicBeatState
 						  camHUD.scroll.y -= 150;
 						}
 					case "discord":
-						if (SONG.noBG != true){
+						//if (SONG.noBG != true){
 		                  curStage = 'discord';
 		                  defaultCamZoom = 0.7;
 						  
-						  ponyvilleBG = addSprite( -908.45, -125.35, "pinkie/bg");
 		                 // bgColor = 0xFFA2E9AD;
 				addSprite( -908.45, -125.35, "pinkie/discord/hills",0.2);
 				addSprite( -378.85, -879.85, "pinkie/discord/bigcloud",0.25);
@@ -530,13 +555,14 @@ class PlayState extends MusicBeatState
 				floatShits.push(addSprite( 575.2, -210.15, "pinkie/discord/floathouse",0.4));
 				floatShits.push(addSprite( 1106.15, -553.45, "pinkie/discord/citthall",0.5));
 				
+						  ponyvilleBG = addSprite( -908.45, -125.35, "pinkie/bg");
 				addAnimPrefix( 894.65, -38.05, "pinkie/discord/cottoncloud2","cottoncloud2",0.6);
 				addAnimPrefix( -148.6, -103.5, "pinkie/discord/cottoncloud3","cottoncloud3",0.7);
 				
 				addSprite( -447.8, 355.05, "pinkie/discord/discordground", 1);
 				
 				
-						}
+						//}
 						  
 					  
 		          default:
@@ -722,7 +748,7 @@ class PlayState extends MusicBeatState
 		add(dad);
 		add(boyfriend);
 
-		var doof:DialogueBox = new DialogueBox(false, dialogue);
+		doof = new DialogueBox(false, dialogue);
 		// doof.x += 70;
 		// doof.y = FlxG.height * 0.5;
 		doof.scrollFactor.set();
@@ -901,6 +927,7 @@ class PlayState extends MusicBeatState
 			lua.setGlobalVar("XY","XY");
 			lua.setGlobalVar("X","X");
 			lua.setGlobalVar("Y","Y");
+			lua.setGlobalVar("version",SONG.version);
 
 			Lua_helper.add_callback(lua.state,"skipCountdown", function(){
 				skipCountdown = true;
@@ -926,6 +953,10 @@ class PlayState extends MusicBeatState
 			});
 			Lua_helper.add_callback(lua.state,"playSound", function(snd:String,vol:Float=1,loop:Bool=false){
 				FlxG.sound.play(Paths.sound(snd),vol,loop);
+			});
+			Lua_helper.add_callback(lua.state, "endSong", function(){
+				KillNotes();
+				endSong();
 			});
 			Lua_helper.add_callback(lua.state, "setCamPos", function(xx:Float=0, yy:Float=0){
 				anotherPoint = true;
@@ -1009,6 +1040,44 @@ class PlayState extends MusicBeatState
 				beatCam(z1,z2);
 			});
 
+			
+			
+			
+			
+		Lua_helper.add_callback(lua.state, "getClassVar", function(classVar:String, variable:String) {
+			var killMe:Array<String> = variable.split('.');
+			if(killMe.length > 1) {
+				var coverMeInPiss:Dynamic = Reflect.getProperty(Type.resolveClass(classVar), killMe[0]);
+				for (i in 1...killMe.length-1) {
+					coverMeInPiss = Reflect.getProperty(coverMeInPiss, killMe[i]);
+				}
+				return Reflect.getProperty(coverMeInPiss, killMe[killMe.length-1]);
+			}
+			return Reflect.getProperty(Type.resolveClass(classVar), variable);
+		});
+		Lua_helper.add_callback(lua.state, "setClassVar", function(classVar:String, variable:String, value:Dynamic) {
+			var killMe:Array<String> = variable.split('.');
+			if(killMe.length > 1) {
+				var coverMeInPiss:Dynamic = Reflect.getProperty(Type.resolveClass(classVar), killMe[0]);
+				for (i in 1...killMe.length-1) {
+					coverMeInPiss = Reflect.getProperty(coverMeInPiss, killMe[i]);
+				}
+				return Reflect.setProperty(coverMeInPiss, killMe[killMe.length-1], value);
+			}
+			return Reflect.setProperty(Type.resolveClass(classVar), variable, value);
+		});
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			/*
 			Lua_helper.add_callback(lua.state,"newShader", function(shaderType:String, ?shaderName:String){
 				var shader:Any;
@@ -1183,7 +1252,9 @@ class PlayState extends MusicBeatState
 					if (hasDialogue){
 						dialogueText(doof);
 					}else{
+						new FlxTimer().start(0.5,function(e:FlxTimer){
 						startCountdown();
+						});
 					}
 			}
 		}
@@ -1192,10 +1263,13 @@ class PlayState extends MusicBeatState
 			switch (curSong.toLowerCase())
 			{
 				case 'smile-hd':
-					
-					startCountdown();
+					new FlxTimer().start(0.5,function(e:FlxTimer){
+						startCountdown();
+						});
 				default:
-					startCountdown();
+					new FlxTimer().start(0.5,function(e:FlxTimer){
+						startCountdown();
+						});
 			}
 		}
 
@@ -1425,8 +1499,40 @@ class PlayState extends MusicBeatState
 		});
 	}
 
+	
+	
+	
+	
+	public function KillNotes(skipping:Bool = false) {
+		
+		if (skipping){
+			
+		}
+		
+		
+		while(hittableNotes.length > 0) {
+			var daNote:Note = hittableNotes[0];
+			daNote.active = false;
+			daNote.visible = false;
+
+			daNote.kill();
+			hittableNotes.remove(daNote);
+			daNote.destroy();
+		}
+		unspawnNotes = [];
+	}
+	
+	
+	
+	
+	
+	
 	var startTimer:FlxTimer;
 	var perfectMode:Bool = false;
+	
+	
+	
+	
 	function startCountdown():Void
 	{
 		inCutscene = false;
@@ -1453,7 +1559,7 @@ class PlayState extends MusicBeatState
 				lua.call("beatHit",[0]);
 			}
 			var introAssets:Map<String, Array<String>> = new Map<String, Array<String>>();
-			introAssets.set('default', ['ready', "set", "go"]);
+			introAssets.set('default', [assetPrefix+'ready'+assetSuffix, assetPrefix+"set"+assetSuffix, assetPrefix+"go"+assetSuffix]);
 			introAssets.set('school', ['weeb/pixelUI/ready-pixel', 'weeb/pixelUI/set-pixel', 'weeb/pixelUI/date-pixel']);
 			introAssets.set('schoolEvil', ['weeb/pixelUI/ready-pixel', 'weeb/pixelUI/set-pixel', 'weeb/pixelUI/date-pixel']);
 
@@ -1473,7 +1579,7 @@ class PlayState extends MusicBeatState
 
 			{
 				case 0:
-					FlxG.sound.play(Paths.sound('intro3'), 0.6);
+					FlxG.sound.play(Paths.sound(assetPrefix+'intro3'+assetSuffix), 0.6);
 				case 1:
 					var ready:FlxSprite = new FlxSprite().loadGraphic(Paths.image(introAlts[0]));
 					ready.scrollFactor.set();
@@ -1491,7 +1597,7 @@ class PlayState extends MusicBeatState
 							ready.destroy();
 						}
 					});
-					FlxG.sound.play(Paths.sound('intro2'), 0.6);
+					FlxG.sound.play(Paths.sound(assetPrefix+'intro2'+assetSuffix), 0.6);
 				case 2:
 					var set:FlxSprite = new FlxSprite().loadGraphic(Paths.image(introAlts[1]));
 					set.scrollFactor.set();
@@ -1509,7 +1615,7 @@ class PlayState extends MusicBeatState
 							set.destroy();
 						}
 					});
-					FlxG.sound.play(Paths.sound('intro1'), 0.6);
+					FlxG.sound.play(Paths.sound(assetPrefix+'intro1'+assetSuffix), 0.6);
 				case 3:
 					if(!skipCountdown){
 						var go:FlxSprite = new FlxSprite().loadGraphic(Paths.image(introAlts[2]));
@@ -1530,7 +1636,7 @@ class PlayState extends MusicBeatState
 								go.destroy();
 							}
 						});
-						FlxG.sound.play(Paths.sound('introGo'), 0.6);
+						FlxG.sound.play(Paths.sound(assetPrefix+'introGo'+assetSuffix), 0.6);
 				}
 				case 4:
 			}
@@ -2208,7 +2314,7 @@ class PlayState extends MusicBeatState
 		else
 		{
 			// Conductor.songPosition = FlxG.sound.music.time;
-			Conductor.songPosition += FlxG.elapsed * 1000;
+			if(!endingSong)Conductor.songPosition += FlxG.elapsed * 1000;
 			if(Conductor.songPosition>=vocals.length){
 				dontSync=true;
 				vocals.volume=0;
@@ -2672,8 +2778,14 @@ class PlayState extends MusicBeatState
 		
 		
 		
-		if (FlxG.keys.justPressed.ONE)
-			endSong();
+		if (FlxG.keys.justPressed.ONE){
+			KillNotes();
+			FlxG.sound.music.time = FlxG.sound.music.length;
+		}
+		if (FlxG.keys.justPressed.TWO){
+			KillNotes();
+			FlxG.sound.music.time = FlxG.sound.music.length;
+		}
 		
 	}
 	function cameraShits(bf:Bool){
@@ -2748,13 +2860,13 @@ class PlayState extends MusicBeatState
 	}
 	function endSong():Void
 	{
+		endingSong = true;
 		TitleState.curDir = "assets";
 		Paths.imgCache.clear();
 		canPause = false;
 		FlxG.sound.music.volume = 0;
 		vocals.volume = 0;
 		FlxG.sound.music.stop();
-
 		#if windows
 		if(lua!=null){
 			lua.destroy();
@@ -2770,66 +2882,154 @@ class PlayState extends MusicBeatState
 
 		if (isStoryMode)
 		{
-			campaignScore += songScore;
+			
+			
+			if (hasEndDialogue){
+				
+				try {
+					dialogue = CoolUtil.coolTextFile(Paths.txt(SONG.song.toLowerCase() + "/dialogueEnd"+(isPony?"-pony":"")));
+					hasEndDialogue = false;
 
-			storyPlaylist.remove(storyPlaylist[0]);
-
-			if (storyPlaylist.length <= 0)
-			{
-
-				FlxG.sound.playMusic(Paths.music('freakyMenu'));
-
-				transIn = FlxTransitionableState.defaultTransIn;
-				transOut = FlxTransitionableState.defaultTransOut;
-
-				FlxG.switchState(new HahaState());
-				Cache.Clear();
-
-				// if ()
-				StoryMenuState.weekUnlocked[Std.int(Math.min(storyWeek + 1, StoryMenuState.weekUnlocked.length - 1))] = true;
-
-				if (SONG.validScore)
-				{
-					//NGio.unlockMedal(60961);
-					Highscore.saveWeekScore(storyWeek, campaignScore, storyDifficulty);
+		doof = new DialogueBox(false, dialogue);
+		// doof.x += 70;
+		// doof.y = FlxG.height * 0.5;
+		doof.scrollFactor.set();
+		doof.cameras = [camHUD];
+					if (SONG.song.toLowerCase() == 'fun'){
+						doof.finishThing = function(){
+								FlxTween.tween(camHUD, {alpha: 0}, 0.4);
+							trace(Conductor.songPosition);
+						camFollow.x = dad.getMidpoint().x ;
+				cloudo4 = addAnimPrefix( 300, -203.5, "pinkie/discord/cottoncloud3", "cottoncloud3", 1);
+				cloudo4.alpha = 0;
+				
+				var discord = addAnimPrefix( -22.95, -809, "pinkie/discordEnter", "discordEnter", 1,false);
+				discord.visible = false;
+							dad.playAnim('lookback');
+								FlxTween.tween(cloudo1, {alpha: 1}, 1);
+								FlxTween.tween(cloudo2, {alpha: 1}, 1);
+								FlxTween.tween(cloudo3, {alpha: 1}, 1);
+								FlxTween.tween(cloudo4, {alpha: 1}, 0.2);
+								
+								
+								
+								
+							new FlxTimer().start(0.2, function(e:FlxTimer){
+								FlxG.sound.play(Paths.sound('ENTER_DISCORD'),1,false);
+								FlxTween.tween(camFollow, {y: -240}, 2,{ease:FlxEase.sineInOut});
+								FlxTween.tween(camGame, {zoom: 0.8}, 1.3);
+								FlxTween.tween(instance, {defaultCamZoom: 0.8}, 1.3);
+								
+								
+								
+								new FlxTimer().start(2, function(e:FlxTimer){
+									FlxTween.tween(camGame, {zoom: 1.1}, 2);
+									FlxTween.tween(instance, {defaultCamZoom: 1.1}, 3);
+									FlxTween.tween(SKY, {alpha: 0.4}, 2);
+								});
+								
+								
+								new FlxTimer().start(4.5, function(e:FlxTimer){
+									camGame.flash();
+									discord.visible = true;
+									discord.animation.play('discordEnter');
+									FlxG.sound.play(Paths.sound('discorddrink'),1,false);
+									FlxTween.tween(instance, {defaultCamZoom: 0.8}, 0.3, {ease:FlxEase.circOut});
+									FlxTween.tween(camGame, {zoom:  0.8}, 0.3, {ease:FlxEase.circOut});
+								new FlxTimer().start(1.4, function(e:FlxTimer){
+									lighting.alpha = 1;
+									SKY.alpha = 0;
+									FlxTween.tween(SKY, {alpha: 0.4}, 1);
+									FlxTween.tween(lighting, {alpha: 0}, 1, {ease:FlxEase.linear});
+									FlxG.sound.play(Paths.sound('lightning'));
+									
+								});
+								new FlxTimer().start(5, function(e:FlxTimer){
+									
+									endSong();
+									
+								});
+									
+								});
+								
+								
+								
+							});
+								
+						};
+					}else{
+					doof.finishThing = endSong;
+					}
+		
+					dialogueText(doof);
+					trace(dialogue);
+					
+				} catch(e){
+					trace("epic style " + e.message);
 				}
+			}else{
+				trace('idfhuidhfjidjfidfijdifjdf');
+				campaignScore += songScore;
 
-				FlxG.save.data.weekUnlocked = StoryMenuState.weekUnlocked;
-				FlxG.save.flush();
-			}
-			else
-			{
-				var difficulty:String = "";
+				storyPlaylist.remove(storyPlaylist[0]);
 
-				if (storyDifficulty == 0)
-					difficulty = '-easy';
-
-				if (storyDifficulty == 2)
-					difficulty = '-hard';
-
-				trace('LOADING NEXT SONG');
-				trace(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
-
-				if (SONG.song.toLowerCase() == 'eggnog')
+				if (storyPlaylist.length <= 0)
 				{
-					var blackShit:FlxSprite = new FlxSprite(-FlxG.width * FlxG.camera.zoom,
-						-FlxG.height * FlxG.camera.zoom).makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
-					blackShit.scrollFactor.set();
-					add(blackShit);
-					camHUD.visible = false;
 
-					FlxG.sound.play(Paths.sound('Lights_Shut_off'));
+					FlxG.sound.playMusic(Paths.music('freakyMenu'));
+
+					transIn = FlxTransitionableState.defaultTransIn;
+					transOut = FlxTransitionableState.defaultTransOut;
+
+					//FlxG.switchState(new HahaState());
+					Cache.Clear();
+
+					// if ()
+					StoryMenuState.weekUnlocked[Std.int(Math.min(storyWeek + 1, StoryMenuState.weekUnlocked.length - 1))] = true;
+
+					if (SONG.validScore)
+					{
+						//NGio.unlockMedal(60961);
+						Highscore.saveWeekScore(storyWeek, campaignScore, storyDifficulty);
+					}
+
+					FlxG.save.data.weekUnlocked = StoryMenuState.weekUnlocked;
+					FlxG.save.flush();
 				}
+				else
+				{
+					var difficulty:String = "";
 
-				FlxTransitionableState.skipNextTransIn = true;
-				FlxTransitionableState.skipNextTransOut = true;
-				prevCamFollow = camFollow;
+					if (storyDifficulty == 0)
+						difficulty = '-easy';
 
-				PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
-				FlxG.sound.music.stop();
+					if (storyDifficulty == 2)
+						difficulty = '-hard';
 
-				LoadingState.loadAndSwitchState(new PlayState());
-				Cache.Clear();
+					trace('LOADING NEXT SONG');
+					trace(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
+
+					if (SONG.song.toLowerCase() == 'eggnog')
+					{
+						var blackShit:FlxSprite = new FlxSprite(-FlxG.width * FlxG.camera.zoom,
+							-FlxG.height * FlxG.camera.zoom).makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
+						blackShit.scrollFactor.set();
+						add(blackShit);
+						camHUD.visible = false;
+
+						FlxG.sound.play(Paths.sound('Lights_Shut_off'));
+					}
+
+					FlxTransitionableState.skipNextTransIn = true;
+					FlxTransitionableState.skipNextTransOut = true;
+					prevCamFollow = camFollow;
+
+					PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
+					FlxG.sound.music.stop();
+
+					LoadingState.loadAndSwitchState(new PlayState());
+					Cache.Clear();
+				}
 			}
 		}
 		else
@@ -2884,20 +3084,21 @@ class PlayState extends MusicBeatState
 			pixelShitPart2 = '-pixel';
 		}
 
-		rating.loadGraphic(Paths.image(pixelShitPart1 + daRating + pixelShitPart2));
+		rating.loadGraphic(Paths.image(assetPrefix+pixelShitPart1 + daRating + pixelShitPart2+assetSuffix));
 		rating.screenCenter();
 		rating.x = coolText.x - 40;
 		rating.y -= 60;
 		rating.acceleration.y = 550;
 		rating.velocity.y -= FlxG.random.int(140, 175);
 		rating.velocity.x -= FlxG.random.int(0, 10);
-
-		var comboSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'combo' + pixelShitPart2));
+		rating.cameras = [camHUD];
+		var comboSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image(assetPrefix+pixelShitPart1 + 'combo' + pixelShitPart2+assetSuffix));
 		comboSpr.screenCenter();
 		comboSpr.x = coolText.x;
 		comboSpr.acceleration.y = 600;
 		comboSpr.velocity.y -= 150;
 		comboSpr.velocity.x += FlxG.random.int(1, 10);
+		comboSpr.cameras = [camHUD];
 		add(rating);
 
 		if (!curStage.startsWith('school'))
@@ -3723,20 +3924,20 @@ class PlayState extends MusicBeatState
 		return sprite;
 	}
 	
-	public function addAnimPrefix(x,y,path:String,prefix:String,scrollFactor:Float=1):FlxSprite{
+	public function addAnimPrefix(x,y,path:String,prefix:String,scrollFactor:Float=1,loop:Bool=true):FlxSprite{
 		var sprite:FlxSprite = new FlxSprite(x, y);
 		sprite.frames = Paths.getSparrowAtlas(path, "shared");
-		sprite.animation.addByPrefix(prefix,prefix,24);
+		sprite.animation.addByPrefix(prefix,prefix,24,loop);
 		sprite.animation.play(prefix);
 		sprite.antialiasing = true;
 		sprite.scrollFactor.set(scrollFactor, scrollFactor);
 		add(sprite);
 		return sprite;
 	}
-	public function addAnimIndices(x,y,path:String,prefix:String,indices:Array<Int>,scrollFactor:Float=1):FlxSprite{
+	public function addAnimIndices(x,y,path:String,prefix:String,indices:Array<Int>,scrollFactor:Float=1,loop:Bool=true):FlxSprite{
 		var sprite:FlxSprite = new FlxSprite(x, y);
 		sprite.frames = Paths.getSparrowAtlas(path, "shared");
-		sprite.animation.addByIndices(prefix, prefix, indices, "", 24);
+		sprite.animation.addByIndices(prefix, prefix, indices, "", 24,loop);
 		sprite.animation.play(prefix);
 		sprite.antialiasing = true;
 		sprite.scrollFactor.set(scrollFactor, scrollFactor);
@@ -3845,7 +4046,7 @@ class PlayState extends MusicBeatState
 
 		if (!boyfriend.animation.curAnim.name.startsWith("sing") && !boyfriend.animation.curAnim.name.startsWith("hey"))
 		{
-			if(!boyfriend.disabledDance)boyfriend.playAnim('idle',true);
+			if(!boyfriend.disabledDance)boyfriend.dance(bfaltAnim);
 		}
 
 		if (curBeat % 8 == 7 && curSong == 'Bopeebo')

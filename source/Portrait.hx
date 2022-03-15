@@ -63,7 +63,7 @@ class Portrait extends FlxSprite
 					var thing = i.split(":");
 							//trace("DATA: " + thing);
 				var loop = true;
-					
+					if (thing[3] != null) loop = thing[3] == 'true';
 					switch(thing[0]){
 						case "indices":
 							var framess = thing[2].split(",");//gets array

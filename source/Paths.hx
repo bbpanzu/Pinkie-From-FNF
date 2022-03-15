@@ -92,9 +92,12 @@ class Paths
 		return getPath('data/$key.json', TEXT, library);
 	}
 
-	static public function sound(key:String, ?library:String)
+	static public function sound(key:String, ?library:String):Any
 	{
-		
+		var file:Sound = returnSongFile(TitleState.curDir+"/sounds/"+key+'.ogg');
+		if(file != null) {
+			return file;
+		}
 		
 		
 		return getPath('sounds/$key.$SOUND_EXT', SOUND, library);
@@ -105,8 +108,13 @@ class Paths
 		return sound(key + FlxG.random.int(min, max), library);
 	}
 
-	inline static public function music(key:String, ?library:String)
+	inline static public function music(key:String, ?library:String):Any
 	{
+		var file:Sound = returnSongFile(TitleState.curDir+"/music/"+key+'.ogg');
+		if(file != null) {
+			return file;
+		}
+		
 		return getPath('music/$key.$SOUND_EXT', MUSIC, library);
 	}
 
@@ -151,10 +159,22 @@ class Paths
 		return getPath('data/$song/modchart.lua',TEXT,library);
 	}
 
-	inline static public function image(key:String, ?library:String)
+	inline static public function image(key:String, ?library:String):Any
 	{
 		
+		var file:BitmapData=null;
 		
+		if (TitleState.curDir != 'assets'){
+			file = BitmapData.fromFile(TitleState.curDir + "/images/" + key + ".png");
+		}
+		
+		//trace(TitleState.curDir + "/images/" + key, FileSystem.exists(TitleState.curDir + "/images/" + key+".png"));
+		if(file != null) {
+			return file;
+		}
+		
+		
+		//trace(key);
 		return getPath('images/$key.png', IMAGE, library);
 	}
 

@@ -10,3 +10,4 @@ prefix howdy 24 pinkie howdy
 prefix whatsup 24 pinkie whatsup
 prefix duck 24 pinkie duck
 prefix fall 24 pinkie fall
+prefix lookback 24 pinkie lookback

@@ -25,7 +25,6 @@ typedef AtlasData = {
 		format:String,
 		size:{w:Int, h:Int},
 		scale:String,
-		resolution:String,
 	}
 }
 
@@ -83,6 +82,7 @@ typedef SymbolInstanceData = {
 
 	?loop:String,
 	firstFrame:Int,
+	?filters:FilterData
 }
 
 typedef ColorData = {
@@ -95,7 +95,9 @@ typedef ColorData = {
 	?redOffset:Float,
 	?greenOffset:Float,
 	?blueOffset:Float,
-	?AlphaOffset:Float
+	?AlphaOffset:Float,
+	?tintColor:String,
+	?tintMultiplier:Float
 }
 
 typedef BitmapPosData = {
@@ -125,6 +127,27 @@ typedef Matrix3DData = {
 	m31:Float,
 	m32:Float,
 	m33:Float,
+}
+//tryna add more support gimme a sec
+typedef FilterData = {
+	?BlurFilter: {
+		blurX:Float,
+		blurY:Float,
+		quality:Int
+		},
+	
+	?GlowFilter: {
+		blurX: Float,
+		blurY: Float,
+		color: Int,
+		alpha: Int,
+		quality: Int,
+		strength: Int,
+		knockout: Bool,
+		inner: Bool
+	}
+
+
 }
 
 typedef Decomposed3DData = {

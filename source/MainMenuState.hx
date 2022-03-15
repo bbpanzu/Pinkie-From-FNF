@@ -23,7 +23,7 @@ import flixel.util.FlxTimer;
 import Options;
 class MainMenuState extends MusicBeatState
 {
-	var curSelected:Int = 1;
+	static var curSelected:Int = 1;
 	var india:Bool = false;
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
@@ -130,7 +130,7 @@ Conductor.changeBPM(110);
 				},0);
 		// NG.core.calls.event.logEvent('swag').send();
 
-		changeItem();
+		changeItem(curSelected);
 
 		doof.finishThing = playmus;
 		doof.scrollFactor.set();

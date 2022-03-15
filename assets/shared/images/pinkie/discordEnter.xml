@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="discordEnter.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="discordEnter0000" x="5976" y="932" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0001" x="5976" y="932" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0002" x="5976" y="932" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0003" x="5976" y="932" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0004" x="5976" y="932" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0005" x="5976" y="932" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0006" x="4790" y="974" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0007" x="1196" y="979" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0008" x="2359" y="979" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0009" x="3522" y="979" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0010" x="0" y="985" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0011" x="5953" y="1796" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0012" x="4685" y="1838" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0013" x="1163" y="1843" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0014" x="2326" y="1843" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0015" x="3489" y="1843" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0016" x="0" y="1849" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0017" x="5848" y="2660" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0018" x="7011" y="2660" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0019" x="4652" y="2702" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0020" x="1163" y="2707" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0021" x="2326" y="2707" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0022" x="2326" y="2707" width="1161" height="862" frameX="-15" frameY="-215" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0023" x="3489" y="2707" width="1156" height="846" frameX="-14" frameY="-219" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0024" x="3489" y="2707" width="1156" height="846" frameX="-14" frameY="-219" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0025" x="5976" y="0" width="1158" height="930" frameX="0" frameY="-60" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0026" x="5976" y="0" width="1158" height="930" frameX="0" frameY="-60" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0027" x="4790" y="0" width="1184" height="972" frameX="-8" frameY="-14" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0028" x="4790" y="0" width="1184" height="972" frameX="-8" frameY="-14" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0029" x="0" y="0" width="1194" height="983" frameX="-9" frameY="-2" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0030" x="0" y="0" width="1194" height="983" frameX="-9" frameY="-2" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0031" x="1196" y="0" width="1196" height="977" frameX="-8" frameY="0" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0032" x="1196" y="0" width="1196" height="977" frameX="-8" frameY="0" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0033" x="2394" y="0" width="1196" height="977" frameX="-8" frameY="0" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0034" x="2394" y="0" width="1196" height="977" frameX="-8" frameY="0" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0035" x="3592" y="0" width="1196" height="977" frameX="-8" frameY="0" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0036" x="3592" y="0" width="1196" height="977" frameX="-8" frameY="0" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0037" x="3592" y="0" width="1196" height="977" frameX="-8" frameY="0" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0038" x="3592" y="0" width="1196" height="977" frameX="-8" frameY="0" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0039" x="3592" y="0" width="1196" height="977" frameX="-8" frameY="0" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0040" x="3592" y="0" width="1196" height="977" frameX="-8" frameY="0" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0041" x="3592" y="0" width="1196" height="977" frameX="-8" frameY="0" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0042" x="3592" y="0" width="1196" height="977" frameX="-8" frameY="0" frameWidth="1204" frameHeight="1077"/>
+	<SubTexture name="discordEnter0043" x="3592" y="0" width="1196" height="977" frameX="-8" frameY="0" frameWidth="1204" frameHeight="1077"/>
+</TextureAtlas>

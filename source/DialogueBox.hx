@@ -89,7 +89,7 @@ class DialogueBox extends FlxSpriteGroup
 
 	
 	var canAdvance = false;
-	var canSkip = true;
+	var canSkip = false;
 	var inAutoText:Bool = false;
 	
 	var timeBeforeSkip:FlxTimer;
@@ -306,22 +306,22 @@ class DialogueBox extends FlxSpriteGroup
 	
 	var isEnding:Bool = false;
 
-	function endDialogue(){
+	function endDialogue(speed = 1.2){
 
 
 		hideAll();
 		if (this.sound != null) this.sound.stop();
-		FlxTween.tween(box, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(bgFade, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(cutsceneImage, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(swagDialogue, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(blackBG, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(dropText, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(skipText, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		if(fadeMusic)FlxG.sound.music.fadeOut(1.2, 0);
+		FlxTween.tween(box, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(bgFade, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(cutsceneImage, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(swagDialogue, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(blackBG, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(dropText, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(skipText, {alpha: 0}, speed, {ease: FlxEase.linear});
+		if(fadeMusic)FlxG.sound.music.fadeOut(speed, 0);
 
 
-		new FlxTimer().start(1.2, function(tmr:FlxTimer)
+		new FlxTimer().start(speed, function(tmr:FlxTimer)
 		{
 			finishThing();
 			kill();
@@ -360,6 +360,8 @@ class DialogueBox extends FlxSpriteGroup
 				case "hideCharacters":
 					skipDialogue = true;
 					hideAll();
+				case "fastEnd":
+					endDialogue(0.01);
 				case "hideBox":
 					wasHidden = true;
 					skipDialogue = true;
@@ -451,7 +453,7 @@ class DialogueBox extends FlxSpriteGroup
 						case "stop":
 							this.sound.stop();
 						default:
-						sound = new FlxSound().loadEmbedded(Sound.fromFile("assets/sounds/" + curAnim + ".ogg"));
+						sound = new FlxSound().loadEmbedded(Paths.sound(curAnim));
 						sound.play();
 						this.sound.looped = (Std.parseInt(dialogueList[0]) == 1);
 					}

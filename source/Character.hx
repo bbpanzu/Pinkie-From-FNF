@@ -9,7 +9,7 @@ import flash.display.BitmapData;
 import openfl.Assets;
 import sys.FileSystem;
 import sys.io.File;
-
+import animateatlas.AtlasFrameMaker;
 using StringTools;
 
 class Character extends FlxSprite
@@ -456,19 +456,6 @@ class Character extends FlxSprite
 
 				antialiasing = false;
 				
-			case 'discord-atlas':
-				
-				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_assets');
-				animation.addByIndices('idle', "idle",numArr(0,14),"", 24, false);
-				animation.addByIndices('new_scene', "new_scene",numArr(15,140),"", 24, false);
-				animation.addByIndices('gofast', "gofast",numArr(191,280),"", 24, false);
-
-				//loadOffsets();
-unintAnims = ["new_scene", "gofast"];
-				playAnim('idle');
-
-				antialiasing = false;
-
 			case 'parents-christmas':
 				frames = Paths.getSparrowAtlas('characters/mom_dad_christmas_assets');
 				animation.addByPrefix('idle', 'Parent Christmas Idle', 24, false);
@@ -486,6 +473,30 @@ unintAnims = ["new_scene", "gofast"];
 				loadOffsets();
 
 				playAnim('idle');
+				
+				
+			case 'discord-atlas':
+				
+				frames = AtlasFrameMaker.construct('shared:assets/shared/images/characters/discord_assets');
+				animation.addByIndices('idle', "idle",numArr(0,14),"", 24, false);
+
+				//loadOffsets();
+				unintAnims = ["new_scene"];
+				playAnim('idle');
+
+				antialiasing = false;
+
+			case 'discord-atlas_newscene':
+				
+				frames = AtlasFrameMaker.construct('shared:assets/shared/images/characters/discord_newscene');
+				animation.addByPrefix('idle', "idle", 24, false);
+				animation.addByPrefix('newscene', "newscene", 24, false);
+
+				//loadOffsets();
+				unintAnims = ["new_scene"];
+				playAnim('newscene');
+
+				antialiasing = false;
 		default:
 			var xmlData:String = '';
 			/*if(Cache.xmlData[curCharacter]!=null){
@@ -515,7 +526,7 @@ unintAnims = ["new_scene", "gofast"];
 			
 			
 			
-				if (StringTools.contains(character, '_atlas')){
+				if (StringTools.contains(character, 'atlas')){
 					for (i in balls){
 						var boobs = i + "/shared/images/characters/" + curCharacter + "/spritemap.png";
 						trace(boobs);
@@ -556,7 +567,6 @@ unintAnims = ["new_scene", "gofast"];
 						frames = FlxAtlasFrames.fromSparrow(getbmp(curCharacter),File.getContent(path));
 						Cache.charFrames[curCharacter]=frames;
 					}
-			
 			}
 			
 			FlxG.bitmap.dumpCache();
@@ -699,7 +709,7 @@ unintAnims = ["new_scene", "gofast"];
 					camOffset[1] = Std.parseInt(c[1]);
 					//camOffset = c;
 				}else if(type.toLowerCase()=='prefix'){
-					animation.addByPrefix(name, stuff.join(" "), fps, false);
+					animation.addByPrefix(name, stuff.join(" "), fps, name.contains('loop_'));
 				}else if(type.toLowerCase()=='indices'){
 					var shit = stuff.join(" ");
 					var indiceShit = shit.split("/")[1];
@@ -708,7 +718,7 @@ unintAnims = ["new_scene", "gofast"];
 					for(i in indiceShit.split(" ")){
 						newArray.push(Std.parseInt(i));
 					};
-					animation.addByIndices(name, prefixShit, newArray, "", fps, false);
+					animation.addByIndices(name, prefixShit, newArray, "", fps, name.contains('loop_'));
 				}
 			}
 		} catch(e:Dynamic) {

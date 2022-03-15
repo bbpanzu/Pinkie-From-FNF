@@ -15,6 +15,7 @@ class MusicBeatState extends FlxUIState
 
 	private var curStep:Int = 0;
 	private var curBeat:Int = 0;
+	public  var stopped:Bool = false;
 	private var controls(get, never):Controls;
 
 	inline function get_controls():Controls

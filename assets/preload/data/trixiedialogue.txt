@@ -1,6 +1,6 @@
 :bg:hidefade:true
 :trixie:default:I got my hands on cool spellbook with window spells.
 :trixie:default:The Great and Powerfull Trixie can transform you into a pony or a human.
-:trixie:magic:
 :autoskip:1:
-:trixie:default:Check it out.
+:trixie:magic:
+:trixie:default:Check it out!

@@ -32,6 +32,7 @@ typedef SwagSong =
 	@:optional var noteskin:String;
 	@:optional var strumskin:String;
 	@:optional var notescale:Float;
+	@:optional var version:Int;
 }
 
 class Song
@@ -51,6 +52,7 @@ class Song
 	public var camBeats:Array<Float>=[];
 	public var player1:String = 'bf';
 	public var player2:String = 'dad';
+	public var version:Int = 1;
 
 	public function new(song, notes, bpm)
 	{
