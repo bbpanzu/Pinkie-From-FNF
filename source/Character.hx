@@ -477,26 +477,68 @@ class Character extends FlxSprite
 				
 			case 'discord-atlas':
 				
-				frames = AtlasFrameMaker.construct('shared:assets/shared/images/characters/discord_assets');
-				animation.addByIndices('idle', "idle",numArr(0,14),"", 24, false);
+				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_assets');
+				animation.addByPrefix('idle', "idle", 24, false);
 
 				//loadOffsets();
-				unintAnims = ["new_scene"];
+				unintAnims = ["idle"];
 				playAnim('idle');
 
-				antialiasing = false;
+				antialiasing = true;
 
 			case 'discord-atlas_newscene':
 				
-				frames = AtlasFrameMaker.construct('shared:assets/shared/images/characters/discord_newscene');
+				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_newscene');
 				animation.addByPrefix('idle', "idle", 24, false);
-				animation.addByPrefix('newscene', "newscene", 24, false);
+				animation.addByPrefix('new_scene', "new_scene", 24, false);
 
 				//loadOffsets();
 				unintAnims = ["new_scene"];
-				playAnim('newscene');
+				playAnim('new_scene');
 
-				antialiasing = false;
+				antialiasing = true;
+
+			case 'discord-atlas_gofast':
+				var anim = "gofast";
+				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_'+anim);
+				animation.addByPrefix('idle', "idle", 24, false);
+				animation.addByPrefix(anim, anim, 24, false);
+
+				//loadOffsets();
+				unintAnims = [anim];
+				playAnim(anim);
+
+				antialiasing = true;
+			case 'discord-atlas_stutter':
+				var anim = "stutter";
+				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_'+anim);
+				animation.addByPrefix('idle', "idle", 24, false);
+				animation.addByPrefix(anim, anim, 24, false);
+
+				//loadOffsets();
+				unintAnims = [anim];
+				playAnim(anim);
+
+				antialiasing = true;
+			case 'doxxie':
+				
+				
+				
+			frames = AtlasFrameMaker.construct("assets/shared/images/characters/doxxie_assets");
+			
+			animation.add("idle", [0,1,2,3,4,5,6,7,8,9], 24, false);
+			animation.add("singLEFT", [12,13], 24, false);
+			animation.add("singRIGHT", [16,17], 24, false);
+			animation.add("singDOWN", numArr(20,22), 24, false);
+			animation.add("singUP", numArr(24, 26), 24, false);
+			
+			animation.add("singUP-alt", numArr(27,32), 24, false);
+			animation.add("singLEFT-alt", numArr(27,32), 24, false);
+			animation.add("singDOWN-alt",  numArr(33, 37), 24, false);
+			animation.add("singRIGHT-alt",  numArr(33, 37), 24, false);
+			
+				playAnim('idle');
+			
 		default:
 			var xmlData:String = '';
 			/*if(Cache.xmlData[curCharacter]!=null){

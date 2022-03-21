@@ -9,6 +9,7 @@ import openfl.utils.AssetType;
 import openfl.media.Sound;
 import openfl.utils.Assets as OpenFlAssets;
 import sys.FileSystem;
+import sys.io.File;
 
 using StringTools;
 class Paths
@@ -90,6 +91,12 @@ class Paths
 	{
 		
 		return getPath('data/$key.json', TEXT, library);
+	}
+
+	inline static public function spritejson(key:String, ?library:String)
+	{
+		
+		return getPath('images/$key.json', TEXT, library);
 	}
 
 	static public function sound(key:String, ?library:String):Any
@@ -185,7 +192,7 @@ class Paths
 	
 	
 	
-	static public function getbmp(key:String):FlxGraphic{
+	static public function getbmp(key:String,includePath:Bool=true):FlxGraphic{
 		
 		if (!imgCache.exists(key)){
 			
@@ -194,11 +201,14 @@ class Paths
 			var balls:Array<String> = [TitleState.curDir, "assets"];
 			var foundshit = false;
 			for (i in balls){
-				if(!foundshit){
-					if (FileSystem.exists(i + "/shared/images/" + key + ".png")){
+				if (!foundshit){
+					var tits = "";
+					if(includePath)tits= i.replace('shared:','')  + "/shared/images/";
+						//trace(tits + key + ".png");
+					if (FileSystem.exists(tits + key + ".png")){
 						if(i == "assets")pulllfromAssets = true;
 						foundshit = true;
-						path = i + "/shared/images/" + key + ".png";
+						path = tits + key + ".png";
 						trace(path);
 					}
 				}
@@ -221,6 +231,34 @@ class Paths
 	}
 	
 
+	static public function getTextFile(key:String):String{
+		
+			
+			var path = "";
+			var pulllfromAssets:Bool = false;
+			var balls:Array<String> = [TitleState.curDir, "assets"];
+			var foundshit = false;
+			for (i in balls){
+				if (!foundshit){
+					if (FileSystem.exists(key)){
+						if(i == "assets")pulllfromAssets = true;
+						foundshit = true;
+						path = key;
+						trace(path);
+					}
+				}
+			}
+			
+						trace(TitleState.curDir);
+						trace(pulllfromAssets);
+						var txt:String = '';
+			if (pulllfromAssets){
+				txt = OpenFlAssets.getText("shared:"+path);
+			}else{
+				txt = File.getContent(path);
+			}
+		return txt;
+	}
 	inline static public function getSparrowAtlas(key:String, ?library:String)
 	{
 		

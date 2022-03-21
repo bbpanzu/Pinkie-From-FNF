@@ -2810,8 +2810,10 @@ class PlayState extends MusicBeatState
 						camFollow.x = dad.getMidpoint().x ;
 						camFollow.y = dad.getMidpoint().y ;
 					case 'discord' | 'discord-atlas':
-						camFollow.x = 704;
-						camFollow.y =-572.7;
+					//	camFollow.x = 704;
+						//camFollow.y =-572.7;
+						camFollow.x = dad.getMidpoint().x ;
+						camFollow.y = dad.getMidpoint().y ;
 				}
 				}
 				

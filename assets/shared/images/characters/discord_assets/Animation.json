@@ -86,86 +86,6 @@
                     ]
                 },
                 {
-                    "Layer_name": "armthing",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
-                        }
-                    ]
-                },
-                {
                     "Layer_name": "armr",
                     "Frames": [
                         {
@@ -179,8 +99,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -238,8 +158,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -297,8 +217,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -356,8 +276,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -415,8 +335,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -474,8 +394,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -533,8 +453,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -592,8 +512,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -651,8 +571,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -710,8 +630,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -769,8 +689,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -828,8 +748,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -887,8 +807,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -946,8 +866,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -1005,8 +925,8 @@
                                         "bitmap": {
                                             "name": "0000",
                                             "Position": {
-                                                "x": -1.07374e+08,
-                                                "y": -1.07374e+08
+                                                "x": 0,
+                                                "y": 0
                                             }
                                         },
                                         "symbolType": "movieclip",
@@ -1052,166 +972,6 @@
                                     }
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "Layer_name": "handdoover",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
-                        }
-                    ]
-                },
-                {
-                    "Layer_name": "pawdoover",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
                         }
                     ]
                 },
@@ -2136,86 +1896,6 @@
                     ]
                 },
                 {
-                    "Layer_name": "armbackdoover",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
-                        }
-                    ]
-                },
-                {
                     "Layer_name": "Layer_8",
                     "Frames": [
                         {
@@ -3136,86 +2816,6 @@
                     ]
                 },
                 {
-                    "Layer_name": "headoover",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
-                        }
-                    ]
-                },
-                {
                     "Layer_name": "head",
                     "Frames": [
                         {
@@ -4132,246 +3732,6 @@
                                     }
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "Layer_name": "Layer_11",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
-                        }
-                    ]
-                },
-                {
-                    "Layer_name": "mouth",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
-                        }
-                    ]
-                },
-                {
-                    "Layer_name": "legdoover",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
                         }
                     ]
                 },
@@ -6216,246 +5576,6 @@
                     ]
                 },
                 {
-                    "Layer_name": "Layer_16",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
-                        }
-                    ]
-                },
-                {
-                    "Layer_name": "bodydoover",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
-                        }
-                    ]
-                },
-                {
-                    "Layer_name": "Layer_18",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
-                        }
-                    ]
-                },
-                {
                     "Layer_name": "Layer_19",
                     "Frames": [
                         {
@@ -6469,8 +5589,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -6481,12 +5601,12 @@
                                             "y": 1266.9
                                         },
                                         "Matrix3D": {
-                                            "m00": 1.056,
+                                            "m00": 2.112,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
                                             "m10": 0,
-                                            "m11": 0.990051,
+                                            "m11": 1.9801,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -6510,8 +5630,8 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 1.056,
-                                                "y": 0.990051,
+                                                "x": 2.112,
+                                                "y": 1.9801,
                                                 "z": 1
                                             }
                                         }
@@ -6530,8 +5650,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -6542,12 +5662,12 @@
                                             "y": 1266.9
                                         },
                                         "Matrix3D": {
-                                            "m00": 1.056,
+                                            "m00": 2.112,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
                                             "m10": 0,
-                                            "m11": 0.990051,
+                                            "m11": 1.9801,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -6571,8 +5691,8 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 1.056,
-                                                "y": 0.990051,
+                                                "x": 2.112,
+                                                "y": 1.9801,
                                                 "z": 1
                                             }
                                         }
@@ -6591,8 +5711,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -6603,12 +5723,12 @@
                                             "y": 1266.8
                                         },
                                         "Matrix3D": {
-                                            "m00": 1.02544,
+                                            "m00": 2.05087,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
                                             "m10": 0,
-                                            "m11": 0.995483,
+                                            "m11": 1.99097,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -6632,8 +5752,8 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 1.02544,
-                                                "y": 0.995483,
+                                                "x": 2.05087,
+                                                "y": 1.99097,
                                                 "z": 1
                                             }
                                         }
@@ -6652,8 +5772,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -6664,12 +5784,12 @@
                                             "y": 1266.8
                                         },
                                         "Matrix3D": {
-                                            "m00": 1.02544,
+                                            "m00": 2.05087,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
                                             "m10": 0,
-                                            "m11": 0.995483,
+                                            "m11": 1.99097,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -6693,8 +5813,8 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 1.02544,
-                                                "y": 0.995483,
+                                                "x": 2.05087,
+                                                "y": 1.99097,
                                                 "z": 1
                                             }
                                         }
@@ -6713,8 +5833,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -6725,12 +5845,12 @@
                                             "y": 1266.9
                                         },
                                         "Matrix3D": {
-                                            "m00": 0.994904,
+                                            "m00": 1.98981,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
                                             "m10": 0,
-                                            "m11": 1.00087,
+                                            "m11": 2.00172,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -6754,8 +5874,8 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 0.994904,
-                                                "y": 1,
+                                                "x": 1.98981,
+                                                "y": 2.00172,
                                                 "z": 1
                                             }
                                         }
@@ -6774,8 +5894,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -6786,12 +5906,12 @@
                                             "y": 1266.9
                                         },
                                         "Matrix3D": {
-                                            "m00": 0.994904,
+                                            "m00": 1.98981,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
                                             "m10": 0,
-                                            "m11": 1.00087,
+                                            "m11": 2.00172,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -6815,8 +5935,8 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 0.994904,
-                                                "y": 1,
+                                                "x": 1.98981,
+                                                "y": 2.00172,
                                                 "z": 1
                                             }
                                         }
@@ -6835,8 +5955,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -6847,12 +5967,12 @@
                                             "y": 1266.75
                                         },
                                         "Matrix3D": {
-                                            "m00": 1,
+                                            "m00": 2,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
                                             "m10": 0,
-                                            "m11": 1,
+                                            "m11": 2,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -6876,8 +5996,8 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 1,
-                                                "y": 1,
+                                                "x": 2,
+                                                "y": 2,
                                                 "z": 1
                                             }
                                         }
@@ -6896,8 +6016,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -6908,12 +6028,12 @@
                                             "y": 1266.75
                                         },
                                         "Matrix3D": {
-                                            "m00": 1,
+                                            "m00": 2,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
                                             "m10": 0,
-                                            "m11": 1,
+                                            "m11": 2,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -6937,8 +6057,8 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 1,
-                                                "y": 1,
+                                                "x": 2,
+                                                "y": 2,
                                                 "z": 1
                                             }
                                         }
@@ -6957,8 +6077,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -6969,12 +6089,12 @@
                                             "y": 1266.75
                                         },
                                         "Matrix3D": {
-                                            "m00": 1,
+                                            "m00": 2,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
-                                            "m10": 0.000442505,
-                                            "m11": 1,
+                                            "m10": 0.00088501,
+                                            "m11": 2,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -6998,8 +6118,8 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 1,
-                                                "y": 1,
+                                                "x": 2,
+                                                "y": 2,
                                                 "z": 1
                                             }
                                         }
@@ -7018,8 +6138,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -7030,12 +6150,12 @@
                                             "y": 1266.75
                                         },
                                         "Matrix3D": {
-                                            "m00": 1,
+                                            "m00": 2,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
-                                            "m10": 0.000442505,
-                                            "m11": 1,
+                                            "m10": 0.00088501,
+                                            "m11": 2,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -7059,8 +6179,8 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 1,
-                                                "y": 1,
+                                                "x": 2,
+                                                "y": 2,
                                                 "z": 1
                                             }
                                         }
@@ -7079,8 +6199,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -7091,12 +6211,12 @@
                                             "y": 1266.75
                                         },
                                         "Matrix3D": {
-                                            "m00": 1,
+                                            "m00": 2,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
-                                            "m10": 0.000442505,
-                                            "m11": 1,
+                                            "m10": 0.00088501,
+                                            "m11": 2,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -7120,8 +6240,8 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 1,
-                                                "y": 1,
+                                                "x": 2,
+                                                "y": 2,
                                                 "z": 1
                                             }
                                         }
@@ -7140,8 +6260,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -7152,12 +6272,12 @@
                                             "y": 1266.75
                                         },
                                         "Matrix3D": {
-                                            "m00": 1,
+                                            "m00": 2,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
-                                            "m10": 0.000442505,
-                                            "m11": 1,
+                                            "m10": 0.00088501,
+                                            "m11": 2,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -7181,8 +6301,8 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 1,
-                                                "y": 1,
+                                                "x": 2,
+                                                "y": 2,
                                                 "z": 1
                                             }
                                         }
@@ -7201,8 +6321,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -7213,12 +6333,12 @@
                                             "y": 1266.75
                                         },
                                         "Matrix3D": {
-                                            "m00": 1,
+                                            "m00": 2,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
-                                            "m10": 0.000442505,
-                                            "m11": 1,
+                                            "m10": 0.00088501,
+                                            "m11": 2,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -7242,8 +6362,8 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 1,
-                                                "y": 1,
+                                                "x": 2,
+                                                "y": 2,
                                                 "z": 1
                                             }
                                         }
@@ -7262,8 +6382,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -7274,12 +6394,12 @@
                                             "y": 1266.75
                                         },
                                         "Matrix3D": {
-                                            "m00": 1,
+                                            "m00": 2,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
-                                            "m10": 0.000442505,
-                                            "m11": 1,
+                                            "m10": 0.00088501,
+                                            "m11": 2,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -7303,8 +6423,8 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 1,
-                                                "y": 1,
+                                                "x": 2,
+                                                "y": 2,
                                                 "z": 1
                                             }
                                         }
@@ -7323,8 +6443,8 @@
                                         "bitmap": {
                                             "name": "0006",
                                             "Position": {
-                                                "x": 0,
-                                                "y": -74
+                                                "x": 157,
+                                                "y": -36
                                             }
                                         },
                                         "symbolType": "graphic",
@@ -7335,12 +6455,12 @@
                                             "y": 1266.75
                                         },
                                         "Matrix3D": {
-                                            "m00": 1,
+                                            "m00": 2,
                                             "m01": 0,
                                             "m02": 0,
                                             "m03": 0,
-                                            "m10": 0.000442505,
-                                            "m11": 1,
+                                            "m10": 0.00088501,
+                                            "m11": 2,
                                             "m12": 0,
                                             "m13": 0,
                                             "m20": 0,
@@ -7364,94 +6484,14 @@
                                                 "z": 0
                                             },
                                             "Scaling": {
-                                                "x": 1,
-                                                "y": 1,
+                                                "x": 2,
+                                                "y": 2,
                                                 "z": 1
                                             }
                                         }
                                     }
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "Layer_name": "taildoover",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
                         }
                     ]
                 },
@@ -8376,86 +7416,6 @@
                     ]
                 },
                 {
-                    "Layer_name": "hoofdoover",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
-                        }
-                    ]
-                },
-                {
                     "Layer_name": "Layer_23",
                     "Frames": [
                         {
@@ -9376,166 +8336,6 @@
                     ]
                 },
                 {
-                    "Layer_name": "armdoover",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
-                        }
-                    ]
-                },
-                {
-                    "Layer_name": "armback",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
-                        }
-                    ]
-                },
-                {
                     "Layer_name": "Layer_26",
                     "Frames": [
                         {
@@ -10452,246 +9252,6 @@
                                     }
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "Layer_name": "Layer_27",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
-                        }
-                    ]
-                },
-                {
-                    "Layer_name": "Layer_28",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
-                        }
-                    ]
-                },
-                {
-                    "Layer_name": "Layer_29",
-                    "Frames": [
-                        {
-                            "index": 0,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 1,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 2,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 3,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 4,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 5,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 6,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 7,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 8,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 9,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 10,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 11,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 12,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 13,
-                            "duration": 1,
-                            "elements": []
-                        },
-                        {
-                            "index": 14,
-                            "duration": 1,
-                            "elements": []
                         }
                     ]
                 }

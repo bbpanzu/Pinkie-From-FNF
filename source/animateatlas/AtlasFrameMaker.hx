@@ -1,4 +1,5 @@
 package animateatlas;
+import flixel.FlxSprite;
 import flixel.util.FlxDestroyUtil;
 import openfl.geom.Rectangle;
 import flixel.math.FlxPoint;
@@ -39,15 +40,25 @@ class AtlasFrameMaker extends FlxFramesCollection{
 
                 var frameCollection:FlxFramesCollection;
                 var frameArray:Array<Array<FlxFrame>> = [];
-                var animationData:AnimationData = Json.parse(Assets.getText(key + "/Animation.json"));
-                var atlasData:AtlasData = Json.parse(Assets.getText(key + "/spritemap.json").replace("\uFEFF", ""));//FIXED UTF8 w/ BOM error
-                var bitmapData:BitmapData = Assets.getBitmapData(key + "/spritemap.png");
-                var ss = new SpriteAnimationLibrary(animationData, atlasData, bitmapData);
+                var animationData:AnimationData = Json.parse(Paths.getTextFile(key + "/Animation.json"));
+                var atlasData:AtlasData = Json.parse(Paths.getTextFile(key + "/spritemap.json").replace("\uFEFF", ""));//FIXED UTF8 w/ BOM error
+               // var bitmapData:BitmapData = Assets.getBitmapData(key + "/spritemap.png");
+				
+				
+				var graphic:FlxGraphic = Paths.getbmp(key+'/spritemap',false);
+				var testsprite:FlxSprite = new FlxSprite(0, 0);
+				testsprite.loadGraphic(graphic);
+				testsprite.scrollFactor.set();
+				//PlayState.instance.add(testsprite);
+		
+				
+				
+                var ss = new SpriteAnimationLibrary(animationData, atlasData, graphic.bitmap);
                 var t = ss.createAnimation();
                 if(_excludeArray == null){
                 _excludeArray = t.getFrameLabels();
                 }
-                frameCollection = new FlxFramesCollection(FlxGraphic.fromBitmapData(bitmapData),FlxFrameCollectionType.IMAGE);
+                frameCollection = new FlxFramesCollection(graphic,FlxFrameCollectionType.IMAGE);
 
                 
                 for(x in t.getFrameLabels()){
