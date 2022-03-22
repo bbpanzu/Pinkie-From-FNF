@@ -287,7 +287,6 @@ class PlayState extends MusicBeatState
 	var detailsText:String = "";
 	var detailsPausedText:String = "";
 	#end
-
 	override public function create()
 	{
 		instance = this;
@@ -677,8 +676,10 @@ class PlayState extends MusicBeatState
 			case 'pinkie':
 				camPos.y = 60;
 				
-			case 'discord'|'discord-atlas':
-				camPos.y = -100;
+			default:
+				if(SONG.player2.startsWith('discord')){
+					camPos.y = -100;
+				}
 		}
 
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
@@ -4013,9 +4014,9 @@ class PlayState extends MusicBeatState
 				
 				switch(curBeat){
 					case 77:
-						dad.playAnim("new_scene");
+						//dad.playAnim("new_scene");
 					case 119:
-						dad.playAnim("gofast");
+						//dad.playAnim("gofast");
 					case 283 | 300:
 						var l = strumLineNotes.members[4].x;
 						var r = strumLineNotes.members[7].x;

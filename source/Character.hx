@@ -475,7 +475,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 				
-			case 'discord-atlas':
+			case 'discord_atlas':
 				
 				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_assets');
 				animation.addByPrefix('idle', "idle", 24, false);
@@ -498,7 +498,7 @@ class Character extends FlxSprite
 
 				antialiasing = true;
 
-			case 'discord-atlas_gofast':
+			case 'discord_atlas_gofast':
 				var anim = "gofast";
 				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_'+anim);
 				animation.addByPrefix('idle', "idle", 24, false);
@@ -509,8 +509,19 @@ class Character extends FlxSprite
 				playAnim(anim);
 
 				antialiasing = true;
-			case 'discord-atlas_stutter':
+			case 'discord_atlas_stutter':
 				var anim = "stutter";
+				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_'+anim);
+				animation.addByPrefix('idle', "idle", 24, false);
+				animation.addByPrefix(anim, anim, 24, false);
+
+				//loadOffsets();
+				unintAnims = [anim];
+				playAnim(anim);
+
+				antialiasing = true;
+			case 'discord_atlas_hey':
+				var anim = "hey";
 				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_'+anim);
 				animation.addByPrefix('idle', "idle", 24, false);
 				animation.addByPrefix(anim, anim, 24, false);

@@ -222,9 +222,7 @@ class FreeplayState extends MusicBeatState
 			trace(poop);
 
 			
-			if (FlxG.keys.pressed.SHIFT){
-				FlxG.switchState(new ChartingState());
-			}else if (FlxG.keys.pressed.CONTROL){
+			if (FlxG.keys.pressed.CONTROL){
 				FlxG.switchState(new StageDebug("discord"));
 			}else{
 				
@@ -234,7 +232,11 @@ class FreeplayState extends MusicBeatState
 
 				PlayState.storyWeek = songs[curSelected].week;
 				trace('CUR WEEK' + PlayState.storyWeek);
-				LoadingState.loadAndSwitchState(new PlayState());
+				if (FlxG.keys.pressed.SHIFT){
+					FlxG.switchState(new ChartingState());
+				}else{
+					LoadingState.loadAndSwitchState(new PlayState());
+				}
 			}
 		}
 	}
