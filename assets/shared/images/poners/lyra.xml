@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="lyra.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="pony0000" x="0" y="578" width="635" height="570" frameX="0" frameY="-6" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0001" x="0" y="578" width="635" height="570" frameX="0" frameY="-6" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0002" x="0" y="1150" width="631" height="569" frameX="0" frameY="-7" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0003" x="0" y="1150" width="631" height="569" frameX="0" frameY="-7" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0004" x="637" y="575" width="628" height="574" frameX="0" frameY="-2" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0005" x="637" y="575" width="628" height="574" frameX="0" frameY="-2" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0006" x="0" y="0" width="630" height="576" frameX="-1" frameY="0" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0007" x="0" y="0" width="630" height="576" frameX="-1" frameY="0" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0008" x="633" y="1151" width="635" height="563" frameX="0" frameY="-6" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0009" x="633" y="1151" width="635" height="563" frameX="0" frameY="-6" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0010" x="1267" y="574" width="631" height="566" frameX="0" frameY="-6" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0011" x="1267" y="574" width="631" height="566" frameX="0" frameY="-6" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0012" x="1265" y="0" width="628" height="572" frameX="0" frameY="-2" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0013" x="1265" y="0" width="628" height="572" frameX="0" frameY="-2" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0014" x="632" y="0" width="631" height="573" frameX="0" frameY="-2" frameWidth="635" frameHeight="576"/>
+	<SubTexture name="pony0015" x="632" y="0" width="631" height="573" frameX="0" frameY="-2" frameWidth="635" frameHeight="576"/>
+</TextureAtlas>

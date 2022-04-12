@@ -1,6 +1,8 @@
 idle -100 -60
-singRIGHT -12 103
 singDOWN -20 100
-kick -20 100
-singLEFT -180 -43
+singRIGHT -12 103
 singUP -20 100
+singLEFT -180 -43
+kick -20 100
+land -20 100
+fall -20 -50

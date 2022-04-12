@@ -475,14 +475,32 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 				
-			case 'discord_atlas':
+			case 'discord-atlas':
 				
 				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_assets');
 				animation.addByPrefix('idle', "idle", 24, false);
+				animation.addByPrefix('singLEFT', "left", 24, false);
+				animation.addByPrefix('singUP', "up", 24, false);
+				animation.addByPrefix('singRIGHT', "right", 24, false);
+				animation.addByPrefix('singDOWN', "down", 24, false);
+				animation.addByPrefix('hey', "hey", 24, false);
+				//loadOffsets();
+				unintAnims = ["hey"];
+				playAnim('idle');
+
+				antialiasing = true;
+
+			case 'discord_end':
+				
+				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_end');
+				animation.addByPrefix('stop', "stop", 24, false);
+				animation.addByPrefix('poo', "poo", 24, false);
+				animation.addByPrefix('die', "die", 24, false);
+				animation.addByPrefix('end', "end", 24, false);
 
 				//loadOffsets();
-				unintAnims = ["idle"];
-				playAnim('idle');
+				unintAnims = ['stop','poo',"die",'end'];
+				playAnim('stop');
 
 				antialiasing = true;
 
@@ -500,37 +518,13 @@ class Character extends FlxSprite
 
 			case 'discord_atlas_gofast':
 				var anim = "gofast";
-				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_'+anim);
-				animation.addByPrefix('idle', "idle", 24, false);
-				animation.addByPrefix(anim, anim, 24, false);
-
-				//loadOffsets();
-				unintAnims = [anim];
-				playAnim(anim);
-
-				antialiasing = true;
+				getDiscord(anim);
 			case 'discord_atlas_stutter':
 				var anim = "stutter";
-				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_'+anim);
-				animation.addByPrefix('idle', "idle", 24, false);
-				animation.addByPrefix(anim, anim, 24, false);
-
-				//loadOffsets();
-				unintAnims = [anim];
-				playAnim(anim);
-
-				antialiasing = true;
+				getDiscord(anim);
 			case 'discord_atlas_hey':
 				var anim = "hey";
-				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_'+anim);
-				animation.addByPrefix('idle', "idle", 24, false);
-				animation.addByPrefix(anim, anim, 24, false);
-
-				//loadOffsets();
-				unintAnims = [anim];
-				playAnim(anim);
-
-				antialiasing = true;
+				getDiscord(anim);
 			case 'doxxie':
 				
 				
@@ -662,7 +656,18 @@ class Character extends FlxSprite
 			}
 		}
 	}
+	public function getDiscord(anim){
+		
+				//frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_'+anim);
+				frames = Startup.atlasFrames.get('discord_'+anim);
+				animation.addByPrefix('idle', "idle", 24, false);
+				animation.addByPrefix(anim, anim, 24, false);
 
+				//loadOffsets();
+				unintAnims = [anim];
+				playAnim(anim);
+				antialiasing = true;
+	}
 	public static function numArr(min:Int, max:Int):Array<Int>{
 		var arr:Array<Int> = [];
 		var len = max - min;
@@ -804,7 +809,7 @@ class Character extends FlxSprite
 				dadVar = 6.1;
 			if (holdTimer >= Conductor.stepCrochet * dadVar * 0.001)
 			{
-				dance();
+				dance(PlayState.instance.dadaltAnim);
 
 				holdTimer = 0;
 			}

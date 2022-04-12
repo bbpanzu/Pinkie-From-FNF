@@ -23,12 +23,29 @@ class MusicBeatState extends FlxUIState
 
 	override function create()
 	{
+		
+		onChangeFramerate();
+		
 		if (transIn != null)
 			trace('reg ' + transIn.region);
 FlxG.save.data.volume = FlxG.sound.volume;
 		super.create();
 	}
 
+
+	function onChangeFramerate()
+	{
+		if(OptionUtils.options.fpsCap > FlxG.drawFramerate)
+		{
+			FlxG.updateFramerate = OptionUtils.options.fpsCap;
+			FlxG.drawFramerate = OptionUtils.options.fpsCap;
+		}
+		else
+		{
+			FlxG.drawFramerate = OptionUtils.options.fpsCap;
+			FlxG.updateFramerate = OptionUtils.options.fpsCap;
+		}
+	}
 	override function update(elapsed:Float)
 	{
 		//everyStep();

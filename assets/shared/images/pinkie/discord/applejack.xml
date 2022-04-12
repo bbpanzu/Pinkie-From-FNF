@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="applejack.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="aj_end0000" x="0" y="0" width="408" height="526" frameX="0" frameY="0" frameWidth="423" frameHeight="529"/>
+	<SubTexture name="aj_end0001" x="410" y="490" width="362" height="370" frameX="-49" frameY="-159" frameWidth="423" frameHeight="529"/>
+	<SubTexture name="aj_end0002" x="410" y="0" width="339" height="488" frameX="-84" frameY="-10" frameWidth="423" frameHeight="529"/>
+</TextureAtlas>

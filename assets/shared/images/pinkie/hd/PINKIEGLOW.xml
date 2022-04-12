@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="PINKIEGLOW.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="PINKIEGLOW0000" x="0" y="0" width="608" height="561" frameX="-20" frameY="-53" frameWidth="628" frameHeight="648"/>
+	<SubTexture name="PINKIEGLOW0001" x="691" y="0" width="88" height="86" frameX="-264" frameY="-555" frameWidth="628" frameHeight="648"/>
+	<SubTexture name="PINKIEGLOW0002" x="603" y="563" width="569" height="563" frameX="-9" frameY="-85" frameWidth="628" frameHeight="648"/>
+	<SubTexture name="PINKIEGLOW0003" x="781" y="0" width="81" height="84" frameX="-271" frameY="-549" frameWidth="628" frameHeight="648"/>
+	<SubTexture name="PINKIEGLOW0004" x="0" y="563" width="601" height="546" frameX="0" frameY="-99" frameWidth="628" frameHeight="648"/>
+	<SubTexture name="PINKIEGLOW0005" x="610" y="0" width="79" height="105" frameX="-264" frameY="-529" frameWidth="628" frameHeight="648"/>
+	<SubTexture name="PINKIEGLOW0006" x="0" y="1111" width="479" height="633" frameX="-57" frameY="0" frameWidth="628" frameHeight="648"/>
+	<SubTexture name="PINKIEGLOW0007" x="481" y="1111" width="95" height="88" frameX="-274" frameY="-542" frameWidth="628" frameHeight="648"/>
+</TextureAtlas>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="scootaloo.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="scootaloo0000" x="441" y="0" width="443" height="435" frameX="0" frameY="0" frameWidth="443" frameHeight="441"/>
+	<SubTexture name="scootaloo0001" x="441" y="437" width="443" height="435" frameX="0" frameY="0" frameWidth="443" frameHeight="441"/>
+	<SubTexture name="scootaloo0002" x="0" y="0" width="439" height="441" frameX="0" frameY="0" frameWidth="443" frameHeight="441"/>
+</TextureAtlas>

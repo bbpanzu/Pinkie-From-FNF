@@ -1,5 +1,6 @@
 package;
 
+import flixel.FlxG;
 import flixel.FlxSprite;
 import openfl.display.BitmapData;
 import sys.FileSystem;
@@ -10,6 +11,7 @@ class HealthIcon extends FlxSprite
 	 * Used for FreeplayState! If you use it elsewhere, prob gonna annoying
 	 */
 	public var sprTracker:FlxSprite;
+	public var shake:Float = 0;
 
 	public function changeCharacter(char:String){
 		
@@ -77,7 +79,7 @@ class HealthIcon extends FlxSprite
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-
+		offset.set(FlxG.random.float( -shake, shake), FlxG.random.float( -shake, shake));
 		if (sprTracker != null)
 			setPosition(sprTracker.x + sprTracker.width + 10, sprTracker.y - 30);
 	}

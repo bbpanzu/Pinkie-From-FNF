@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="screwball.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="screwball0000" x="0" y="0" width="623" height="406"/>
+	<SubTexture name="screwball0001" x="0" y="408" width="623" height="406"/>
+	<SubTexture name="screwball0002" x="0" y="816" width="614" height="406" frameX="-9" frameY="0" frameWidth="623" frameHeight="406"/>
+	<SubTexture name="screwball0003" x="616" y="816" width="614" height="406" frameX="-9" frameY="0" frameWidth="623" frameHeight="406"/>
+	<SubTexture name="screwball0004" x="625" y="0" width="614" height="406" frameX="-9" frameY="0" frameWidth="623" frameHeight="406"/>
+	<SubTexture name="screwball0005" x="625" y="408" width="614" height="406" frameX="-9" frameY="0" frameWidth="623" frameHeight="406"/>
+</TextureAtlas>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="pinkie.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="pinkie_end0000" x="0" y="0" width="519" height="580" frameX="0" frameY="0" frameWidth="519" frameHeight="584"/>
+	<SubTexture name="pinkie_end0001" x="0" y="582" width="477" height="429" frameX="-17" frameY="-155" frameWidth="519" frameHeight="584"/>
+	<SubTexture name="pinkie_end0002" x="521" y="0" width="409" height="569" frameX="-87" frameY="-1" frameWidth="519" frameHeight="584"/>
+</TextureAtlas>

@@ -136,6 +136,8 @@ class Options
 	public var senpaiShaders:Bool = true;
 	public var freeplayPreview:Bool = true;
 	public var hitSound:Bool = false;
+	public var lessBS:Bool = false;
+	public var fpsCap:Int = 60;
 
 	public function loadOptions(){
 

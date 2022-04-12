@@ -84,7 +84,7 @@ class ChartingState extends MusicBeatState
 	var curSelectedMarker:VelocityChange;
 
 
-	var tempBpm:Int = 0;
+	var tempBpm:Float = 0;
 
 	var vocals:FlxSound;
 
@@ -127,7 +127,7 @@ class ChartingState extends MusicBeatState
 				noBG: false,
 				song: 'Test',
 				notes: [],
-				bpm: 150,
+				bpm: 150.000,
 				needsVoices: true,
 				player1: 'bf',
 				player2: 'dad',
@@ -138,7 +138,7 @@ class ChartingState extends MusicBeatState
 				noBG: false,
 				song: 'Test',
 				notes: [],
-				bpm: 150,
+				bpm: 150.000,
 				needsVoices: true,
 				player1: 'bf',
 				player2: 'dad',
@@ -544,7 +544,7 @@ var UI_notescale:FlxUINumericStepper;
 	}*/
 	function sectionStartTime():Float
 	{
-		var daBPM:Int = _song.bpm;
+		var daBPM:Float = _song.bpm;
 		var daPos:Float = 0;
 		for (i in 0...curSection)
 		{
@@ -558,7 +558,7 @@ var UI_notescale:FlxUINumericStepper;
 	}
 	function sectionEndTime():Float
 	{
-		var daBPM:Int = _song.bpm;
+		var daBPM:Float = _song.bpm;
 		var daPos:Float = 0;
 		for (i in 0...curSection+1)
 		{
@@ -1006,7 +1006,7 @@ var UI_notescale:FlxUINumericStepper;
 		else
 		{
 			// get last bpm
-			var daBPM:Int = _song.bpm;
+			var daBPM:Float = _song.bpm;
 			for (i in 0...curSection)
 				if (_song.notes[i].changeBPM)
 					daBPM = _song.notes[i].bpm;

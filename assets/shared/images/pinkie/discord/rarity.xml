@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="rarity.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="rarity_end0000" x="0" y="0" width="1030" height="1046" frameX="0" frameY="0" frameWidth="1056" frameHeight="1118"/>
+	<SubTexture name="rarity_end0001" x="0" y="2051" width="971" height="745" frameX="-64" frameY="-373" frameWidth="1056" frameHeight="1118"/>
+	<SubTexture name="rarity_end0002" x="0" y="1048" width="1019" height="1001" frameX="-37" frameY="-13" frameWidth="1056" frameHeight="1118"/>
+</TextureAtlas>

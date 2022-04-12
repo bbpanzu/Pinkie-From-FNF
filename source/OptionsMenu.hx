@@ -32,6 +32,7 @@ class OptionsMenu extends MusicBeatState
 			new OptionCategory("Modifiers",[
 				new ToggleOption("failForMissing","Sudden Death"),
 			]),
+			new ToggleOption("lessBS","Less Bullshit Mode"),
 			new ToggleOption("loadModcharts","Load Lua modcharts"),
 			new ScrollOption("ratingWindow",0,OptionUtils.ratingWindowNames.length-1,OptionUtils.ratingWindowNames),
 			new ToggleOption("ghosttapping","Ghost-tapping","Missing when you hit nothing"),
@@ -48,6 +49,7 @@ class OptionsMenu extends MusicBeatState
 			new ToggleOption("newInput","New Input","New input is a quaver-like system where each lane handles its own notes"),
 			new ToggleOption("hitSound","Hit sounds","Play a click sound when you hit a note"),
 			new ToggleOption("freeplayPreview","Song preview in freeplay","Do songs get played when selecting them in the freeplay menu"),
+			new CountOption("fpsCap",60,240,'',' FPS'),
 			new OptionCategory("Effects",[
 				new ToggleOption("picoShaders","Week 3 shaders","Does the windows fading out in week 3 use shaders"),
 				new ToggleOption("picoCamshake","Week 3 cam shake","Does the train cause a camera shake in week 3"),
@@ -127,18 +129,24 @@ class OptionsMenu extends MusicBeatState
 		category.curSelected = curSelected;
 	}
 
+	var canZoom = false;
+	var zoomdelay = 0;
 	override function update(elapsed:Float)
 	{
 		var upP = false;
 		var downP = false;
 		var leftP = false;
 		var rightP = false;
+		var left_ = false;
+		var right_ = false;
 		var accepted = false;
 		var back = false;
 		if(controls.keyboardScheme!=None){
 			upP = controls.UP_P;
 			downP = controls.DOWN_P;
 			leftP = controls.LEFT_P;
+			down_ = controls.DOWN;
+			left_ = controls.LEFT;
 			rightP = controls.RIGHT_P;
 
 			accepted = controls.ACCEPT;
@@ -168,14 +176,21 @@ class OptionsMenu extends MusicBeatState
 			  OptionUtils.saveOptions(OptionUtils.options);
 			}
 		}
-		if(option.type!="Category"){
-			if(leftP){
+		if (option.type != "Category"){
+			
+			if (left_ || right_) zoomdelay += Math.floor(0.016/elapsed);
+			
+			canZoom = zoomdelay > 30;
+			
+			if (!left_ && !right_) zoomdelay = 0;
+			
+			if(leftP || left_ && canZoom){
 				if(option.left()) {
 					option.createOptionText(curSelected,optionText);
 					changeSelection();
 				}
 			}
-			if(rightP){
+			if(rightP|| right_ && canZoom){
 				if(option.right()) {
 					option.createOptionText(curSelected,optionText);
 					changeSelection();

@@ -12,6 +12,7 @@ import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.addons.transition.TransitionData;
+import flixel.effects.FlxFlicker;
 import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup;
@@ -68,10 +69,12 @@ class TitleState extends MusicBeatState
 
 		curWacky = FlxG.random.getObject(getIntroTextShit());
 
+		
 		// DEBUG BULLSHIT
 
 		super.create();
 
+		
 		/*NGio.noLogin(APIStuff.API);
 
 		#if ng
@@ -156,44 +159,53 @@ introSong = openfl.media.Sound.fromFile(Paths.music('freakyMenu'));
 		Conductor.changeBPM(110);
 		persistentUpdate = true;
 
-		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
-		// bg.antialiasing = true;
-		// bg.setGraphicSize(Std.int(bg.width * 0.6));
-		// bg.updateHitbox();
+		var bg:FlxSprite = new FlxSprite(-135.6,-118).loadGraphic(Paths.image('SKYY'));
 		add(bg);
+		
+		var mt:FlxSprite = new FlxSprite(-2018,272).loadGraphic(Paths.image('moutains'));
+		add(mt);
+		
+		FlxTween.tween(mt,{x:-212.15},45,{type:LOOPING});
+		
+		
+		var houses:FlxSprite = new FlxSprite(-1769.9,-1586.75).loadGraphic(Paths.image('houses'));
+		add(houses);
+		houses.origin.set();
+		FlxTween.tween(houses,{x:-388.95,y:-170.2},15,{type:LOOPING,ease:FlxEase.linear});
+		FlxTween.tween(houses.scale, {x:0.5, y:0.5}, 15, {type:LOOPING,ease:FlxEase.linear});
+		
+		
 
-		logoBl = new FlxSprite(-150, -100);
-		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
-		logoBl.antialiasing = true;
-		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
-		logoBl.animation.play('bump');
-		logoBl.updateHitbox();
+		logoBl = new FlxSprite(83, 50).loadGraphic(Paths.image('logo'));
+		logoBl.angle = -5;
+		FlxTween.tween(logoBl,{angle:5},3,{type:PINGPONG,ease:FlxEase.sineInOut});
+		FlxTween.tween(logoBl,{y:100},1,{type:PINGPONG,ease:FlxEase.sineInOut});
 		// logoBl.screenCenter();
 		// logoBl.color = FlxColor.BLACK;
 
-		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
-		gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');//AtlasFrameMaker.construct("assets/shared/images/characters/GF_ass_sets",);
-		//gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "",24, false);
-		//gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
-		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+		gfDance = new FlxSprite(529, 10);
+		gfDance.frames = Paths.getSparrowAtlas('pinkie_start_screen');
+		gfDance.animation.addByIndices('danceLeft', 'pinkoo', Character.numArr(0,15), "", 24, false);
+		gfDance.animation.addByIndices('danceRight', 'pinkoo', Character.numArr(16,31), "", 24, false);
 		gfDance.antialiasing = true;
 		add(gfDance);
 		add(logoBl);
 
-		titleText = new FlxSprite(100, FlxG.height * 0.8);
-		titleText.frames = Paths.getSparrowAtlas('titleEnter');
-		titleText.animation.addByPrefix('idle', "Press Enter to Begin", 24);
-		titleText.animation.addByPrefix('press', "ENTER PRESSED", 24);
-		titleText.antialiasing = true;
-		titleText.animation.play('idle');
-		titleText.updateHitbox();
-		// titleText.screenCenter(X);
+		titleText = new FlxSprite(692, 700).loadGraphic(Paths.image('PRESS'));
 		add(titleText);
 
 		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('logo'));
 		logo.screenCenter();
 		logo.antialiasing = true;
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		// add(logo);
 
 		// FlxTween.tween(logoBl, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
@@ -232,6 +244,7 @@ introSong = openfl.media.Sound.fromFile(Paths.music('freakyMenu'));
 
 		// credGroup.add(credTextShit);
 	}
+
 
 	function getIntroTextShit():Array<Array<String>>
 	{
@@ -295,8 +308,7 @@ introSong = openfl.media.Sound.fromFile(Paths.music('freakyMenu'));
 			if (Date.now().getDay() == 5)
 				//NGio.unlockMedal(61034);
 			#end
-
-			titleText.animation.play('press');
+			FlxFlicker.flicker(titleText);
 
 			FlxG.camera.flash(FlxColor.WHITE, 1);
 			FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
@@ -370,7 +382,8 @@ introSong = openfl.media.Sound.fromFile(Paths.music('freakyMenu'));
 	{
 		super.beatHit();
 
-		logoBl.animation.play('bump');
+		logoBl.scale.set(1.1, 1.1);
+		FlxTween.tween(logoBl.scale, {x:1, y:1}, 2 * (Conductor.stepCrochet / 1000), {ease:FlxEase.circOut});
 		danceLeft = !danceLeft;
 
 		if (danceLeft)

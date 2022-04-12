@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="dash.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="dash_end0000" x="0" y="1058" width="976" height="851" frameX="-417" frameY="-100" frameWidth="1997" frameHeight="1201"/>
+	<SubTexture name="dash_end0001" x="978" y="1058" width="976" height="851" frameX="-409" frameY="-350" frameWidth="1997" frameHeight="1201"/>
+	<SubTexture name="dash_end0002" x="0" y="0" width="1997" height="1056" frameX="0" frameY="0" frameWidth="1997" frameHeight="1201"/>
+</TextureAtlas>

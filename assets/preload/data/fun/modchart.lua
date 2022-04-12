@@ -1,11 +1,12 @@
+singTime = 0
+singL = 6
 function createPost(song)
 
 	setVar('camBoomSpeed',1)
 
 	setVar('beattype','polka')
 
-	newCharacter(20,1000,'pinkie_rap',false,false)
-	pinkie_rap.setCamera(pinkie_rap,'game')
+	newCharacterHUD(200,1000,'pinkie_rap',false,false)
 
 end
 function stepHit(beat)
@@ -18,15 +19,17 @@ function stepHit(beat)
 		end
 	end
 
-
-
+	singTime = singTime - 1;
+	if singTime == 0 then
+		pinkie_rap.playAnim(pinkie_rap,'idle')
+	end
 
 end
 
 
 function beatHit(beat)
 
-pinkie_rap.playAnim(pinkie_rap,'idle')
+if singTime <= 0 then pinkie_rap.playAnim(pinkie_rap,'idle') end
 if getVar('beattype') == 'porche' then
 	day = getVar('healthBar.y') - (getVar('iconP1.height') / 2);
 	angle = 10
@@ -78,22 +81,81 @@ if beat == 188 then
 	dad.playAnim(dad,'duck')
 
 end
-if beat == 189 then
+if beat == 160 or beat == 223 or beat == 336 then
 
-	setCamPos(200,300)
+
+setVar('beattype','polka')
+
+end
+if beat == 192 or beat == 230 or beat == 320 then
+
+
+setVar('beattype','trap')
+
+end
+if beat == 256 or beat == 230 or beat == 352 then
+
+
+setVar('beattype','porche')
+
+end
+if beat == 384 then
+
+
+setVar('beattype','none')
+
+end
+if beat == 188 then
+	dad.playAnim(dad,'duck')
+
+end
+if beat == 189 then
+playSound('pinkie_jump',0.6)
+pinkie_rap.diabledDance = true
+	setCamPos(400,300)
 	dad.playAnim(dad,'fall')
-	setVar('dad.velocity.x',50)
-	setVar('dad.acceleration.y',5000)
+	setVar('dad.velocity.x',5)
+	dad.tween(dad,{['y']=1000},0.6,'sineIn')
 
 end
 if beat == 191 then
 
-pinkie_rap.tween(pinkie_rap,{[y]=100},0.3,'circOut')
-	dad.playAnim(dad,'fall')
 	setVar('dad.velocity.x',0)
-	setVar('dad.acceleration.y',0)
+pinkie_rap.tween(pinkie_rap,{['y']=100},0.3,'circOut')
+	dad.playAnim(dad,'fall')
+
+end
+if beat == 253 then
+
+pinkie_rap.tween(pinkie_rap,{['y']=1000},0.3,'circIn')
+
+end
+if beat == 254 then
+
+	setVar('dad.y',-2000)
+dad.tween(dad,{['y']=-96},crochet/1000,'linear')
+
+end
+if beat == 255 then
+
+	setCamPos(9999,9999,true)
+dad.playAnim(dad,'duck',true)
+
+end
+if beat == 256 then
+dad.diabledDance = false
+dad.playAnim(dad,'danceLeft',true)
 
 end
 
+
+
+end
+
+function dadNoteHit(d,s,pos,sus,t)
+	anim = {'LEFT','DOWN','UP','RIGHT'}
+singTime =5
+pinkie_rap.disabledDance = true
+pinkie_rap.playAnim(pinkie_rap,'sing' .. anim[d+1],true)
 
 end

@@ -1,6 +1,6 @@
 ﻿{"ATLAS": {"SPRITES":[ 
-{"SPRITE" : {"name": "0000","x":4094,"y":0,"w":1,"h":1,"rotated": false}},
-{"SPRITE" : {"name": "0001","x":0,"y":2512,"w":265,"h":184,"rotated": false}},
+{"SPRITE" : {"name": "0000","x":4023,"y":264,"w":53,"h":53,"rotated": false}},
+{"SPRITE" : {"name": "0001","x":3714,"y":1532,"w":265,"h":184,"rotated": false}},
 {"SPRITE" : {"name": "0002","x":2800,"y":1189,"w":253,"h":231,"rotated": false}},
 {"SPRITE" : {"name": "0003","x":2062,"y":736,"w":374,"h":223,"rotated": false}},
 {"SPRITE" : {"name": "0004","x":3739,"y":0,"w":355,"h":264,"rotated": false}},
@@ -196,7 +196,7 @@
 {"SPRITE" : {"name": "0194","x":3053,"y":1189,"w":98,"h":69,"rotated": false}},
 {"SPRITE" : {"name": "0195","x":3942,"y":756,"w":98,"h":69,"rotated": false}},
 {"SPRITE" : {"name": "0196","x":2800,"y":1420,"w":239,"h":221,"rotated": false}},
-{"SPRITE" : {"name": "0197","x":3714,"y":1532,"w":265,"h":184,"rotated": false}},
+{"SPRITE" : {"name": "0197","x":0,"y":2512,"w":265,"h":184,"rotated": false}},
 {"SPRITE" : {"name": "0198","x":1353,"y":1277,"w":274,"h":197,"rotated": false}},
 {"SPRITE" : {"name": "0199","x":3741,"y":1098,"w":258,"h":228,"rotated": false}},
 {"SPRITE" : {"name": "0200","x":265,"y":2512,"w":220,"h":191,"rotated": false}},
