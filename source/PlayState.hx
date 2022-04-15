@@ -2419,7 +2419,6 @@ class PlayState extends MusicBeatState
 				lua.setGlobalVar("health",health);
 		}
 
-
 		if (healthBar.percent < 20)
 			iconP1.animation.curAnim.curFrame = 1;
 		else

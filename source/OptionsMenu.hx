@@ -71,7 +71,6 @@ class OptionsMenu extends MusicBeatState
 		category=defCat;
 		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image("menuDesat"));
 
-		menuBG.color = 0xFFa271de;
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
 		menuBG.updateHitbox();
 		menuBG.screenCenter();
@@ -145,7 +144,7 @@ class OptionsMenu extends MusicBeatState
 			upP = controls.UP_P;
 			downP = controls.DOWN_P;
 			leftP = controls.LEFT_P;
-			down_ = controls.DOWN;
+			right_ = controls.RIGHT;
 			left_ = controls.LEFT;
 			rightP = controls.RIGHT_P;
 
@@ -176,6 +175,7 @@ class OptionsMenu extends MusicBeatState
 			  OptionUtils.saveOptions(OptionUtils.options);
 			}
 		}
+		
 		if (option.type != "Category"){
 			
 			if (left_ || right_) zoomdelay += Math.floor(0.016/elapsed);
