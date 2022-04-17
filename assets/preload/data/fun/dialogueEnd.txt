@@ -26,7 +26,7 @@
 
 :autoskip:during:2.5
 :pinkie:whoa: OOH! Or a going away SONG!!!
-:sound:bloop:1
+:sound:bloop:0
 :text:pretext:`current
 :pinkie:choc:
 :effect:fromY:-10

@@ -37,6 +37,10 @@ class HealthIcon extends FlxSprite
 		loadGraphic(Paths.image('icons-hd'), true, 150, 150);
 
 		animation.add('pinkie-hd', [0, 1], 0, false);
+		}else if (char == 'discord-atlas'){
+		loadGraphic(Paths.image('icons-discord'), true, 150, 150);
+
+		animation.add(char, [0, 1], 0, false);
 		}else{
 		loadGraphic(Paths.image('iconGrid'), true, 150, 150);
 

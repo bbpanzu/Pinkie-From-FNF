@@ -129,7 +129,7 @@ class OptionsMenu extends MusicBeatState
 	}
 
 	var canZoom = false;
-	var zoomdelay = 0;
+	var zoomdelay = 0.00;
 	override function update(elapsed:Float)
 	{
 		var upP = false;
@@ -178,7 +178,7 @@ class OptionsMenu extends MusicBeatState
 		
 		if (option.type != "Category"){
 			
-			if (left_ || right_) zoomdelay += Math.floor(0.016/elapsed);
+			if (left_ || right_) zoomdelay += 0.016/elapsed;
 			
 			canZoom = zoomdelay > 30;
 			
