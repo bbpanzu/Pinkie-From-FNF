@@ -2,6 +2,7 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxObject;
+import flixel.FlxSprite;
 import flixel.FlxSubState;
 import flixel.math.FlxPoint;
 import flixel.util.FlxColor;
@@ -11,36 +12,29 @@ class GameOverSubstate extends MusicBeatSubstate
 {
 	var bf:Boyfriend;
 	var camFollow:FlxObject;
-
+	var deathSong:String = 'gameOver';
+	var deathEndSong:String = 'gameOver';
 	var stageSuffix:String = "";
-
-	public function new(x:Float, y:Float)
+	public function new(x:Float, y:Float,boyf:String='bf',deathSound:String='fnf_loss_sfx',deathSong:String='gameOver',deathEndSong:String='gameOver',color:String='ff0000')
 	{
 		var daStage = PlayState.curStage;
 		var daBf:String = '';
-		switch (daStage)
-		{
-			case 'school':
-				stageSuffix = '-pixel';
-				daBf = 'bf-pixel-dead';
-			case 'schoolEvil':
-				stageSuffix = '-pixel';
-				daBf = 'bf-pixel-dead';
-			default:
-				daBf = 'bf';
-		}
-
+		daBf = boyf;
+deathSong = 'gameOver';
 		super();
-
+		var bg:FlxSprite = new FlxSprite(0, 0).makeGraphic(1280, 720, CoolUtil.getColorFromHex(color));
+		add(bg);
+		bg.scrollFactor.set();
+		bg.scale.set(FlxG.camera.zoom,FlxG.camera.zoom);
 		Conductor.songPosition = 0;
-
+		
 		bf = new Boyfriend(x, y, daBf);
 		add(bf);
 
 		camFollow = new FlxObject(bf.getGraphicMidpoint().x, bf.getGraphicMidpoint().y, 1, 1);
 		add(camFollow);
 
-		FlxG.sound.play(Paths.sound('fnf_loss_sfx' + stageSuffix));
+		FlxG.sound.play(Paths.sound(deathSound + stageSuffix));
 		Conductor.changeBPM(100);
 
 		// FlxG.camera.followLerp = 1;
@@ -77,7 +71,7 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)
 		{
-			FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
+			FlxG.sound.playMusic(Paths.music(deathSong + stageSuffix));
 		}
 
 		if (FlxG.sound.music.playing)

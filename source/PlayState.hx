@@ -81,6 +81,12 @@ class PlayState extends MusicBeatState
 	public var dontSync:Bool=false;
 	public var currentTrackPos:Float = 0;
 	public var currentVisPos:Float = 0;
+	//YOURE CODING IN CUSTOM DEATH SHITSS
+	public var deathSound:String = '';
+	public var deathEndSong:String = '';
+	public var deathSong:String = '';
+	public var boyf:String = '';
+	public var deathColor:String = '';
 	var halloweenLevel:Bool = false;
 
 	private var vocals:FlxSound;
@@ -577,6 +583,20 @@ class PlayState extends MusicBeatState
 				addSprite( -447.8, 355.05, "pinkie/discord/discordground", 1);
 				
 				
+				
+				
+						  setSpr('aj',addAnimPrefix( 1514.75, 53.55, "pinkie/discord/applejack", 'aj_end',1,false,0));
+						  setSpr('pinkie',addAnimPrefix( 1809.9, 4.95, "pinkie/discord/pinkie", 'pinkie_end',1,false,0));
+						  
+						//  var bitchtwi:FlxSprite = new FlxSprite(2030.9, -148);
+						// bitchtwi.frames = AtlasFrameMaker.construct('assets/shared/images/pinkie/discord/twilight');
+						//  bitchtwi.animation.addByPrefix('twi_end','twi_end',24,false);
+						  
+						  
+						  setSpr('twi', addAnimPrefix(2030.9, -148, "pinkie/discord/twi", 'twi_end', 1, false, 24));
+						  getSpr('twi').animation.addByIndices('twiFloat', 'twi_end', Character.numArr(119, 129), '', 24);
+						  
+				
 						//}
 						  
 					  
@@ -796,7 +816,20 @@ class PlayState extends MusicBeatState
 				gf.scale.x = gf.scale.y = 0.2;
 				gf.angle = 20;
 				
+						  setSpr('flutter', addAnimPrefix( 2536.8, 60.8, "pinkie/discord/fluttershy", 'flutter_end', 1, false, 0));
+						  setSpr('rarity', addAnimPrefix( 2168.85, 310.45, "pinkie/discord/rarity", 'rarity_end', 1, false, 0));
+						  setSpr('dash', addAnimPrefix( 1428.5, 332.75, "pinkie/discord/dash", 'dash_end', 1, false, 0));
 				
+						  
+						  getSpr('pinkie').visible = false;
+						  getSpr('twi').visible = false;
+						  getSpr('aj').visible = false;
+						  
+						  getSpr('flutter').visible = false;
+						  getSpr('rarity').visible = false;
+						  getSpr('dash').visible = false;
+						  
+						  
 						  setSpr('screwball', addAnimPrefix( 1280, -13, "pinkie/discord/screwball", 'screwball', 1));
 						  getSpr('screwball').cameras = [camOther];
 						 new FlxTimer().start(FlxG.random.int(60, 120), function(e:FlxTimer){
@@ -3098,10 +3131,11 @@ class PlayState extends MusicBeatState
 
 		if (isStoryMode)
 		{
-			
-			
 			if (hasEndDialogue){
 				
+			if (SONG.song.toLowerCase() == 'disocrd' && isPony){
+				FlxG.switchState(new CutsceneState());
+			}
 				try {
 					dialogue = CoolUtil.coolTextFile(Paths.txt(SONG.song.toLowerCase() + "/dialogueEnd"+(isPony?"-pony":"")));
 					hasEndDialogue = false;
@@ -3241,6 +3275,10 @@ class PlayState extends MusicBeatState
 					FlxTransitionableState.skipNextTransOut = true;
 					prevCamFollow = camFollow;
 
+			if (SONG.song.toLowerCase() == 'disocrd' && isPony){
+				FlxG.switchState(new CutsceneState());
+			}
+			
 					PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
 					FlxG.sound.music.stop();
 
@@ -4171,20 +4209,20 @@ class PlayState extends MusicBeatState
 		
 		return theSprites.get(name);
 	}
-	public function addAnimPrefix(x,y,path:String,prefix:String,scrollFactor:Float=1,loop:Bool=true):FlxSprite{
+	public function addAnimPrefix(x,y,path:String,prefix:String,scrollFactor:Float=1,loop:Bool=true,fps:Int=24):FlxSprite{
 		var sprite:FlxSprite = new FlxSprite(x, y);
 		sprite.frames = Paths.getSparrowAtlas(path, "shared");
-		sprite.animation.addByPrefix(prefix,prefix,24,loop);
+		sprite.animation.addByPrefix(prefix,prefix,fps,loop);
 		sprite.animation.play(prefix);
 		sprite.antialiasing = true;
 		sprite.scrollFactor.set(scrollFactor, scrollFactor);
 		add(sprite);
 		return sprite;
 	}
-	public function addAnimIndices(x,y,path:String,prefix:String,indices:Array<Int>,scrollFactor:Float=1,loop:Bool=true):FlxSprite{
+	public function addAnimIndices(x,y,path:String,prefix:String,indices:Array<Int>,scrollFactor:Float=1,loop:Bool=true,fps:Int=24):FlxSprite{
 		var sprite:FlxSprite = new FlxSprite(x, y);
 		sprite.frames = Paths.getSparrowAtlas(path, "shared");
-		sprite.animation.addByIndices(prefix, prefix, indices, "", 24,loop);
+		sprite.animation.addByIndices(prefix, prefix, indices, "", fps,loop);
 		sprite.animation.play(prefix);
 		sprite.antialiasing = true;
 		sprite.scrollFactor.set(scrollFactor, scrollFactor);
@@ -4261,15 +4299,52 @@ class PlayState extends MusicBeatState
 			if (curSong.toLowerCase() == "discord"){
 				
 				switch(curBeat){
-					case 77:
-						//dad.playAnim("new_scene");
-					case 119:
-						//dad.playAnim("gofast");
-					case 283 | 300:
-						var l = strumLineNotes.members[4].x;
-						var r = strumLineNotes.members[7].x;
-						strumLineNotes.members[4].x = r;
-						strumLineNotes.members[7].x = l;
+					case 552:
+						
+						  getSpr('pinkie').visible = true;
+						  getSpr('twi').visible = true;
+						  getSpr('twi').animation.play('twi_end',true,false,10);
+						  getSpr('aj').visible = true;
+						  
+						  getSpr('flutter').visible = true;
+						  getSpr('rarity').visible = true;
+						  getSpr('dash').visible = true;
+						  
+					case 554:
+						
+						  setCamPos(2325, 296);
+						  
+						  
+					case 567:
+						
+						  getSpr('pinkie').animation.curAnim.curFrame = 1;
+						  getSpr('aj').animation.curAnim.curFrame = 1;
+						  
+						  getSpr('flutter').animation.curAnim.curFrame = 1;
+						  getSpr('rarity').animation.curAnim.curFrame = 1;
+						  getSpr('dash').animation.curAnim.curFrame = 1;
+					case 569:
+						
+						  getSpr('pinkie').animation.curAnim.curFrame = 2;
+						  getSpr('aj').animation.curAnim.curFrame = 2;
+						  
+						  getSpr('flutter').animation.curAnim.curFrame = 2;
+						  getSpr('rarity').animation.curAnim.curFrame = 2;
+						  getSpr('dash').animation.curAnim.curFrame = 2;
+						  
+						  var p = ['pinkie', 'aj', 'rarity', 'dash', 'flutter', 'twi'];
+						  
+						  for (u in p){
+							 FlxTween.tween(getSpr(u), {y:getSpr(u).y - 240}, 3, {ease:FlxEase.sineInOut});
+						  }
+							 FlxTween.tween(camGame.scroll, {y:56.05}, 1, {ease:FlxEase.sineInOut});
+						  
+						  
+					case 573:
+						  setCamPos(9999,9999,true);
+					case 579:
+						 
+					
 				}
 			}
 		

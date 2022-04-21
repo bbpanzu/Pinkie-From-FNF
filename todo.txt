@@ -6,11 +6,14 @@ reanimate trixie portrait [X]
 Rapper pinkie for trap bit [X]
 Title screen animation[X]
 Illustrate Dialogue BGs [X]
-Twilight end monologue[ ]
+Twilight end monologue[X]
 BG pony boppers cool lookin [X]
 Discord Entrance Sequence Animation [X]
-Discord bg events [ ]
 
+Discord bg events [ ]
 Discord end event [ ]
+Discord portraits [ ]
+Storyblanks zombie ponies [ ]
+babs sneed ending [ ]
 
 

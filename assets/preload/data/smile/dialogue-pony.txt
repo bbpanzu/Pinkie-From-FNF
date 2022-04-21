@@ -1,24 +1,24 @@
-:bg:0:
+:bg:p0001:
 :hideCharacters::
 :effect:hidden:
-:bg:1:
+:bg:p0002:
 :camEffect:flash:1
 :hideCharacters:
 :bg:shake:-2
 :effect:hidden:
-:bg:2:
+:bg:p0003:
 :hideCharacters:
 :text:shake:-3
 :noChar:default:AAAAAHHH!!!!
 :text:shake:0
-:bg:3:
+:bg:p0004:
 :bg:shake:0
 :music:damnshit:1
-:bfpone:what:WAIT STOP!!! I SWEAR I WAS ONLY TOUCHING THE HIPS
-:bg:4:
+:noChar:default:WAIT STOP!!! I SWEAR I WAS ONLY TOUCHING THE HIPS
+:bg:p0005:
 :effect:hidden:
 :effect:shake:8
-:bg:5:
+:bg:hide:
 :text:shake:8
 :bfpone:fuck:FUCK YOU. PURPLE FUCK
 :gf:anger:watch your mouth. thats my dad
@@ -27,7 +27,7 @@
 :gf:default:Well he isn't really a normal dad.
 :bfpone:wtf:Where are we anyway
 :gf:default:Looks like some wacky forest.
-:bg:6:
+:bg:p0007:
 :effect:addX:400
 :bfpone:upset:Hmm. left or right?
 :effect:addY:-10
@@ -51,7 +51,7 @@
 :bfpone:yikes:this is a tricky one.
 :effect:addY:-10
 :gf:sad:Just- lets go.
-:bg:7:
+:bg:p0008:
 :music:ponyville:1
 :effect:hidden:
 :bfpone:default:There seems to be an abundance of colorful quadrupeds
@@ -133,23 +133,13 @@
 :effect:shake:12
 :text:shake:12
 :pinkie:whoa:HOLY MOLY-!!!
-:autoskip:during:0.9
 :text:shake:12
-:pinkie:whoa:REAL
-:autoskip:during:0.9
-:text:shake:12
-:text:pretext:`current
-:pinkie:default:! ACTUAL
-:text:shake:-12
-:text:pretext:`current
-:pinkie:smile: !! HUMANS!!!
+:pinkie:whoa:NEW FACES!!
 :text:shake:0
-:gf:omg: AHA That's what im talking about
 :pinkie:default: So Lyra WASN'T being all coo coo in the brain! You must be new here!
-:bfpone:default: Well considering you haven't seen actual humans before, yea.
-:pinkie:wink-smile: Ooohh You know what that means ;D
+:pinkie:wink-smile:You know what that means ;D
 :autoskip:during:1
 :bfpone:default:
-:bfpone:default:...no
+:bfpone:default:...no?
 :pinkie:smile: A "Welcome to ponyville" Song, of course!!!
 :gf:stim: OOH IM SO EXCITED

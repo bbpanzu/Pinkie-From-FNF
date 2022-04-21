@@ -32,8 +32,8 @@ class Startup extends MusicBeatState
 	"Breaking-Point",
     "Green-Hill", "Racing", "Boom", "Happy-Time"];*/
 	public var atlist = [
-	'discord_assets',
-	'discord_end'
+	'characters/discord_assets',
+	'characters/discord_end'
 	];
     public static var atlasFrames:Map<String, FlxFramesCollection> = new Map<String, FlxFramesCollection>();
 	public static var indx = 0;
@@ -50,11 +50,11 @@ class Startup extends MusicBeatState
         var loadingBG = new FlxSprite(0.0).loadGraphic(Paths.image('loadingscreen'));
         loadingBG.antialiasing = true;
         add(loadingBG);
-        
+        loadingBG.screenCenter();
 
         loadingText = new FlxText(5, FlxG.height - 30, 0, "Preloading Assets...", 24);
         loadingText.setFormat("assets/fonts/vcr.ttf", 24, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-        //add(loadingText);
+        add(loadingText);
 
         //new FlxTimer().start(1.1, function(tmr:FlxTimer)
         //{
@@ -116,7 +116,7 @@ class Startup extends MusicBeatState
     }*/
 
     function preloadAtlas():Void{
-			var boobers:FlxFramesCollection = AtlasFrameMaker.construct('assets/shared/images/characters/' + atlist[indx]);
+			var boobers:FlxFramesCollection = AtlasFrameMaker.construct('assets/shared/images/' + atlist[indx]);
 			
 			
         atlasFrames.set(atlist[indx], boobers);

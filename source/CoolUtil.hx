@@ -28,6 +28,10 @@ class CoolUtil
 	}
 
 
+	public static function getColorFromHex(color:String) {
+		if(!color.startsWith('0x')) color = '0xff' + color;
+		return Std.parseInt(color);
+	}
 	public static function cameraFromString(cam:String):FlxCamera {
 		trace(cam);
 		switch(cam.toLowerCase()) {

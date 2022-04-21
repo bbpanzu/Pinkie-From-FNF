@@ -1,5 +1,4 @@
 Animators-
-OhSoVanilla
 An Anonymous Animator
 
 Programmers-
