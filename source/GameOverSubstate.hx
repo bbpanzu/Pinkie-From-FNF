@@ -13,14 +13,14 @@ class GameOverSubstate extends MusicBeatSubstate
 	var bf:Boyfriend;
 	var camFollow:FlxObject;
 	var deathSong:String = 'gameOver';
-	var deathEndSong:String = 'gameOver';
+	var deathEndSong:String = 'gameOverEnd';
 	var stageSuffix:String = "";
-	public function new(x:Float, y:Float,boyf:String='bf',deathSound:String='fnf_loss_sfx',deathSong:String='gameOver',deathEndSong:String='gameOver',color:String='ff0000')
+	public function new(x:Float, y:Float,boyf:String='bf',deathSound:String='fnf_loss_sfx',deathSong:String='gameOver',deathEndSong:String='gameOver',color:String='000000')
 	{
 		var daStage = PlayState.curStage;
 		var daBf:String = '';
 		daBf = boyf;
-deathSong = 'gameOver';
+this.deathSong = deathSong;
 		super();
 		var bg:FlxSprite = new FlxSprite(0, 0).makeGraphic(1280, 720, CoolUtil.getColorFromHex(color));
 		add(bg);
@@ -96,7 +96,7 @@ deathSong = 'gameOver';
 			isEnding = true;
 			bf.playAnim('deathConfirm', true);
 			FlxG.sound.music.stop();
-			FlxG.sound.play(Paths.music('gameOverEnd' + stageSuffix));
+			FlxG.sound.play(Paths.music(deathEndSong + stageSuffix));
 			new FlxTimer().start(0.7, function(tmr:FlxTimer)
 			{
 				FlxG.camera.fade(FlxColor.BLACK, 2, false, function()

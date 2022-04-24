@@ -13,7 +13,7 @@ Discord Entrance Sequence Animation [X]
 Discord bg events [ ]
 Discord end event [ ]
 Discord portraits [ ]
-Storyblanks zombie ponies [ ]
+Storyblanks zombie ponies [X]
 babs sneed ending [ ]
 
 

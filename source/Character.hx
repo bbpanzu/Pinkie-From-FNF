@@ -761,6 +761,8 @@ class Character extends FlxSprite
 				trace(type,name,stuff.join(" "),fps);
 				if(type.toLowerCase()=='flipx'){
 					flipX = !flipX;
+				}else if(type.toLowerCase()=='pixel'){
+					antialiasing = false;
 				}else if(type.toLowerCase()=='camofs'){
 					var c = name.split(',');
 					camOffset[0] = Std.parseInt(c[0]);

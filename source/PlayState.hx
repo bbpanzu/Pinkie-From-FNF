@@ -81,12 +81,12 @@ class PlayState extends MusicBeatState
 	public var dontSync:Bool=false;
 	public var currentTrackPos:Float = 0;
 	public var currentVisPos:Float = 0;
-	//YOURE CODING IN CUSTOM DEATH SHITSS
-	public var deathSound:String = '';
-	public var deathEndSong:String = '';
-	public var deathSong:String = '';
-	public var boyf:String = '';
-	public var deathColor:String = '';
+	
+	public var deathSound:String = 'fnf_loss_sfx';
+	public var deathEndSong:String = 'gameOverEnd';
+	public var deathSong:String = 'gameOver';
+	public var boyf:String = 'bf';
+	public var deathColor:String = '000000';
 	var halloweenLevel:Bool = false;
 
 	private var vocals:FlxSound;
@@ -280,6 +280,7 @@ class PlayState extends MusicBeatState
 	public var ponyvilleBG:FlxSprite;
 	public var daInst:openfl.media.Sound;
 	public var camBoomSpeed:Int = 4;
+	public var camZoomSpeed:Float = 0.4;
 	public var SKY:FlxSprite;
 	//public var daVoices:openfl.media.Sound;
 
@@ -905,7 +906,7 @@ class PlayState extends MusicBeatState
 
 		add(camFollow);
 
-		FlxG.camera.follow(camFollow, LOCKON, 0.1);
+		FlxG.camera.follow(camFollow, LOCKON, camZoomSpeed / fpsRatio);
 		// FlxG.camera.setScrollBounds(0, FlxG.width, 0, FlxG.height);
 		FlxG.camera.zoom = defaultCamZoom;
 		FlxG.camera.focusOn(camFollow.getPosition());
@@ -913,7 +914,6 @@ class PlayState extends MusicBeatState
 		FlxG.worldBounds.set(0, 0, FlxG.width, FlxG.height);
 
 		FlxG.fixedTimestep = false;
-
 		healthBarBG = new FlxSprite(0, FlxG.height * 0.9).loadGraphic(Paths.image('healthBar'));
 		healthBarBG.screenCenter(X);
 		healthBarBG.scrollFactor.set();
@@ -2642,7 +2642,7 @@ class PlayState extends MusicBeatState
 			vocals.stop();
 			FlxG.sound.music.stop();
 
-			openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+			openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y,boyf,deathSound,deathSong,deathEndSong,deathColor));
 
 			// FlxG.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 
