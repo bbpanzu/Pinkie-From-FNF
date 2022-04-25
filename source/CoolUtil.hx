@@ -1,6 +1,6 @@
 package;
 
-import flixel.FlxCamera;
+import flixel.*;
 import lime.utils.Assets;
 import sys.io.File;
 
@@ -9,7 +9,7 @@ using StringTools;
 class CoolUtil
 {
 	public static var difficultyArray:Array<String> = ['EASY', "NORMAL", "HARD"];
-
+	
 	public static function difficultyString():String
 	{
 		return difficultyArray[PlayState.storyDifficulty];
@@ -41,6 +41,32 @@ class CoolUtil
 		return PlayState.instance.camGame;
 	}
 
+	public static function addSprite(x,y,path:String,scrollFactor:Float=1):FlxSprite{
+		var sprite:FlxSprite = new FlxSprite(x, y).loadGraphic(Paths.image(path));
+		sprite.scrollFactor.set(scrollFactor, scrollFactor);
+		sprite.active = false;
+		sprite.antialiasing = true;
+		return sprite;
+	}
+	public static function addAnimPrefix(x,y,path:String,prefix:String,scrollFactor:Float=1,loop:Bool=true,fps:Int=24):FlxSprite{
+		var sprite:FlxSprite = new FlxSprite(x, y);
+		sprite.frames = Paths.getSparrowAtlas(path);
+		sprite.animation.addByPrefix(prefix,prefix,fps,loop);
+		sprite.animation.play(prefix);
+		sprite.antialiasing = true;
+		sprite.scrollFactor.set(scrollFactor, scrollFactor);
+		return sprite;
+	}
+	public static function addAnimIndices(x,y,path:String,prefix:String,indices:Array<Int>,scrollFactor:Float=1,loop:Bool=true,fps:Int=24):FlxSprite{
+		var sprite:FlxSprite = new FlxSprite(x, y);
+		sprite.frames = Paths.getSparrowAtlas(path);
+		sprite.animation.addByIndices(prefix, prefix, indices, "", fps,loop);
+		sprite.animation.play(prefix);
+		sprite.antialiasing = true;
+		sprite.scrollFactor.set(scrollFactor, scrollFactor);
+		return sprite;
+	}
+	
 	public static function coolTextFile3(path:String):Array<String>
 	{
 		var daList:Array<String> = File.getContent(path).trim().split('\n');

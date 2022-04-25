@@ -656,7 +656,7 @@ class Character extends FlxSprite
 			}
 		}
 	}
-	public function getDiscord(anim){
+	public function getDiscord(anim){//UNUSED DISCORD WAS GOING TO HAVE 12 ANIMS
 		
 				//frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_'+anim);
 				frames = Startup.atlasFrames.get('discord_'+anim);

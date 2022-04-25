@@ -58,10 +58,12 @@ this.deathSong = deathSong;
 		{
 			FlxG.sound.music.stop();
 
-			if (PlayState.isStoryMode)
+			if (PlayState.isStoryMode){
+				Conductor.changeBPM(110);
 				FlxG.switchState(new StoryMenuState());
-			else
+			}else{
 				FlxG.switchState(new FreeplayState());
+			}
 		}
 
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.curFrame == 12)

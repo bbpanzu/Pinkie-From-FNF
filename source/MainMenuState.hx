@@ -97,7 +97,6 @@ class MainMenuState extends MusicBeatState
 		add(trixie);
 		
 		
-Conductor.changeBPM(110);
 		add(menuItems);
 		
 

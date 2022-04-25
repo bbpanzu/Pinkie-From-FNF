@@ -198,12 +198,12 @@ class Note extends FlxSprite
 			var balls:Array<String> = [TitleState.curDir,"assets"];
 			for (i in balls){
 				
-				if (FileSystem.exists(i + "/shared/images/NOTE_assets.png")){
-					path = i + "/shared/images/NOTE_assets.png";
+				if (FileSystem.exists(i + "/shared/images/"+char+".png")){
+					path = i + "/shared/images/"+char+".png";
 					break;
 				}
-				if (FileSystem.exists("mods/"+ i + "/shared/images/NOTE_assets.png")){
-					path = "mods/" + i + "/shared/images/NOTE_assets.png";
+				if (FileSystem.exists("mods/"+ i + "/shared/images/"+char+".png")){
+					path = "mods/" + i + "/shared/images/"+char+".png";
 					break;
 				}
 			}

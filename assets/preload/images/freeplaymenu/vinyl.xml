@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="vinyl.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="vinyl0000" x="760" y="1419" width="758" height="701" frameX="0" frameY="-14" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0001" x="1520" y="1419" width="758" height="701" frameX="0" frameY="-14" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0002" x="2280" y="1419" width="758" height="696" frameX="0" frameY="-14" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0003" x="2280" y="2117" width="758" height="696" frameX="0" frameY="-14" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0004" x="0" y="712" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0005" x="760" y="712" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0006" x="3040" y="0" width="758" height="706" frameX="0" frameY="-4" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0007" x="3040" y="708" width="758" height="706" frameX="0" frameY="-4" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0008" x="1520" y="712" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0009" x="2280" y="712" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0010" x="1520" y="712" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0011" x="2280" y="712" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0012" x="1520" y="712" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0013" x="2280" y="712" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0014" x="1520" y="712" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0015" x="2280" y="712" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0016" x="1520" y="712" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0017" x="2280" y="712" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0018" x="1520" y="712" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0019" x="2280" y="712" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0020" x="3040" y="1416" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0021" x="0" y="1419" width="758" height="705" frameX="0" frameY="-5" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0022" x="0" y="0" width="758" height="710" frameX="0" frameY="0" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0023" x="760" y="0" width="758" height="710" frameX="0" frameY="0" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0024" x="1520" y="0" width="758" height="710" frameX="0" frameY="0" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0025" x="2280" y="0" width="758" height="710" frameX="0" frameY="0" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0026" x="1520" y="0" width="758" height="710" frameX="0" frameY="0" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0027" x="2280" y="0" width="758" height="710" frameX="0" frameY="0" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0028" x="1520" y="0" width="758" height="710" frameX="0" frameY="0" frameWidth="758" frameHeight="715"/>
+	<SubTexture name="vinyl0029" x="2280" y="0" width="758" height="710" frameX="0" frameY="0" frameWidth="758" frameHeight="715"/>
+</TextureAtlas>

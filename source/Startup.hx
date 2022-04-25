@@ -71,10 +71,11 @@ class Startup extends MusicBeatState
     override function update(elapsed) 
     {
         
+			if (indx>=atlist.length)
+				loadingText.text = "Done!";
       
        if (atlasDone)
         {
-        loadingText.text = "Done!";
         //FlxG.sound.play(Paths.sound('confirmMenu'));
 			if (indx>=atlist.length){
 				
@@ -83,7 +84,6 @@ class Startup extends MusicBeatState
 				FlxG.switchState(new Startup());
 			}
         }
-            
         super.update(elapsed);
 
     }

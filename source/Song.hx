@@ -3,6 +3,7 @@ package;
 import Section.SwagSection;
 import haxe.Json;
 import haxe.format.JsonParser;
+import sys.FileSystem;
 import lime.utils.Assets;
 import sys.io.File;
 
@@ -64,6 +65,10 @@ class Song
 
 	public static function loadFromJson(jsonInput:String, ?folder:String):SwagSong
 	{
+		
+		if (!FileSystem.exists(Paths.json(folder.toLowerCase() + '/' + jsonInput.toLowerCase()))){
+			return null;
+		}
 		var rawJson = File.getContent(Paths.json(folder.toLowerCase() + '/' + jsonInput.toLowerCase())).trim();
 
 		while (!rawJson.endsWith("}"))

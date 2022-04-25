@@ -178,6 +178,7 @@ introSong = openfl.media.Sound.fromFile(Paths.music('freakyMenu'));
 
 		logoBl = new FlxSprite(83, 50).loadGraphic(Paths.image('logo'));
 		logoBl.angle = -5;
+		logoBl.antialiasing=true;
 		FlxTween.tween(logoBl,{angle:5},3,{type:PINGPONG,ease:FlxEase.sineInOut});
 		FlxTween.tween(logoBl,{y:100},1,{type:PINGPONG,ease:FlxEase.sineInOut});
 		// logoBl.screenCenter();

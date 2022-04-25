@@ -231,7 +231,7 @@ class Paths
 	}
 	
 
-	static public function getTextFile(key:String):String{
+	static public function getTextFile(key:String,preload:Bool = false):String{
 		
 			
 			var path = "";
@@ -253,7 +253,8 @@ class Paths
 						trace(pulllfromAssets);
 						var txt:String = '';
 			if (pulllfromAssets){
-				txt = OpenFlAssets.getText("shared:"+path);
+				var pl = preload?"":"shared:";
+				txt = OpenFlAssets.getText(pl+path);
 			}else{
 				txt = File.getContent(path);
 			}

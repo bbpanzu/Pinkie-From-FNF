@@ -108,9 +108,11 @@ class PauseSubState extends MusicBeatSubstate
 				case "Restart Song":
 					FlxG.resetState();
 				case "Botplay":
-					PlayState.currentPState.currentOptions.botPlay = !PlayState.currentPState.currentOptions.botPlay;
+					ScoreUtils.botPlay = !ScoreUtils.botPlay;
 				case "Exit to menu":
+					Conductor.changeBPM(110);
 					FlxG.switchState(new MainMenuState());
+					Paths.imgCache.clear();
 					Cache.Clear();
 			}
 		}
