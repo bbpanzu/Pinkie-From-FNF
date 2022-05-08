@@ -49,6 +49,7 @@ class OptionsMenu extends MusicBeatState
 			new ToggleOption("newInput","New Input","New input is a quaver-like system where each lane handles its own notes"),
 			new ToggleOption("hitSound","Hit sounds","Play a click sound when you hit a note"),
 			new ToggleOption("freeplayPreview","Song preview in freeplay","Do songs get played when selecting them in the freeplay menu"),
+			//new ToggleOption("stretchspeed","Stretch-Speed Change","Enable for Stretch-scroll speed. disable for Shift-scroll speed"),
 			new CountOption("fpsCap",60,240,'',' FPS'),
 			new OptionCategory("Effects",[
 				new ToggleOption("picoShaders","Week 3 shaders","Does the windows fading out in week 3 use shaders"),

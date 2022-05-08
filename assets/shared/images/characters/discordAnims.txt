@@ -1,1 +1,6 @@
-prefix idle discordAll
+prefix idle 24 discord_idle
+prefix singLEFT 24 discord_left
+prefix singRIGHT 24 discord_right
+prefix singUP 24 discord_up
+prefix singDOWN 24 discord_down
+camofs 0,-100

@@ -13,8 +13,8 @@ class MusicBeatState extends FlxUIState
 	private var lastBeat:Float = 0;
 	private var lastStep:Float = 0;
 
-	private var curStep:Int = 0;
-	private var curBeat:Int = 0;
+	public var curStep:Int = 0;
+	public var curBeat:Int = 0;
 	public  var stopped:Bool = false;
 	private var controls(get, never):Controls;
 
@@ -28,6 +28,7 @@ class MusicBeatState extends FlxUIState
 		
 		if (transIn != null)
 			trace('reg ' + transIn.region);
+			
 FlxG.save.data.volume = FlxG.sound.volume;
 		super.create();
 	}

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="rainbowsss.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="rainbowsss0000" x="0" y="0" width="1301" height="721"/>
+	<SubTexture name="rainbowsss0001" x="1303" y="0" width="1301" height="720" frameX="0" frameY="0" frameWidth="1301" frameHeight="721"/>
+	<SubTexture name="rainbowsss0002" x="2606" y="0" width="1301" height="720" frameX="0" frameY="0" frameWidth="1301" frameHeight="721"/>
+	<SubTexture name="rainbowsss0003" x="3909" y="0" width="1301" height="720" frameX="0" frameY="0" frameWidth="1301" frameHeight="721"/>
+	<SubTexture name="rainbowsss0004" x="5212" y="0" width="1301" height="720" frameX="0" frameY="0" frameWidth="1301" frameHeight="721"/>
+	<SubTexture name="rainbowsss0005" x="6515" y="0" width="1301" height="720" frameX="0" frameY="0" frameWidth="1301" frameHeight="721"/>
+	<SubTexture name="rainbowsss0006" x="1303" y="722" width="1301" height="720" frameX="0" frameY="0" frameWidth="1301" frameHeight="721"/>
+	<SubTexture name="rainbowsss0007" x="2606" y="722" width="1301" height="720" frameX="0" frameY="0" frameWidth="1301" frameHeight="721"/>
+	<SubTexture name="rainbowsss0008" x="3909" y="722" width="1301" height="720" frameX="0" frameY="0" frameWidth="1301" frameHeight="721"/>
+	<SubTexture name="rainbowsss0009" x="5212" y="722" width="1301" height="720" frameX="0" frameY="0" frameWidth="1301" frameHeight="721"/>
+	<SubTexture name="rainbowsss0010" x="6515" y="722" width="1301" height="720" frameX="0" frameY="0" frameWidth="1301" frameHeight="721"/>
+	<SubTexture name="rainbowsss0011" x="0" y="723" width="1301" height="720" frameX="0" frameY="0" frameWidth="1301" frameHeight="721"/>
+	<SubTexture name="rainbowsss0012" x="1303" y="1444" width="1301" height="720" frameX="0" frameY="0" frameWidth="1301" frameHeight="721"/>
+	<SubTexture name="rainbowsss0013" x="2606" y="1444" width="1301" height="720" frameX="0" frameY="0" frameWidth="1301" frameHeight="721"/>
+	<SubTexture name="rainbowsss0014" x="3909" y="1444" width="1301" height="720" frameX="0" frameY="0" frameWidth="1301" frameHeight="721"/>
+	<SubTexture name="rainbowsss0015" x="5212" y="1444" width="1280" height="720" frameX="-7" frameY="0" frameWidth="1301" frameHeight="721"/>
+</TextureAtlas>

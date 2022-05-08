@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="down.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="discord_down0000" x="0" y="1070" width="1358" height="1028" frameX="-10" frameY="-77" frameWidth="1368" frameHeight="1105"/>
+	<SubTexture name="discord_down0001" x="0" y="1070" width="1358" height="1028" frameX="-10" frameY="-77" frameWidth="1368" frameHeight="1105"/>
+	<SubTexture name="discord_down0002" x="0" y="0" width="1358" height="1068" frameX="0" frameY="0" frameWidth="1368" frameHeight="1105"/>
+	<SubTexture name="discord_down0003" x="0" y="0" width="1358" height="1068" frameX="0" frameY="0" frameWidth="1368" frameHeight="1105"/>
+	<SubTexture name="discord_down0004" x="0" y="0" width="1358" height="1068" frameX="0" frameY="0" frameWidth="1368" frameHeight="1105"/>
+	<SubTexture name="discord_down0005" x="0" y="0" width="1358" height="1068" frameX="0" frameY="0" frameWidth="1368" frameHeight="1105"/>
+</TextureAtlas>

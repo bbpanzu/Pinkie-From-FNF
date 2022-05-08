@@ -651,7 +651,7 @@ var UI_notescale:FlxUINumericStepper;
 		}
 
 		curRenderedNotes.forEach(function(note:Note){
-			if(note.strumTime<=Conductor.songPosition && note.noteType==0){
+			if(note.strumTime<=Conductor.songPosition){
 				if(note.color!=0xAAAAAA){
 					if(!note.wasGoodHit){
 						note.wasGoodHit=true;

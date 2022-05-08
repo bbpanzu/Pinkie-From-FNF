@@ -10,10 +10,12 @@ Twilight end monologue[X]
 BG pony boppers cool lookin [X]
 Discord Entrance Sequence Animation [X]
 
-Discord bg events [ ]
-Discord end event [ ]
+Discord bg events [X]
+Discord end event [X]
 Discord portraits [ ]
+Discord dialogue [ ]
 Storyblanks zombie ponies [X]
-babs sneed ending [ ]
-
+babs sneed ending [X]
+Fix chart errors (Cupcakes, )[ ]
+remove cyan rap pinkie guidelines[ ]
 

@@ -117,9 +117,9 @@ class MainMenuState extends MusicBeatState
 		menuItems.members[2].setPosition(645.45, 411);
 		//FlxG.camera.follow(camFollow, null, 0.06);
 
-		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, "v" + Application.current.meta.get('version') + " - Andromeda Engine B6", 12);
+		var versionShit:FlxText = new FlxText(5, FlxG.height - 36, 0, "Laughter Edition  - Andromeda Engine B6", 18);
 		versionShit.scrollFactor.set();
-		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		versionShit.setFormat("Woodrow W00 Reg", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
 
 				new FlxTimer().start(12, function(e:FlxTimer){

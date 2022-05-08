@@ -19,10 +19,12 @@ class AnimationDebug extends FlxState
 	var bf:Boyfriend;
 	var dad:Character;
 	var char:Character;
+	var ghostchar:Character;
 	var textAnim:FlxText;
 	var dumbTexts:FlxTypedGroup<FlxText>;
 	var animList:Array<String> = [];
 	var curAnim:Int = 0;
+	var GHOST_curAnim:Int = 0;
 	var isDad:Bool = true;
 	var daAnim:String = 'spooky';
 	var camFollow:FlxObject;
@@ -49,7 +51,6 @@ class AnimationDebug extends FlxState
 			dad = new Character(0, 0, daAnim);
 			dad.screenCenter();
 			dad.debugMode = true;
-			add(dad);
 
 			char = dad;
 			dad.flipX = false;
@@ -59,12 +60,16 @@ class AnimationDebug extends FlxState
 			bf = new Boyfriend(0, 0);
 			bf.screenCenter();
 			bf.debugMode = true;
-			add(bf);
 
 			char = bf;
 			bf.flipX = false;
 		}
-
+ghostchar = new Character(0, 0, daAnim, !isDad);
+ghostchar.alpha = 0.5;
+ghostchar.debugMode = true;
+ghostchar.screenCenter();
+			add(char);
+			add(ghostchar);
 		dumbTexts = new FlxTypedGroup<FlxText>();
 		add(dumbTexts);
 
@@ -127,7 +132,7 @@ class AnimationDebug extends FlxState
 			FlxG.camera.zoom += 0.25;
 		if (FlxG.keys.justPressed.Q)
 			FlxG.camera.zoom -= 0.25;
-
+/*
 		if (FlxG.keys.pressed.I || FlxG.keys.pressed.J || FlxG.keys.pressed.K || FlxG.keys.pressed.L)
 		{
 			if (FlxG.keys.pressed.I)
@@ -147,20 +152,34 @@ class AnimationDebug extends FlxState
 		else
 		{
 			camFollow.velocity.set();
+		}*/
+
+		if (FlxG.keys.justPressed.C && FlxG.keys.pressed.CONTROL)
+		{
+			openfl.system.System.setClipboard(texto);
 		}
 
 		if (FlxG.keys.justPressed.W)
 		{
 			curAnim -= 1;
 		}
-		if (FlxG.keys.justPressed.C && FlxG.keys.pressed.CONTROL)
-		{
-			openfl.system.System.setClipboard(texto);
-		}
-
 		if (FlxG.keys.justPressed.S)
 		{
 			curAnim += 1;
+		}
+
+		if (FlxG.keys.justPressed.B)
+		{
+			ghostchar.visible = !ghostchar.visible;
+		}
+		
+		if (FlxG.keys.justPressed.I)
+		{
+			GHOST_curAnim -= 1;
+		}
+		if (FlxG.keys.justPressed.K)
+		{
+			GHOST_curAnim += 1;
 		}
 
 		if (curAnim < 0)
@@ -175,6 +194,10 @@ class AnimationDebug extends FlxState
 
 			updateTexts();
 			genBoyOffsets(false);
+		}
+		if (FlxG.keys.justPressed.K || FlxG.keys.justPressed.I || FlxG.keys.justPressed.SPACE)
+		{
+			ghostchar.playAnim(animList[curAnim]);
 		}
 
 		var upP = FlxG.keys.anyJustPressed([UP]);
@@ -192,12 +215,16 @@ class AnimationDebug extends FlxState
 			updateTexts();
 			if (upP)
 				char.animOffsets.get(animList[curAnim])[1] += 1 * multiplier;
+				ghostchar.animOffsets.get(animList[curAnim])[1] += 1 * multiplier;
 			if (downP)
 				char.animOffsets.get(animList[curAnim])[1] -= 1 * multiplier;
+				ghostchar.animOffsets.get(animList[curAnim])[1] -= 1 * multiplier;
 			if (leftP)
 				char.animOffsets.get(animList[curAnim])[0] += 1 * multiplier;
+				ghostchar.animOffsets.get(animList[curAnim])[0] += 1 * multiplier;
 			if (rightP)
 				char.animOffsets.get(animList[curAnim])[0] -= 1 * multiplier;
+				ghostchar.animOffsets.get(animList[curAnim])[0] -= 1 * multiplier;
 
 			updateTexts();
 			genBoyOffsets(false);

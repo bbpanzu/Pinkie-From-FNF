@@ -926,7 +926,6 @@ class LuaCam extends LuaClass {
     cam.shake(intensity,duration,null,force);
     return 0;
   }
-
   private static function setShaders(l:StatePointer):Int{
     // 1 = self
     // 2 = table of shaders

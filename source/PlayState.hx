@@ -163,6 +163,7 @@ class PlayState extends MusicBeatState
 	public var hasEndDialogue:Bool = false;
 	public var dadaltAnim:String = "";
 	public var bfaltAnim:String = "";
+	public var gfaltAnim:String = "";
 
 	public var camZoomTween:FlxTween;
 	public var camBoomTween:FlxTween;
@@ -260,6 +261,9 @@ class PlayState extends MusicBeatState
 	var noteLanes:Array<Array<Note>> = [];
 	var susNoteLanes:Array<Array<Note>> = [];
 
+		var p1Color = 0xFF66FF33;
+		var p2Color = 0xFFFF0000; // TODO: GIVE EVERYONE CUSTOM HP BAR COLOURS!!!
+		// AND MAKE IT BETTER WITH A NOTEPAD FILE OR SOMETHING!!
 	var velocityMarkers:Array<Float>=[];
 	var beattype:String = "porche";
 	//porche (liek bella borce)
@@ -564,7 +568,10 @@ class PlayState extends MusicBeatState
 				addSprite( -378.85, -879.85, "pinkie/discord/bigcloud",0.25);
 				
 				
-				
+				setSpr('disc_end',addSprite( 0, 0, "characters/discord_end",1));
+				setSpr('disc_die',addSprite( 0, 0, "characters/discord_die",1));
+				getSpr('disc_end').alpha = 0.001;
+				getSpr('disc_die').alpha = 0.001;
 				
 				
 				
@@ -577,7 +584,6 @@ class PlayState extends MusicBeatState
 				floatShits.push(addSprite( 575.2, -210.15, "pinkie/discord/floathouse",0.4));
 				floatShits.push(addSprite( 1106.15, -553.45, "pinkie/discord/citthall",0.5));
 				
-						  ponyvilleBG = addSprite( -908.45, -125.35, "pinkie/bg");
 				addAnimPrefix( 894.65, -38.05, "pinkie/discord/cottoncloud2","cottoncloud2",0.6);
 				addAnimPrefix( -148.6, -103.5, "pinkie/discord/cottoncloud3","cottoncloud3",0.7);
 				
@@ -599,8 +605,12 @@ class PlayState extends MusicBeatState
 						  
 				
 						//}
-						  
+						  setSpr('rainbowsss', addAnimPrefix(0, 0, "pinkie/discord/rainbowsss", 'rainbowsss', 0, true, 24));
+						  getSpr('rainbowsss').visible = false;
+						  getSpr('rainbowsss').scale.set(1.5,1.5);
 					  
+				setSpr('disc_hey',addAnimPrefix( -661.55,-1199.25, "characters/DISCORDSPRITES/hey","discord_hey",1,false));
+					getSpr('disc_hey').alpha = 0.001;
 		          default:
 		          {
 											if(!SONG.noBG){
@@ -811,24 +821,25 @@ class PlayState extends MusicBeatState
 				
 			//	strumLine.y += 150;
 			case 'discord':
-				dad.setPosition(-261.55,-1199.25);
+				dad.setPosition(-661.55,-1199.25);
 				boyfriend.setPosition(880,234);
 				gf.setPosition(400, -96);
 				gf.scale.x = gf.scale.y = 0.2;
 				gf.angle = 20;
-				
+				gf.scrollFactor.set(0.4,0.4)
+				floatShits.push(gf);
 						  setSpr('flutter', addAnimPrefix( 2536.8, 60.8, "pinkie/discord/fluttershy", 'flutter_end', 1, false, 0));
 						  setSpr('rarity', addAnimPrefix( 2168.85, 310.45, "pinkie/discord/rarity", 'rarity_end', 1, false, 0));
 						  setSpr('dash', addAnimPrefix( 1428.5, 332.75, "pinkie/discord/dash", 'dash_end', 1, false, 0));
 				
 						  
-						  getSpr('pinkie').visible = false;
-						  getSpr('twi').visible = false;
-						  getSpr('aj').visible = false;
+						  getSpr('pinkie').alpha = 0.0001;
+						  getSpr('twi').alpha = 0.0001;
+						  getSpr('aj').alpha = 0.0001;
 						  
-						  getSpr('flutter').visible = false;
-						  getSpr('rarity').visible = false;
-						  getSpr('dash').visible = false;
+						  getSpr('flutter').alpha = 0.0001;
+						  getSpr('rarity').alpha = 0.0001;
+						  getSpr('dash').alpha = 0.0001;
 						  
 						  
 						  setSpr('screwball', addAnimPrefix( 1280, -13, "pinkie/discord/screwball", 'screwball', 1));
@@ -836,6 +847,7 @@ class PlayState extends MusicBeatState
 						 new FlxTimer().start(FlxG.random.int(60, 120), function(e:FlxTimer){
 						  getSpr('screwball').velocity.x = -300;
 						 });
+						 
 						  
 
 			case 'mallEvil':
@@ -922,9 +934,6 @@ class PlayState extends MusicBeatState
 		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
 			'health', 0, 2);
 		healthBar.scrollFactor.set();
-		var p1Color = 0xFF66FF33;
-		var p2Color = 0xFFFF0000; // TODO: GIVE EVERYONE CUSTOM HP BAR COLOURS!!!
-		// AND MAKE IT BETTER WITH A NOTEPAD FILE OR SOMETHING!!
 
 		switch(SONG.player1){
 			case 'bf-neb':
@@ -951,37 +960,37 @@ class PlayState extends MusicBeatState
 		add(healthBar);
 
 		scoreTxt = new FlxText(healthBarBG.x + healthBarBG.width / 2 - 150, healthBarBG.y + 50, 0, "", 20);
-		scoreTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		scoreTxt.setFormat(Paths.font("Woodrow W00 Reg.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		scoreTxt.scrollFactor.set();
 		add(scoreTxt);
 
 		presetTxt = new FlxText(0, FlxG.height/2-80, 0, "", 20);
-		presetTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+		presetTxt.setFormat(Paths.font("Woodrow W00 Reg.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		presetTxt.scrollFactor.set();
 		presetTxt.visible=false;
 
 		highComboTxt = new FlxText(0, FlxG.height/2-60, 0, "", 20);
-		highComboTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+		highComboTxt.setFormat(Paths.font("Woodrow W00 Reg.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		highComboTxt.scrollFactor.set();
 
 		sicksTxt = new FlxText(0, FlxG.height/2-40, 0, "", 20);
-		sicksTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+		sicksTxt.setFormat(Paths.font("Woodrow W00 Reg.ttf"), 16, FlxColor.CYAN, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		sicksTxt.scrollFactor.set();
 
 		goodsTxt = new FlxText(0, FlxG.height/2-20, 0, "", 20);
-		goodsTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+		goodsTxt.setFormat(Paths.font("Woodrow W00 Reg.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		goodsTxt.scrollFactor.set();
 
 		badsTxt = new FlxText(0, FlxG.height/2, 0, "", 20);
-		badsTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+		badsTxt.setFormat(Paths.font("Woodrow W00 Reg.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		badsTxt.scrollFactor.set();
 
 		shitsTxt = new FlxText(0, FlxG.height/2+20, 0, "", 20);
-		shitsTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+		shitsTxt.setFormat(Paths.font("Woodrow W00 Reg.ttf"), 16, FlxColor.GRAY, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		shitsTxt.scrollFactor.set();
 
 		missesTxt = new FlxText(0, FlxG.height/2+40, 0, "", 20);
-		missesTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+		missesTxt.setFormat(Paths.font("Woodrow W00 Reg.ttf"), 16, FlxColor.RED, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		missesTxt.scrollFactor.set();
 
 		missesTxt.text = "Miss: " + misses;
@@ -1047,6 +1056,12 @@ class PlayState extends MusicBeatState
 
 			Lua_helper.add_callback(lua.state,"skipCountdown", function(){
 				skipCountdown = true;
+			});
+			Lua_helper.add_callback(lua.state,"flashCam", function(cam:String='game',?dur:Float=0.5,?color:String='FFFFFF'){
+				CoolUtil.cameraFromString(cam).flash(CoolUtil.getColorFromHex(color), dur);
+			});
+			Lua_helper.add_callback(lua.state,"fadeCam", function(cam:String='game',?dur:Float=0.5,?color:String='FFFFFF'){
+				CoolUtil.cameraFromString(cam).fade(CoolUtil.getColorFromHex(color), dur);
 			});
 			Lua_helper.add_callback(lua.state,"notePlayAnim", function(note:Int,animation:String,forced:Bool=false){
 				hittableNotes[note].animation.play(animation,forced);
@@ -2602,12 +2617,11 @@ class PlayState extends MusicBeatState
 		if (curSong == 'Discord')
 		{
 			
-			gf.angle += 0.01;
-			var t = 0;
+			var t = 0.00;
 			for (i in floatShits){
 				var r = 1;
 				if (t % 160 == 0) r = -1;
-				t += 80;
+				t += 80*(elapsed/0.016);
 				i.angle = Math.sin((bitch + t)/100) * 2 * r;
 				i.offset.y = Math.sin((bitch + t)/10)*8;
 			}
@@ -2831,6 +2845,7 @@ class PlayState extends MusicBeatState
 						if(luaModchartExists && lua!=null){
 							lua.call("dadNoteHit",[Math.abs(daNote.noteData),daNote.strumTime,Conductor.songPosition,daNote.isSustainNote,daNote.noteType]); // TODO: Note lua class???
 						}
+						
 						if(health > modchart.opponentHPDrain){
 						health -= modchart.opponentHPDrain;
 						}
@@ -4320,15 +4335,17 @@ class PlayState extends MusicBeatState
 				switch(curBeat){
 					case 552:
 						
-						  getSpr('pinkie').visible = true;
-						  getSpr('twi').visible = true;
+						  getSpr('pinkie').alpha = 1;
+						  getSpr('twi').alpha = 1;
 						  getSpr('twi').animation.play('twi_end',true,false,10);
-						  getSpr('aj').visible = true;
+						  getSpr('aj').alpha = 1;
 						  
-						  getSpr('flutter').visible = true;
-						  getSpr('rarity').visible = true;
-						  getSpr('dash').visible = true;
-						  
+						  getSpr('flutter').alpha = 1;
+						  getSpr('rarity').alpha = 1;
+						  getSpr('dash').alpha = 1;
+						  FlxTween.tween(camHUD, {alpha:0}, 0.4);
+					case 288:
+						PlayState.instance.getSpr('disc_hey').alpha = 0.001;
 					case 554:
 						
 						  setCamPos(2325, 296);
@@ -4361,8 +4378,10 @@ class PlayState extends MusicBeatState
 						  
 					case 573:
 						  setCamPos(9999,9999,true);
-					case 579:
-						 
+					case 580:
+						  getSpr('rainbowsss').visible = true;
+					case 594:
+						  getSpr('rainbowsss').visible = false;
 					
 				}
 			}
@@ -4387,7 +4406,7 @@ class PlayState extends MusicBeatState
 		iconP2.scale.set(1.2, 1.2);
 		if (curBeat % gfSpeed == 0)
 		{
-			gf.dance();
+			gf.dance(gfaltAnim);
 		}
 
 		if (!boyfriend.animation.curAnim.name.startsWith("sing") && !boyfriend.animation.curAnim.name.startsWith("hey"))

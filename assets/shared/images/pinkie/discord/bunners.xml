@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bunners.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="BUNNERS0000" x="1619" y="0" width="1605" height="780" frameX="-5" frameY="0" frameWidth="1629" frameHeight="785"/>
+	<SubTexture name="BUNNERS0001" x="0" y="0" width="1617" height="775" frameX="-8" frameY="-5" frameWidth="1629" frameHeight="785"/>
+	<SubTexture name="BUNNERS0002" x="1631" y="782" width="1629" height="761" frameX="0" frameY="-24" frameWidth="1629" frameHeight="785"/>
+	<SubTexture name="BUNNERS0003" x="0" y="1551" width="1605" height="749" frameX="-5" frameY="-34" frameWidth="1629" frameHeight="785"/>
+	<SubTexture name="BUNNERS0004" x="1631" y="1545" width="1617" height="751" frameX="-8" frameY="-34" frameWidth="1629" frameHeight="785"/>
+	<SubTexture name="BUNNERS0005" x="0" y="782" width="1629" height="767" frameX="0" frameY="-16" frameWidth="1629" frameHeight="785"/>
+</TextureAtlas>

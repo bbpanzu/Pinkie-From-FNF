@@ -1,20 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="discord.png">
-	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="discord_idle0000" x="0" y="0" width="1053" height="1644" frameX="-49" frameY="-23" frameWidth="1139" frameHeight="1667"/>
-	<SubTexture name="discord_idle0001" x="0" y="0" width="1053" height="1644" frameX="-49" frameY="-23" frameWidth="1139" frameHeight="1667"/>
-	<SubTexture name="discord_idle0002" x="1053" y="0" width="1101" height="1667" frameX="-27" frameY="0" frameWidth="1139" frameHeight="1667"/>
-	<SubTexture name="discord_idle0003" x="1053" y="0" width="1101" height="1667" frameX="-27" frameY="0" frameWidth="1139" frameHeight="1667"/>
-	<SubTexture name="discord_idle0004" x="2154" y="0" width="1136" height="1662" frameX="-3" frameY="-5" frameWidth="1139" frameHeight="1667"/>
-	<SubTexture name="discord_idle0005" x="2154" y="0" width="1136" height="1662" frameX="-3" frameY="-5" frameWidth="1139" frameHeight="1667"/>
-	<SubTexture name="discord_idle0006" x="0" y="1667" width="1138" height="1653" frameX="0" frameY="-14" frameWidth="1139" frameHeight="1667"/>
-	<SubTexture name="discord_idle0007" x="0" y="1667" width="1138" height="1653" frameX="0" frameY="-14" frameWidth="1139" frameHeight="1667"/>
-	<SubTexture name="discord_idle0008" x="1138" y="1667" width="1136" height="1651" frameX="-1" frameY="-16" frameWidth="1139" frameHeight="1667"/>
-	<SubTexture name="discord_idle0009" x="1138" y="1667" width="1136" height="1651" frameX="-1" frameY="-16" frameWidth="1139" frameHeight="1667"/>
-	<SubTexture name="discord_idle0010" x="1138" y="1667" width="1136" height="1651" frameX="-1" frameY="-16" frameWidth="1139" frameHeight="1667"/>
-	<SubTexture name="discord_idle0011" x="1138" y="1667" width="1136" height="1651" frameX="-1" frameY="-16" frameWidth="1139" frameHeight="1667"/>
-	<SubTexture name="discord_idle0012" x="1138" y="1667" width="1136" height="1651" frameX="-1" frameY="-16" frameWidth="1139" frameHeight="1667"/>
-	<SubTexture name="discord_idle0013" x="1138" y="1667" width="1136" height="1651" frameX="-1" frameY="-16" frameWidth="1139" frameHeight="1667"/>
-	<SubTexture name="discord_idle0014" x="1138" y="1667" width="1136" height="1651" frameX="-1" frameY="-16" frameWidth="1139" frameHeight="1667"/>
+	<SubTexture name="discord_down0000" x="1310" y="3553" width="1358" height="1028" frameX="-10" frameY="-77" frameWidth="1368" frameHeight="1105"/>
+	<SubTexture name="discord_down0001" x="1310" y="3553" width="1358" height="1028" frameX="-10" frameY="-77" frameWidth="1368" frameHeight="1105"/>
+	<SubTexture name="discord_down0002" x="5644" y="3429" width="1358" height="1068" frameX="0" frameY="0" frameWidth="1368" frameHeight="1105"/>
+	<SubTexture name="discord_down0003" x="5644" y="3429" width="1358" height="1068" frameX="0" frameY="0" frameWidth="1368" frameHeight="1105"/>
+	<SubTexture name="discord_down0004" x="5644" y="3429" width="1358" height="1068" frameX="0" frameY="0" frameWidth="1368" frameHeight="1105"/>
+	<SubTexture name="discord_down0005" x="5644" y="3429" width="1358" height="1068" frameX="0" frameY="0" frameWidth="1368" frameHeight="1105"/>
+	<SubTexture name="discord_idle0000" x="0" y="1808" width="1308" height="1810" frameX="0" frameY="0" frameWidth="1345" frameHeight="1810"/>
+	<SubTexture name="discord_idle0001" x="0" y="1808" width="1308" height="1810" frameX="0" frameY="0" frameWidth="1345" frameHeight="1810"/>
+	<SubTexture name="discord_idle0002" x="1478" y="1741" width="1334" height="1810" frameX="0" frameY="0" frameWidth="1345" frameHeight="1810"/>
+	<SubTexture name="discord_idle0003" x="1478" y="1741" width="1334" height="1810" frameX="0" frameY="0" frameWidth="1345" frameHeight="1810"/>
+	<SubTexture name="discord_idle0004" x="2972" y="0" width="1345" height="1810"/>
+	<SubTexture name="discord_idle0005" x="2972" y="0" width="1345" height="1810"/>
+	<SubTexture name="discord_idle0006" x="4319" y="0" width="1344" height="1810" frameX="0" frameY="0" frameWidth="1345" frameHeight="1810"/>
+	<SubTexture name="discord_idle0007" x="4319" y="0" width="1344" height="1810" frameX="0" frameY="0" frameWidth="1345" frameHeight="1810"/>
+	<SubTexture name="discord_idle0008" x="5665" y="0" width="1343" height="1810" frameX="0" frameY="0" frameWidth="1345" frameHeight="1810"/>
+	<SubTexture name="discord_idle0009" x="5665" y="0" width="1343" height="1810" frameX="0" frameY="0" frameWidth="1345" frameHeight="1810"/>
+	<SubTexture name="discord_idle0010" x="5665" y="0" width="1343" height="1810" frameX="0" frameY="0" frameWidth="1345" frameHeight="1810"/>
+	<SubTexture name="discord_idle0011" x="5665" y="0" width="1343" height="1810" frameX="0" frameY="0" frameWidth="1345" frameHeight="1810"/>
+	<SubTexture name="discord_idle0012" x="5665" y="0" width="1343" height="1810" frameX="0" frameY="0" frameWidth="1345" frameHeight="1810"/>
+	<SubTexture name="discord_idle0013" x="5665" y="0" width="1343" height="1810" frameX="0" frameY="0" frameWidth="1345" frameHeight="1810"/>
+	<SubTexture name="discord_idle0014" x="5665" y="0" width="1343" height="1810" frameX="0" frameY="0" frameWidth="1345" frameHeight="1810"/>
+	<SubTexture name="discord_left0000" x="1478" y="0" width="1492" height="1739" frameX="0" frameY="-33" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_left0001" x="1478" y="0" width="1492" height="1739" frameX="0" frameY="-33" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_left0002" x="0" y="0" width="1476" height="1806" frameX="-39" frameY="0" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_left0003" x="0" y="0" width="1476" height="1806" frameX="-39" frameY="0" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_left0004" x="0" y="0" width="1476" height="1806" frameX="-39" frameY="0" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_left0005" x="0" y="0" width="1476" height="1806" frameX="-39" frameY="0" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_left0006" x="0" y="0" width="1476" height="1806" frameX="-39" frameY="0" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_left0007" x="0" y="0" width="1476" height="1806" frameX="-39" frameY="0" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_left0008" x="0" y="0" width="1476" height="1806" frameX="-39" frameY="0" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_left0009" x="0" y="0" width="1476" height="1806" frameX="-39" frameY="0" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_left0010" x="0" y="0" width="1476" height="1806" frameX="-39" frameY="0" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_left0011" x="0" y="0" width="1476" height="1806" frameX="-39" frameY="0" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_left0012" x="0" y="0" width="1476" height="1806" frameX="-39" frameY="0" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_left0013" x="0" y="0" width="1476" height="1806" frameX="-39" frameY="0" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_left0014" x="0" y="0" width="1476" height="1806" frameX="-39" frameY="0" frameWidth="1515" frameHeight="1806"/>
+	<SubTexture name="discord_right0000" x="4060" y="3429" width="1582" height="1248" frameX="0" frameY="-28" frameWidth="1582" frameHeight="1323"/>
+	<SubTexture name="discord_right0001" x="4060" y="3429" width="1582" height="1248" frameX="0" frameY="-28" frameWidth="1582" frameHeight="1323"/>
+	<SubTexture name="discord_right0002" x="4060" y="1812" width="1535" height="1323" frameX="-4" frameY="0" frameWidth="1582" frameHeight="1323"/>
+	<SubTexture name="discord_right0003" x="4060" y="1812" width="1535" height="1323" frameX="-4" frameY="0" frameWidth="1582" frameHeight="1323"/>
+	<SubTexture name="discord_right0004" x="4060" y="1812" width="1535" height="1323" frameX="-4" frameY="0" frameWidth="1582" frameHeight="1323"/>
+	<SubTexture name="discord_right0005" x="4060" y="1812" width="1535" height="1323" frameX="-4" frameY="0" frameWidth="1582" frameHeight="1323"/>
+	<SubTexture name="discord_right0006" x="4060" y="1812" width="1535" height="1323" frameX="-4" frameY="0" frameWidth="1582" frameHeight="1323"/>
+	<SubTexture name="discord_right0007" x="4060" y="1812" width="1535" height="1323" frameX="-4" frameY="0" frameWidth="1582" frameHeight="1323"/>
+	<SubTexture name="discord_right0008" x="4060" y="1812" width="1535" height="1323" frameX="-4" frameY="0" frameWidth="1582" frameHeight="1323"/>
+	<SubTexture name="discord_right0009" x="4060" y="1812" width="1535" height="1323" frameX="-4" frameY="0" frameWidth="1582" frameHeight="1323"/>
+	<SubTexture name="discord_right0010" x="4060" y="1812" width="1535" height="1323" frameX="-4" frameY="0" frameWidth="1582" frameHeight="1323"/>
+	<SubTexture name="discord_right0011" x="4060" y="1812" width="1535" height="1323" frameX="-4" frameY="0" frameWidth="1582" frameHeight="1323"/>
+	<SubTexture name="discord_right0012" x="4060" y="1812" width="1535" height="1323" frameX="-4" frameY="0" frameWidth="1582" frameHeight="1323"/>
+	<SubTexture name="discord_up0000" x="2814" y="1812" width="1244" height="1642" frameX="0" frameY="0" frameWidth="1285" frameHeight="1642"/>
+	<SubTexture name="discord_up0001" x="2814" y="1812" width="1244" height="1642" frameX="0" frameY="0" frameWidth="1285" frameHeight="1642"/>
+	<SubTexture name="discord_up0002" x="5597" y="1812" width="1238" height="1615" frameX="-47" frameY="-9" frameWidth="1285" frameHeight="1642"/>
+	<SubTexture name="discord_up0003" x="5597" y="1812" width="1238" height="1615" frameX="-47" frameY="-9" frameWidth="1285" frameHeight="1642"/>
+	<SubTexture name="discord_up0004" x="5597" y="1812" width="1238" height="1615" frameX="-47" frameY="-9" frameWidth="1285" frameHeight="1642"/>
+	<SubTexture name="discord_up0005" x="5597" y="1812" width="1238" height="1615" frameX="-47" frameY="-9" frameWidth="1285" frameHeight="1642"/>
+	<SubTexture name="discord_up0006" x="5597" y="1812" width="1238" height="1615" frameX="-47" frameY="-9" frameWidth="1285" frameHeight="1642"/>
+	<SubTexture name="discord_up0007" x="5597" y="1812" width="1238" height="1615" frameX="-47" frameY="-9" frameWidth="1285" frameHeight="1642"/>
+	<SubTexture name="discord_up0008" x="5597" y="1812" width="1238" height="1615" frameX="-47" frameY="-9" frameWidth="1285" frameHeight="1642"/>
+	<SubTexture name="discord_up0009" x="5597" y="1812" width="1238" height="1615" frameX="-47" frameY="-9" frameWidth="1285" frameHeight="1642"/>
+	<SubTexture name="discord_up0010" x="5597" y="1812" width="1238" height="1615" frameX="-47" frameY="-9" frameWidth="1285" frameHeight="1642"/>
+	<SubTexture name="discord_up0011" x="5597" y="1812" width="1238" height="1615" frameX="-47" frameY="-9" frameWidth="1285" frameHeight="1642"/>
+	<SubTexture name="discord_up0012" x="5597" y="1812" width="1238" height="1615" frameX="-47" frameY="-9" frameWidth="1285" frameHeight="1642"/>
+	<SubTexture name="discord_up0013" x="5597" y="1812" width="1238" height="1615" frameX="-47" frameY="-9" frameWidth="1285" frameHeight="1642"/>
+	<SubTexture name="discord_up0014" x="5597" y="1812" width="1238" height="1615" frameX="-47" frameY="-9" frameWidth="1285" frameHeight="1642"/>
 </TextureAtlas>

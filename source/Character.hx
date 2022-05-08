@@ -490,16 +490,15 @@ class Character extends FlxSprite
 
 				antialiasing = true;
 
-			case 'discord_end':
+				antialiasing = true;
+/*
+			case 'discord_die':
 				
-				frames = AtlasFrameMaker.construct('assets/shared/images/characters/discord_end');
-				animation.addByPrefix('stop', "stop", 24, false);
-				animation.addByPrefix('poo', "poo", 24, false);
-				animation.addByPrefix('die', "die", 24, false);
-				animation.addByPrefix('end', "end", 24, false);
+				frames = Paths.getSparrowAtlas('characters/DISCORDSPRITES/die');
+				animation.addByPrefix('die', "discord_die", 24, false);
 
 				//loadOffsets();
-				unintAnims = ['stop','poo',"die",'end'];
+				unintAnims = ['stop','poo'];
 				playAnim('stop');
 
 				antialiasing = true;
@@ -524,7 +523,7 @@ class Character extends FlxSprite
 				getDiscord(anim);
 			case 'discord_atlas_hey':
 				var anim = "hey";
-				getDiscord(anim);
+				getDiscord(anim);*/
 			case 'doxxie':
 				
 				
@@ -842,7 +841,7 @@ class Character extends FlxSprite
 			else if (animation.getByName("danceRight"+alt)!=null && animation.getByName("danceLeft"+alt)!=null){
 				if (!animation.curAnim.name.startsWith('hair'))
 				{
-					danced = !danced;
+					danced = PlayState.instance.curBeat % 2 == 1;
 
 					if (danced)
 						playAnim('danceRight'+alt,true);
@@ -863,6 +862,22 @@ class Character extends FlxSprite
 		
 		animation.play(AnimName, Force, Reversed, Frame);
 		curAnim = AnimName;
+		
+		if (curCharacter == 'discord'){
+			
+			if (AnimName == 'hey'){
+				alpha = 0.001;
+				PlayState.instance.getSpr('disc_hey').alpha = 1;
+				PlayState.instance.getSpr('disc_hey').animation.play('discord_hey');
+			}
+			if (AnimName == 'singLEFT'){
+				alpha = 1;
+				PlayState.instance.getSpr('disc_hey').alpha = 0.0001;
+			}
+		}
+		
+		
+		
 		var daOffset = animOffsets.get(AnimName);
 		if (animOffsets.exists(AnimName))
 		{
@@ -887,6 +902,7 @@ class Character extends FlxSprite
 				danced = !danced;
 			}
 		}
+		
 	}
 
 	public function addOffset(name:String, x:Float = 0, y:Float = 0)

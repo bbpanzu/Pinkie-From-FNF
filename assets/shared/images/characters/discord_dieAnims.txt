@@ -1,0 +1,4 @@
+prefix idle 24 discord_die 
+prefix die 24 discord_die
+indices end 24 discord_die/115 116 117 118 119 120 121 122 123 124 125
+camofs 0,-100

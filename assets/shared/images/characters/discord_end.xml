@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="discord_end.png">
+	<!-- Created with Adobe Animate version 22.0.1.105 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="discord_poo0000" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0001" x="1183" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0002" x="1183" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0003" x="2366" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0004" x="2366" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0005" x="2366" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0006" x="3549" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0007" x="3549" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0008" x="3549" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0009" x="4732" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0010" x="4732" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0011" x="4732" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0012" x="5915" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0013" x="5915" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0014" x="5915" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0015" x="3549" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0016" x="3549" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0017" x="3549" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0018" x="4732" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0019" x="4732" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0020" x="4732" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0021" x="4732" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0022" x="4732" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0023" x="4732" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0024" x="4732" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0025" x="4732" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0026" x="4732" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_poo0027" x="4732" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0000" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0001" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0002" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0003" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0004" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0005" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0006" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0007" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0008" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0009" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0010" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0011" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0012" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0013" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0014" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0015" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0016" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0017" x="3404" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0018" x="4511" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0019" x="4511" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0020" x="5618" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0021" x="5618" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0022" x="5618" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0023" x="4511" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0024" x="4511" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0025" x="4511" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0026" x="4511" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0027" x="4511" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0028" x="4511" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0029" x="5618" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0030" x="5618" y="3105" width="1105" height="1553" frameX="-77" frameY="-18" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0031" x="6725" y="3105" width="1101" height="1528" frameX="-84" frameY="-43" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0032" x="6725" y="3105" width="1101" height="1528" frameX="-84" frameY="-43" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0033" x="7098" y="0" width="1082" height="1529" frameX="-114" frameY="-42" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0034" x="7098" y="0" width="1082" height="1529" frameX="-114" frameY="-42" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0035" x="1144" y="1572" width="1142" height="1526" frameX="-62" frameY="-45" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0036" x="1144" y="1572" width="1142" height="1526" frameX="-62" frameY="-45" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0037" x="0" y="1572" width="1142" height="1531" frameX="-61" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0038" x="0" y="1572" width="1142" height="1531" frameX="-61" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0039" x="2288" y="1572" width="1133" height="1531" frameX="-69" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0040" x="2288" y="1572" width="1133" height="1531" frameX="-69" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0041" x="3423" y="1572" width="1130" height="1531" frameX="-72" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0042" x="3423" y="1572" width="1130" height="1531" frameX="-72" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0043" x="4555" y="1572" width="1129" height="1531" frameX="-73" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0044" x="4555" y="1572" width="1129" height="1531" frameX="-73" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0045" x="5686" y="1572" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0046" x="5686" y="1572" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0047" x="6816" y="1572" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0048" x="6816" y="1572" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0049" x="1144" y="3100" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0050" x="1144" y="3100" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0051" x="0" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0052" x="0" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0053" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0054" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0055" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0056" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0057" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0058" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0059" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0060" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0061" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0062" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0063" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0064" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0065" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0066" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0067" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0068" x="2274" y="3105" width="1128" height="1531" frameX="-74" frameY="-40" frameWidth="1204" frameHeight="1571"/>
+	<SubTexture name="discord_stop0069" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0070" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0071" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0072" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0073" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0074" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0075" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0076" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0077" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0078" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0079" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0080" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0081" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0082" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0083" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0084" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0085" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0086" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0087" x="0" y="0" width="1181" height="1570"/>
+	<SubTexture name="discord_stop0088" x="0" y="0" width="1181" height="1570"/>
+</TextureAtlas>

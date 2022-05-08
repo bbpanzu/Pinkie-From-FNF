@@ -138,6 +138,7 @@ class Options
 	public var hitSound:Bool = false;
 	public var lessBS:Bool = false;
 	public var fpsCap:Int = 60;
+	public var stretchspeed:Bool = false;
 
 	public function loadOptions(){
 

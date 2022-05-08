@@ -1,0 +1,4 @@
+prefix stop 24 discord_stop
+prefix idle 24 discord_poo
+prefix poo 24 discord_poo
+camofs 0,-100
