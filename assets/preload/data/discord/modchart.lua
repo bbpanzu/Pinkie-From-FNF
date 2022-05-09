@@ -10,11 +10,14 @@ end
 function stepHit(step)
 	funni = 117
 	if step == 1134 or step == 1135 then
-	setCamPos(0,-400)
+	setCamPos(300,-600)
 	dad.playAnim(dad,'hey')
 	dad.visible = false;
 	end
 
+	if step == 1148 or step == 1149 then
+	setCamPos(300,-200)
+	end
 	if step == 1148 or step == 1149 then
 	leftPlrNote.xOffset = funni*3
 	rightPlrNote.xOffset = funni*-3
@@ -50,6 +53,7 @@ end
 
 if curbeat == 574 then
 dad.playAnim(dad,'poo')
+setVar('defaultCamZoom',0.8)
 end
 if curbeat == 288 then
 dad.visible = true
@@ -59,26 +63,28 @@ flashCam('game',0.6)
 gameCam.shake(gameCam,0.02,4,true)
 dad.changeCharacter(dad,'discord_die')
 dad.disabledDance = true
+setVar('defaultCamZoom',0.7)
 dad.playAnim(dad,'idle')
 end
 if curbeat == 594 then
 flashCam('game',0.1)
 dad.playAnim(dad,'end')
+setVar('defaultCamZoom',0.5)
 end
 if curbeat == 600 then
 fadeCam('game',1,'000000')
 end
 end
 
-
 function dadTurn()
-
+if curBeat < 541 then
 setVar('defaultCamZoom',0.5)
-
+end
 end
 function bfTurn()
 
+if curBeat < 541 then
 setVar('defaultCamZoom',0.8)
-
+end
 
 end
