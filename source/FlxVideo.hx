@@ -9,6 +9,7 @@ import vlc.VlcBitmap;
 #end
 import flixel.FlxBasic;
 import flixel.FlxG;
+import flixel.tweens.FlxTween;
 
 class FlxVideo extends FlxBasic {
 	//#if VIDEOS_ALLOWED
@@ -25,6 +26,7 @@ class FlxVideo extends FlxBasic {
 		var player:Video = new Video();
 		player.x = 0;
 		player.y = 0;
+		
 		FlxG.addChildBelowMouse(player);
 		var netConnect = new NetConnection();
 		netConnect.connect(null);
@@ -62,6 +64,8 @@ class FlxVideo extends FlxBasic {
 		vlcBitmap.fullscreen = false;
 		fixVolume(null);
 
+		vlcBitmap.alpha = 0.0001;
+		FlxTween.tween(vlcBitmap, {alpha:1}, 0.1);
 		FlxG.addChildBelowMouse(vlcBitmap);
 		vlcBitmap.play(checkFile(name));
 		#end

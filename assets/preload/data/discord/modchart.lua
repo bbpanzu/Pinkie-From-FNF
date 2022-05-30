@@ -21,19 +21,56 @@ function stepHit(step)
 	if step == 1148 or step == 1149 then
 	leftPlrNote.xOffset = funni*3
 	rightPlrNote.xOffset = funni*-3
+
+	if getVar('storyDifficultyText') == 'Normal' then
+
+	upPlrNote.xOffset = -funni
+	downPlrNote.xOffset = funni
+	end
+
+
 	funni = 112
 	end
 	if step == 1150 or step == 1151 then
 	leftPlrNote.xOffset = funni*3
 	rightPlrNote.xOffset = funni*-3
+
+	if getVar('storyDifficultyText') == 'Normal' then
+
+	upPlrNote.xOffset = -funni
+	downPlrNote.xOffset = funni
+	end
+
+
+
 	end
 	if step == 1150 or step == 1151 then
 	leftPlrNote.xOffset = funni*3
 	rightPlrNote.xOffset = funni*-3
+
+
+	if getVar('storyDifficultyText') == 'Normal' then
+
+	upPlrNote.xOffset = -funni
+	downPlrNote.xOffset = funni
+	end
+
+
+
 	end
 	if step == 1404 or step == 1405 then
 	leftPlrNote.xOffset = 0
 	rightPlrNote.xOffset = 0
+
+
+	if getVar('storyDifficultyText') == 'Normal' then
+
+	upPlrNote.xOffset = 0
+	downPlrNote.xOffset = 0
+	end
+
+
+
 	end
 	if step == 1152 or step == 1153 then
 	setCamPos(9999,9999,true)
@@ -74,6 +111,52 @@ end
 if curbeat == 600 then
 fadeCam('game',1,'000000')
 end
+
+
+
+
+if curbeat == 64 or curbeat == 192 then
+setVar('camBoomSpeed',1)
+end
+
+if curbeat == 124 then
+setVar('camBoomSpeed',4)
+end
+
+
+if curbeat == 128 then
+setVar('camBoomSpeed',2)
+end
+
+
+if curbeat == 480 then
+tweenVar('camGame.zoom',1.4,15)
+end
+
+if curbeat == 541 then
+tweenVar('camGame.zoom',0.8,0.2)
+end
+
+
+if curbeat == 558 then
+tweenVar('camGame.zoom',1.1,4)
+end
+if curbeat == 572 then
+tweenVar('camGame.zoom',0.9,1)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
 end
 
 function dadTurn()

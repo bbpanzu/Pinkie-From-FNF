@@ -23,7 +23,7 @@ class MusicBeatState extends FlxUIState
 
 	override function create()
 	{
-		
+		Character.instance = this;
 		onChangeFramerate();
 		
 		if (transIn != null)
@@ -75,11 +75,11 @@ FlxG.save.data.volume = FlxG.sound.volume;
 		}
 		for (i in 0...Conductor.bpmChangeMap.length)
 		{
-			if (Conductor.songPosition - OptionUtils.options.noteOffset >= Conductor.bpmChangeMap[i].songTime)
+			if (Conductor.songPosition >= Conductor.bpmChangeMap[i].songTime)
 				lastChange = Conductor.bpmChangeMap[i];
 		}
 
-		curStep = lastChange.stepTime + Math.floor((Conductor.songPosition - OptionUtils.options.noteOffset - lastChange.songTime) / Conductor.stepCrochet);
+		curStep = lastChange.stepTime + Math.floor(((Conductor.songPosition - OptionUtils.options.noteOffset) - lastChange.songTime) / Conductor.stepCrochet);
 	}
 
 	public function stepHit():Void

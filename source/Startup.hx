@@ -37,6 +37,8 @@ class Startup extends MusicBeatState
 	];
     public static var atlasFrames:Map<String, FlxFramesCollection> = new Map<String, FlxFramesCollection>();
 	public static var indx = 0;
+	public static var screen = 0;
+	public static var loaded = false;
     var musicDone:Bool = false;
     var atlasDone:Bool = false;
    
@@ -46,10 +48,16 @@ class Startup extends MusicBeatState
 	override function create()
 	{
 
+		if (!loaded){
+			screen = FlxG.random.int(0, 7);
+		}
+		
+		loaded = true;
         FlxG.mouse.visible = false;
-        var loadingBG = new FlxSprite(0.0).loadGraphic(Paths.image('loadingscreen'));
+        var loadingBG = new FlxSprite(0.0).loadGraphic(Paths.image('loadingscreen'+screen));
         loadingBG.antialiasing = true;
         add(loadingBG);
+        loadingBG.scale.set(1280/loadingBG.width,1280/loadingBG.width);
         loadingBG.screenCenter();
 
         loadingText = new FlxText(5, FlxG.height - 30, 0, "Preloading Assets...", 24);
@@ -121,7 +129,7 @@ class Startup extends MusicBeatState
 			
         atlasFrames.set(atlist[indx], boobers);
 		trace(atlist[indx]);
-		var testsprite:FlxSprite = new FlxSprite(0, 0);
+		var testsprite:FlxSprite = new FlxSprite(1280, 1280);
 		testsprite.frames = atlasFrames.get(atlist[indx]);
 		add(testsprite);
 		

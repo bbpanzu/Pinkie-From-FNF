@@ -2,5 +2,7 @@ pinkie 200 90
 bf 100 90
 bfpone 100 90
 gf 100 90
+gfpone 100 60
 twilight 100 90
 trixie 338 0
+discord 0 -200

@@ -17,7 +17,7 @@ class Character extends FlxSprite
 	public var animOffsets:Map<String, Array<Dynamic>>;
 	public var unintAnims:Array<String> = [];
 	public var debugMode:Bool = false;
-
+	public static var instance:MusicBeatState;
 	public var isPlayer:Bool = false;
 	public var curCharacter:String = 'bf';
 	public var holding:Bool=false;
@@ -25,6 +25,7 @@ class Character extends FlxSprite
 	public var curAnim:String = "";
 	public var holdTimer:Float = 0;
 	public var camOffset:Array<Int> = [0,0];
+	public var danceSpeed:Int = 1;
 	public static var charsBitmaps:Map<String,FlxGraphic> = new Map<String,FlxGraphic>();
 	public function new(x:Float, y:Float, ?character:String = "bf", ?isPlayer:Bool = false)
 	{
@@ -836,12 +837,14 @@ class Character extends FlxSprite
 		if (!debugMode && !disabledDance)
 		{
 			holding=false;
-			if(animation.getByName("idle"+alt)!=null)
-				playAnim("idle"+alt,true);
-			else if (animation.getByName("danceRight"+alt)!=null && animation.getByName("danceLeft"+alt)!=null){
+			if(animation.getByName("idle"+alt)!=null){
+				if (Math.abs(instance.curBeat) % danceSpeed == 0){
+					playAnim("idle"+alt,true);
+				}
+			}else if (animation.getByName("danceRight"+alt)!=null && animation.getByName("danceLeft"+alt)!=null){
 				if (!animation.curAnim.name.startsWith('hair'))
 				{
-					danced = PlayState.instance.curBeat % 2 == 1;
+					danced = Math.abs(instance.curBeat) % 2 == 1;
 
 					if (danced)
 						playAnim('danceRight'+alt,true);

@@ -99,7 +99,7 @@ class DialogueBox extends FlxSpriteGroup
 	{
 		super();
 		this.fadeMusic = fadeMusic;
-		arrow = new FlxSprite(1191.1, 641.75);
+		arrow = new FlxSprite(1091.1, 641.75);
 		arrow.frames = Paths.getSparrowAtlas("pinkie/arrow", "shared");
 		arrow.animation.addByIndices("arrow", "arrow", [0,1,2], "", 8);
 		arrow.animation.play("arrow",true);

@@ -297,7 +297,22 @@ class LuaSprite extends LuaClass {
     return 0;
   }
 
+
+  private static function setOrigin(l:StatePointer):Int{
+    // 1 = self
+    // 2 = x
+    // 3 = y
+    var orx = LuaL.checknumber(state,2);
+    var ory = LuaL.checknumber(state,3);
+    Lua.getfield(state,1,"spriteName");
+    var spriteName = Lua.tostring(state,-1);
+    var sprite = PlayState.currentPState.luaSprites[spriteName];
+    sprite.origin.set(orx,ory);
+    return 0;
+  }
+
   private static var setScaleC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(setScale);
+  private static var setOriginC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(setOrigin);
 
   private static function getProperty(l:StatePointer):Int{
     // 1 = self
@@ -615,6 +630,16 @@ class LuaSprite extends LuaClass {
         getter:GetNumProperty,
         setter:SetNumProperty
       },
+      "originX"=>{
+        defaultValue:sprite.origin.x,
+        getter:GetNumProperty,
+        setter:SetNumProperty
+      },
+      "originy"=>{
+        defaultValue:sprite.origin.y,
+        getter:GetNumProperty,
+        setter:SetNumProperty
+      },
       "alpha"=>{
         defaultValue:sprite.alpha,
         getter:GetNumProperty,
@@ -654,6 +679,17 @@ class LuaSprite extends LuaClass {
         defaultValue:0,
         getter:function(l:State,data:Any){
           Lua.pushcfunction(l,setScaleC);
+          return 1;
+        },
+        setter:function(l:State){
+          LuaL.error(l,"setScale is read-only.");
+          return 0;
+        }
+      },
+      "setOrigin"=>{
+        defaultValue:0,
+        getter:function(l:State,data:Any){
+          Lua.pushcfunction(l,setOriginC);
           return 1;
         },
         setter:function(l:State){

@@ -25,14 +25,15 @@ class AnimationDebug extends FlxState
 	var animList:Array<String> = [];
 	var curAnim:Int = 0;
 	var GHOST_curAnim:Int = 0;
-	var isDad:Bool = true;
+	public static var isDad:Bool = true;
 	var daAnim:String = 'spooky';
 	var camFollow:FlxObject;
 	var texto:String = '';
-	public function new(daAnim:String = 'spooky')
+	public function new(daAnim:String = 'spooky',isDad:Bool=true)
 	{
 		super();
 		this.daAnim = daAnim;
+		AnimationDebug.isDad = isDad;
 	}
 
 	override function create()
@@ -43,8 +44,6 @@ class AnimationDebug extends FlxState
 		gridBG.scrollFactor.set(0.5, 0.5);
 		add(gridBG);
 
-		if (daAnim == 'bf')
-			isDad = false;
 
 		if (isDad)
 		{
@@ -57,7 +56,7 @@ class AnimationDebug extends FlxState
 		}
 		else
 		{
-			bf = new Boyfriend(0, 0);
+			bf = new Boyfriend(0, 0,daAnim);
 			bf.screenCenter();
 			bf.debugMode = true;
 
@@ -68,6 +67,7 @@ ghostchar = new Character(0, 0, daAnim, !isDad);
 ghostchar.alpha = 0.5;
 ghostchar.debugMode = true;
 ghostchar.screenCenter();
+			ghostchar.flipX != isDad;
 			add(char);
 			add(ghostchar);
 		dumbTexts = new FlxTypedGroup<FlxText>();

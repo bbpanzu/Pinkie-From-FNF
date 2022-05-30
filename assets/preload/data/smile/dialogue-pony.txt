@@ -1,44 +1,44 @@
-:bg:p0001:
+:bg:pony0001:
 :hideCharacters::
 :effect:hidden:
-:bg:p0002:
+:bg:pony0002:
 :camEffect:flash:1
 :hideCharacters:
 :bg:shake:-2
 :effect:hidden:
-:bg:p0003:
+:bg:pony0003:
 :hideCharacters:
 :text:shake:-3
 :noChar:default:AAAAAHHH!!!!
 :text:shake:0
-:bg:p0004:
+:bg:pony0004:
 :bg:shake:0
 :music:damnshit:1
 :noChar:default:WAIT STOP!!! I SWEAR I WAS ONLY TOUCHING THE HIPS
-:bg:p0005:
+:bg:pony0005:
 :effect:hidden:
 :effect:shake:8
 :bg:hide:
 :text:shake:8
 :bfpone:fuck:FUCK YOU. PURPLE FUCK
-:gf:anger:watch your mouth. thats my dad
+:gfpone:anger:watch your mouth. thats my dad
 :bg:hide:
 :bfpone:upset:Why can't he just punish me like a normal dad. Idk like kicking me out or something.
-:gf:default:Well he isn't really a normal dad.
+:gfpone:default:Well he isn't really a normal dad.
 :bfpone:wtf:Where are we anyway
-:gf:default:Looks like some wacky forest.
-:bg:p0007:
+:gfpone:default:Looks like some wacky forest.
+:bg:pony0007:
 :effect:addX:400
 :bfpone:upset:Hmm. left or right?
 :effect:addY:-10
 :effect:addX:400
-:gf:default:Huh. Idk boyfriend
+:gfpone:default:Huh. Idk boyfriend
 :effect:addX:100
-:gf:default:Should we pick the path leading to unending darkness,
+:gfpone:default:Should we pick the path leading to unending darkness,
 :effect:flip:
 :effect:addX:600
 :effect:addY:10
-:gf:default:or the path leading to the end of the damn thing?
+:gfpone:default:or the path leading to the end of the damn thing?
 :autoskip:during:0.4
 :bfpone:yikes:Hmm
 :autoskip:during:1
@@ -50,70 +50,70 @@
 :text:speed:0.04
 :bfpone:yikes:this is a tricky one.
 :effect:addY:-10
-:gf:sad:Just- lets go.
-:bg:p0008:
+:gfpone:sad:Just- lets go.
+:bg:pony0008:
 :music:ponyville:1
 :effect:hidden:
 :bfpone:default:There seems to be an abundance of colorful quadrupeds
 :effect:shake:5
 :text:shake:5
 :effect:addY:-10
-:gf:whoa:*GASP*
+:gfpone:whoa:*GASP*
 :effect:shake:5
 :text:shake:-2
-:gf:whoa:Y-
+:gfpone:whoa:Y-
 :effect:shake:-5
 :text:shake:-5
 :sound:wobble:1
 :effect:addY:50
-:gf:omg:BF OMG
+:gfpone:omg:BF OMG
 :effect:shake:-8
 :text:shake:-8
 :effect:addY:-20
 :autoskip:during:1
-:gf:stim:THIS SHIT IS F
+:gfpone:stim:THIS SHIT IS F
 :autoskip:during:0.4
 :effect:flip:
 :text:pretext:`current
-:gf:stim:
+:gfpone:stim:
 :autoskip:during:1
 :effect:flip:
 :text:pretext:`current
-:gf:stim:
+:gfpone:stim:
 :effect:shake:-8
 :text:shake:-12
 :effect:addY:-30
-:gf:stim:THIS IS FUCKING MY LITTLE PONYGMMGOMHOMGHOFMGOMOHOLLYYYSHITTTTTTT!!!!!!!!!
+:gfpone:stim:THIS IS FUCKING MY LITTLE PONYGMMGOMHOMGHOFMGOMOHOLLYYYSHITTTTTTT!!!!!!!!!
 :effect:shake:0
 :sound:stop:
 :text:shake:0
 :bfpone:default:Whaoh. 
 :bfpone:wtf:WAIT. You're a brony???
-:gf:default:Well some prefer the term pegasister.
+:gfpone:default:Well some prefer the term pegasister.
 :bfpone:upset:Sounds dumb. Gotta say your dad knows how to torture a man
 :bfpone:upset:i'd rather have me burning by the edge of a trident then be stuck in Candyland
-:gf:sad:It is NOT "Candyland" it's Ponyville.
+:gfpone:sad:It is NOT "Candyland" it's Ponyville.
 :bfpone:default:You seem to be quite knowledgeable about this toy-marketing TV show
-:gf:whoa:Quite indeed. In about a few seconds a funny character is going to show up and introduce us to the town
+:gfpone:whoa:Quite indeed. In about a few seconds a funny character is going to show up and introduce us to the town
 :text:speed:0.08
 :effect:addY:20
-:gf:omg:Riiight...
+:gfpone:omg:Riiight...
 :effect:addY:20
 :effect:addX:-20
 :text:speed:0.2
-:gf:omg:Abouuut 
+:gfpone:omg:Abouuut 
 :effect:addY:-10
 :text:speed:0.04
 :effect:addY:-20
 :autoskip:during:0.4
 :effect:flip:
 :effect:addX:30
-:gf:omg:NOW!!!!
+:gfpone:omg:NOW!!!!
 :effect:flip:
 :effect:addY:-10
 :text:speed:0.2
 :music:stop:
-:gf:anger:oh...
+:gfpone:anger:oh...
 :text:speed:0.04
 :text:speed:0.6
 :autoskip:during:3
@@ -134,12 +134,20 @@
 :text:shake:12
 :pinkie:whoa:HOLY MOLY-!!!
 :text:shake:12
-:pinkie:whoa:NEW FACES!!
+:autoskip:during:0.5
+:text:shake:12
+:pinkie:whoa:BRAND
+:autoskip:during:0.5
+:text:shake:12
+:text:pretext:`current
+:pinkie:default:! NEW
+:text:shake:-12
+:text:pretext:`current
+:pinkie:smile: !! FACES!!!
 :text:shake:0
-:pinkie:default: So Lyra WASN'T being all coo coo in the brain! You must be new here!
 :pinkie:wink-smile:You know what that means ;D
 :autoskip:during:1
 :bfpone:default:
 :bfpone:default:...no?
 :pinkie:smile: A "Welcome to ponyville" Song, of course!!!
-:gf:stim: OOH IM SO EXCITED
+:gfpone:stim: OOH IM SO EXCITED

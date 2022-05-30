@@ -24,6 +24,7 @@ class CutsceneState extends MusicBeatState
 		var vid = new FlxVideo(vido);
 		vid.finishCallback = next;
 		add(vid);
+		FlxG.camera.flash(0xff000000, 0.2);
 	}
 	
 	public static function end(){

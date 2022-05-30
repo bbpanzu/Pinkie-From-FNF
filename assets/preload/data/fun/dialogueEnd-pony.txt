@@ -1,0 +1,43 @@
+:pinkie:smile: OO BOY! That was a DOOZY !!
+
+:bfpone:default: Haha yea that was kinda fun lol anyway we bouta dip. C'mon GF lets go
+
+:gfpone:cry: Aww already??
+
+:bfpone:default: you know these people. go find someone who can take us home.
+
+:effect:fromY:-10
+:pinkie:whoa: oh.. you're..
+
+:effect:toY:10
+:pinkie:whoa: You're leaving already?
+
+:bfpone:default: yea?
+
+:effect:fromY:-10
+:pinkie:wink-smile: Oh that STINKS!
+
+:effect:fromY:10
+:pinkie:default: I didn't even get to plan your going-away partyyy haha!!!
+
+:pinkie:whoa: AT LEAST let me give you a going-away cake!
+
+:autoskip:during:2.5
+:pinkie:whoa: OOH! Or a going away SONG!!!
+:sound:bloop:0
+:text:pretext:`current
+:pinkie:choc:
+:effect:fromY:-10
+:pinkie:chocooh:ooohhh
+:pinkie:choclick: *lick*
+
+:pinkie:default: CHOCOLATE!
+
+:bfpone:default: *lick*
+
+:bfpone:upset: Dark chocolate :/
+
+:autoskip:during:3.5
+:twilight:wtf: Chocolate? Rain??? How is that even possi-
+:fastEnd::
+:twilight:wtf:

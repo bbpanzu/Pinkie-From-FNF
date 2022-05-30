@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="gfpone.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="gfpone_portrait0000" x="0" y="0" width="402" height="402"/>
+	<SubTexture name="gfpone_portrait0001" x="404" y="0" width="402" height="402"/>
+	<SubTexture name="gfpone_portrait0002" x="808" y="0" width="402" height="402"/>
+	<SubTexture name="gfpone_portrait0003" x="1212" y="0" width="402" height="402"/>
+	<SubTexture name="gfpone_portrait0004" x="1616" y="0" width="402" height="402"/>
+	<SubTexture name="gfpone_portrait0005" x="0" y="404" width="402" height="402"/>
+	<SubTexture name="gfpone_portrait0006" x="404" y="404" width="402" height="402"/>
+	<SubTexture name="gfpone_portrait0007" x="808" y="404" width="402" height="402"/>
+	<SubTexture name="gfpone_portrait0008" x="1212" y="404" width="402" height="402"/>
+	<SubTexture name="gfpone_portrait0009" x="1616" y="404" width="402" height="402"/>
+</TextureAtlas>

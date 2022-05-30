@@ -23,8 +23,8 @@ class StoryMenuState extends MusicBeatState
 	var scoreText:FlxText;
 
 	var weekData:Array<Dynamic> = [
-		//['Smile','FUN','Discord']
-		['Discord']
+		['Smile','FUN','Discord']
+		//['Discord']
 	];
 	var curDifficulty:Int = 1;
 
