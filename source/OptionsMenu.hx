@@ -179,7 +179,7 @@ class OptionsMenu extends MusicBeatState
 		
 		if (option.type != "Category"){
 			
-			if (left_ || right_) zoomdelay += 0.016/elapsed;
+			if (left_ || right_) zoomdelay += elapsed/0.016;
 			
 			canZoom = zoomdelay > 30;
 			

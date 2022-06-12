@@ -195,7 +195,7 @@ ghostchar.screenCenter();
 			updateTexts();
 			genBoyOffsets(false);
 		}
-		if (FlxG.keys.justPressed.K || FlxG.keys.justPressed.I || FlxG.keys.justPressed.SPACE)
+		if (FlxG.keys.justPressed.K || FlxG.keys.justPressed.I )
 		{
 			ghostchar.playAnim(animList[curAnim]);
 		}
@@ -213,18 +213,23 @@ ghostchar.screenCenter();
 		if (upP || rightP || downP || leftP)
 		{
 			updateTexts();
-			if (upP)
+			if (upP){
 				char.animOffsets.get(animList[curAnim])[1] += 1 * multiplier;
 				ghostchar.animOffsets.get(animList[curAnim])[1] += 1 * multiplier;
-			if (downP)
+				
+			}
+			if (downP){
 				char.animOffsets.get(animList[curAnim])[1] -= 1 * multiplier;
 				ghostchar.animOffsets.get(animList[curAnim])[1] -= 1 * multiplier;
-			if (leftP)
+			}
+			if (leftP){
 				char.animOffsets.get(animList[curAnim])[0] += 1 * multiplier;
 				ghostchar.animOffsets.get(animList[curAnim])[0] += 1 * multiplier;
-			if (rightP)
+			}
+			if (rightP){
 				char.animOffsets.get(animList[curAnim])[0] -= 1 * multiplier;
 				ghostchar.animOffsets.get(animList[curAnim])[0] -= 1 * multiplier;
+			}
 
 			updateTexts();
 			genBoyOffsets(false);

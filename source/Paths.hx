@@ -219,11 +219,11 @@ class Paths
 						trace(TitleState.curDir);
 						trace(pulllfromAssets);
 			if (pulllfromAssets){
-				bmp = OpenFlAssets.getBitmapData("shared:"+path);
+				bmp = OpenFlAssets.getBitmapData("shared:" + path,false);
 			}else{
 				bmp = BitmapData.fromFile(path);
 			}
-			gra = FlxGraphic.fromBitmapData(bmp, false, key);
+			gra = FlxGraphic.fromBitmapData(bmp, false, key,false);
 			gra.persist = true;
 			imgCache.set(key, gra);
 		}

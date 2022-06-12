@@ -55,6 +55,7 @@ class ChartingState extends MusicBeatState
 
 	var strumLine:FlxSprite;
 	var curSong:String = 'None';
+	var curTex:String = '';
 	var amountSteps:Int = 0;
 	var bullshitUI:FlxGroup;
 
@@ -91,6 +92,7 @@ class ChartingState extends MusicBeatState
 	var leftIcon:HealthIcon;
 	var rightIcon:HealthIcon;
 
+	
 	override function create()
 	{
 		gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 8, GRID_SIZE * 16);
@@ -204,9 +206,10 @@ class ChartingState extends MusicBeatState
 var UI_noteskin:FlxUIInputText;
 var UI_strumskin:FlxUIInputText;
 var UI_notescale:FlxUINumericStepper;
+var UI_songTitle:FlxUIInputText;
 	function addSongUI():Void
 	{
-		var UI_songTitle = new FlxUIInputText(10, 10, 70, _song.song, 8);
+		UI_songTitle = new FlxUIInputText(10, 10, 70, _song.song, 8);
 		typingShit = UI_songTitle;
 		 UI_noteskin = new FlxUIInputText(10, 130, 70, _song.noteskin, 8);
 		 UI_strumskin = new FlxUIInputText(10, 160, 70, _song.strumskin, 8);
@@ -395,13 +398,18 @@ var UI_notescale:FlxUINumericStepper;
 
 	var stepperSusLength:FlxUINumericStepper;
 	var stepperNoteType:FlxUINumericStepper;
-
+var UI_noteTex:FlxUIInputText;
 
 	function addNoteUI():Void
 	{
 		var tab_group_note = new FlxUI(null, UI_box);
 		tab_group_note.name = 'Note';
 
+		
+		
+		UI_noteTex = new FlxUIInputText(10, 70, 70, curTex, 8);
+		
+		
 		stepperSusLength = new FlxUINumericStepper(10, 10, Conductor.stepCrochet / 2, 0, 0, Conductor.stepCrochet * 16);
 		stepperSusLength.value = 0;
 		stepperSusLength.name = 'note_susLength';
@@ -411,8 +419,14 @@ var UI_notescale:FlxUINumericStepper;
 		stepperNoteType.name = 'note_type';
 
 
-		var applyLength:FlxButton = new FlxButton(100, 10, 'Apply');
+		var applyLength:FlxButton = new FlxButton(100, 10, 'Apply', function(){
+			
+				curTex = curSelectedNote[4] = UI_noteTex.text;
+				updateGrid();
+				
+		});
 
+		tab_group_note.add(UI_noteTex);
 		tab_group_note.add(stepperSusLength);
 		tab_group_note.add(stepperNoteType);
 		tab_group_note.add(applyLength);
@@ -576,7 +590,7 @@ var UI_notescale:FlxUINumericStepper;
 		curStep = recalculateSteps();
 
 		Conductor.songPosition = FlxG.sound.music.time;
-		_song.song = typingShit.text;
+		_song.song = UI_songTitle.text;
 		_song.noteskin = UI_noteskin.text;
 		_song.strumskin = UI_strumskin.text;
 		_song.notescale = UI_notescale.value;
@@ -724,7 +738,9 @@ var UI_notescale:FlxUINumericStepper;
 			}
 		}
 
-		if (!typingShit.hasFocus)
+		var blockInput:Bool = false;
+		blockInput = (UI_songTitle.hasFocus || UI_noteskin.hasFocus || UI_strumskin.hasFocus || UI_noteTex.hasFocus);
+		if (!blockInput)
 		{
 			if (FlxG.keys.justPressed.SPACE)
 			{
@@ -1029,8 +1045,9 @@ var UI_notescale:FlxUINumericStepper;
  			var daStrumTime = i[0];
  			var daSus = i[2];
  			var daType = i[3];
+ 			var daTex = i[4];
 			
- 			var note:Note = new Note(daStrumTime, daNoteInfo % 4, null, false,0,true,daType);
+ 			var note:Note = new Note(daStrumTime, daNoteInfo % 4, null, false,0,true,daType,daTex);
 			note.wasGoodHit = daStrumTime<Conductor.songPosition;
  			note.rawNoteData = daNoteInfo;
  			note.sustainLength = daSus;
@@ -1058,7 +1075,7 @@ var UI_notescale:FlxUINumericStepper;
  				var sus = [];
  				for (susNote in 0...Math.floor(daSus))
  				{
- 					var sustainNote:Note = new Note(daStrumTime + (Conductor.stepCrochet * susNote) + Conductor.stepCrochet, daNoteInfo % 4, oldNote, true,0,true);
+ 					var sustainNote:Note = new Note(daStrumTime + (Conductor.stepCrochet * susNote) + Conductor.stepCrochet, daNoteInfo % 4, oldNote, true,0,true,daType,daTex);
  					sustainNote.rawNoteData = daNoteInfo;
  					sustainNote.setGraphicSize(GRID_SIZE, GRID_SIZE);
  					sustainNote.updateHitbox();
@@ -1225,12 +1242,13 @@ var UI_notescale:FlxUINumericStepper;
 		var noteData = Math.floor(FlxG.mouse.x / GRID_SIZE);
 		var noteSus = 0;
 		var noteType = stepperNoteType.value;
-		_song.notes[curSection].sectionNotes.push([noteStrum, noteData, noteSus,noteType]);
+		var noteTex = curTex;
+		_song.notes[curSection].sectionNotes.push([noteStrum, noteData, noteSus,noteType,noteTex]);
 
 		curSelectedNote = _song.notes[curSection].sectionNotes[_song.notes[curSection].sectionNotes.length - 1];
 
 		if(FlxG.keys.pressed.CONTROL){
-			_song.notes[curSection].sectionNotes.push([noteStrum, (noteData+4)%8, noteSus,noteType]);
+			_song.notes[curSection].sectionNotes.push([noteStrum, (noteData+4)%8, noteSus,noteType,noteTex]);
 		}
 
 		updateGrid();

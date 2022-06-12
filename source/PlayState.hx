@@ -304,6 +304,8 @@ class PlayState extends MusicBeatState
 	#end
 	override public function create()
 	{
+		Paths.imgCache.clear();
+		Cache.Clear();
 		instance = this;
 		fpsRatio = (openfl.Lib.current.stage.frameRate / 60);
 		Cache.Clear();
@@ -1059,6 +1061,7 @@ class PlayState extends MusicBeatState
 			lua.setGlobalVar("X","X");
 			lua.setGlobalVar("Y","Y");
 			lua.setGlobalVar("version",SONG.version);
+			lua.setGlobalVar("isPony",isPony);
 
 			Lua_helper.add_callback(lua.state,"skipCountdown", function(){
 				skipCountdown = true;
@@ -1972,7 +1975,9 @@ class PlayState extends MusicBeatState
 			{
 				var daStrumTime:Float = songNotes[0];
 				var daType:Int=0;
+				var daTex:String='';
 				if (songNotes[3] != null) daType = songNotes[3];
+				if (songNotes[4] != null) daTex = songNotes[4];
 				var daNoteData:Int = Std.int(songNotes[1] % 4);
 				var gottaHitNote:Bool = section.mustHitSection;
 				if (songNotes[1] > 3)
@@ -1988,7 +1993,7 @@ class PlayState extends MusicBeatState
 				else
 					oldNote = null;
 
-				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote, false, getPosFromTime(daStrumTime),false,daType);
+				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote, false, getPosFromTime(daStrumTime),false,daType,daTex);
 				swagNote.sustainLength = songNotes[2];
 				swagNote.scrollFactor.set(0, 0);
 
@@ -2002,7 +2007,7 @@ class PlayState extends MusicBeatState
 				{
 					oldNote = unspawnNotes[Std.int(unspawnNotes.length - 1)];
 					var sussy = daStrumTime + (Conductor.stepCrochet * susNote) + Conductor.stepCrochet;
-					var sustainNote:Note = new Note(sussy, daNoteData, oldNote, true, getPosFromTime(sussy),false,daType);
+					var sustainNote:Note = new Note(sussy, daNoteData, oldNote, true, getPosFromTime(sussy),false,daType,daTex);
 
 					sustainNote.scrollFactor.set();
 					unspawnNotes.push(sustainNote);
@@ -3185,7 +3190,6 @@ class PlayState extends MusicBeatState
 	{
 		endingSong = true;
 		TitleState.curDir = "assets";
-		Paths.imgCache.clear();
 		canPause = false;
 		FlxG.sound.music.volume = 0;
 		vocals.volume = 0;
@@ -3392,9 +3396,8 @@ class PlayState extends MusicBeatState
 
 		var placement:String = Std.string(combo);
 
-		var coolText:FlxText = new FlxText(0, 0, 0, placement, 32);
-		coolText.screenCenter();
-		coolText.x = FlxG.width * 0.55;
+		var coolText:FlxText = new FlxText(0, strumLine.y-100, 0, placement, 32);
+		coolText.screenCenter(X);
 		//
 
 		var rating:FlxSprite = new FlxSprite();
@@ -3422,11 +3425,11 @@ class PlayState extends MusicBeatState
 		}
 
 		rating.loadGraphic(Paths.image(assetPrefix+pixelShitPart1 + daRating + pixelShitPart2+assetSuffix));
-		rating.screenCenter();
+		rating.screenCenter(X);
 		rating.x = coolText.x - 40;
-		rating.y -= 60;
-		rating.acceleration.y = 550;
-		rating.velocity.y -= FlxG.random.int(140, 175);
+		rating.y = strumLine.y;
+		//rating.acceleration.y = 550;
+		rating.velocity.y -= FlxG.random.int(40, 75);
 		rating.velocity.x -= FlxG.random.int(0, 10);
 		rating.cameras = [camHUD];
 		var comboSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image(assetPrefix+pixelShitPart1 + 'combo' + pixelShitPart2+assetSuffix));
@@ -3436,7 +3439,10 @@ class PlayState extends MusicBeatState
 		comboSpr.velocity.y -= 150;
 		comboSpr.velocity.x += FlxG.random.int(1, 10);
 		comboSpr.cameras = [camHUD];
-		add(rating);
+		
+	
+		
+		if(!ScoreUtils.botPlay)add(rating);
 
 		if (!curStage.startsWith('school'))
 		{
@@ -3475,7 +3481,9 @@ class PlayState extends MusicBeatState
 			var numScore:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'num' + i + pixelShitPart2));
 			numScore.screenCenter(XY);
 			numScore.x = coolText.x + (43 * daLoop) - 90;
+			numScore.y = strumLine.y;
 			numScore.y += 80;
+			numScore.cameras = [camHUD];
 
 			if (!curStage.startsWith('school'))
 			{
@@ -3497,7 +3505,7 @@ class PlayState extends MusicBeatState
 				numScore.scrollFactor.set(0,0);
 			}
 			if(combo>=10){
-				add(numScore);
+				if(!ScoreUtils.botPlay)add(numScore);
 			}
 			FlxTween.tween(numScore, {alpha: 0}, 0.2, {
 				onComplete: function(tween:FlxTween)

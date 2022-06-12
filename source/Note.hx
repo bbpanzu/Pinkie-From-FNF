@@ -47,7 +47,7 @@ class Note extends FlxSprite
 	public static var GREEN_NOTE:Int = 2;
 	public static var BLUE_NOTE:Int = 1;
 	public static var RED_NOTE:Int = 3;
-	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?initialPos:Float=0, ?beingCharted=false,noteType:Int=0)
+	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?initialPos:Float=0, ?beingCharted=false,noteType:Int=0,noteTexture:String=null)
 	{
 		super();
 		this.noteType = noteType;
@@ -105,16 +105,21 @@ class Note extends FlxSprite
 			var path = "";
 			var balls:Array<String> = [TitleState.curDir,"assets"];
 			var stopLookin = false;
+			var daTex = PlayState.SONG.noteskin;
+			if (noteTexture != null && noteTexture.length >0 && noteTexture != ''){
+				daTex = noteTexture;
+			}
 			for (i in balls){
 				if (!stopLookin){
-					if (FileSystem.exists(i + "/shared/images/"+PlayState.SONG.noteskin+".xml")){
-						path = i + "/shared/images/"+PlayState.SONG.noteskin+".xml";
+					if (FileSystem.exists(i + "/shared/images/"+daTex+".xml")){
+						path = i + "/shared/images/"+daTex+".xml";
 						stopLookin = true;
 						break;
 					}
 				}
 			}
-				frames = FlxAtlasFrames.fromSparrow(Paths.getbmp(PlayState.SONG.noteskin), File.getContent(path));//Paths.getSparrowAtlas('NOTE_assets');
+			trace(daTex+": "+path);
+				frames = FlxAtlasFrames.fromSparrow(Paths.getbmp(daTex), File.getContent(path));//Paths.getSparrowAtlas('NOTE_assets');
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
@@ -209,7 +214,7 @@ class Note extends FlxSprite
 			}
 			var gra:FlxGraphic;
 			var bmp = BitmapData.fromFile(path);
-			gra = FlxGraphic.fromBitmapData(bmp, false, char);
+			gra = FlxGraphic.fromBitmapData(bmp, false, char,false);
 			gra.persist = true;
 			noteBitmaps.set(char, gra);
 		}

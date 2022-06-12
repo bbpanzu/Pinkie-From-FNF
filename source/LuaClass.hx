@@ -311,8 +311,36 @@ class LuaSprite extends LuaClass {
     return 0;
   }
 
+
+  private static function setVelocity(l:StatePointer):Int{
+    // 1 = self
+    // 2 = x
+    // 3 = y
+    var orx = LuaL.checknumber(state,2);
+    var ory = LuaL.checknumber(state,3);
+    Lua.getfield(state,1,"spriteName");
+    var spriteName = Lua.tostring(state,-1);
+    var sprite = PlayState.currentPState.luaSprites[spriteName];
+    sprite.velocity.set(orx,ory);
+    return 0;
+  }
+  private static function setAcceleration(l:StatePointer):Int{
+    // 1 = self
+    // 2 = x
+    // 3 = y
+    var orx = LuaL.checknumber(state,2);
+    var ory = LuaL.checknumber(state,3);
+    Lua.getfield(state,1,"spriteName");
+    var spriteName = Lua.tostring(state,-1);
+    var sprite = PlayState.currentPState.luaSprites[spriteName];
+    sprite.acceleration.set(orx,ory);
+    return 0;
+  }
+
   private static var setScaleC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(setScale);
   private static var setOriginC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(setOrigin);
+  private static var setVelocityC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(setVelocity);
+  private static var setAccelerationC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(setAcceleration);
 
   private static function getProperty(l:StatePointer):Int{
     // 1 = self
@@ -690,6 +718,28 @@ class LuaSprite extends LuaClass {
         defaultValue:0,
         getter:function(l:State,data:Any){
           Lua.pushcfunction(l,setOriginC);
+          return 1;
+        },
+        setter:function(l:State){
+          LuaL.error(l,"setScale is read-only.");
+          return 0;
+        }
+      },
+      "setVelocity"=>{
+        defaultValue:0,
+        getter:function(l:State,data:Any){
+          Lua.pushcfunction(l,setVelocityC);
+          return 1;
+        },
+        setter:function(l:State){
+          LuaL.error(l,"setScale is read-only.");
+          return 0;
+        }
+      },
+      "setAcceleration"=>{
+        defaultValue:0,
+        getter:function(l:State,data:Any){
+          Lua.pushcfunction(l,setAccelerationC);
           return 1;
         },
         setter:function(l:State){
