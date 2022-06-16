@@ -763,6 +763,9 @@ class Character extends FlxSprite
 					flipX = !flipX;
 				}else if(type.toLowerCase()=='pixel'){
 					antialiasing = false;
+				}else if (type.toLowerCase() == 'scale'){
+					origin.set();
+					scale.set(Std.parseFloat(name),Std.parseFloat(name));
 				}else if(type.toLowerCase()=='camofs'){
 					var c = name.split(',');
 					camOffset[0] = Std.parseInt(c[0]);

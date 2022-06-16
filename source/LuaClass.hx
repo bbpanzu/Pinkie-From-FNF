@@ -354,6 +354,7 @@ class LuaSprite extends LuaClass {
   }
 
   private static var getPropertyC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(getProperty);
+  private static var setBlendModeC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(setBlendMode);
 
   private static function addSpriteAnimByPrefix(l:StatePointer):Int{
     // 1 = self
@@ -606,7 +607,29 @@ class LuaSprite extends LuaClass {
     return 1;
 
   }
-
+  
+  private static function setBlendMode(l:StatePointer):Int{
+    // 1 = self
+    // 2 = blend
+    var blend = LuaL.checkstring(state,2);
+      Lua.getfield(state,1,"spriteName");
+      var spriteName = Lua.tostring(state,-1);
+      var sprite = PlayState.currentPState.luaSprites[spriteName];
+	  sprite.blend = CoolUtil.blendModeFromString(blend);
+   trace(blend);
+    return 0;
+  }
+  private static function setDepth(l:StatePointer):Int{
+    // 1 = self
+    // 2 = INDEX
+      Lua.getfield(state,1,"spriteName");
+      var spriteName = Lua.tostring(state,-1);
+      var sprite = PlayState.currentPState.luaSprites[spriteName];
+    var index = Math.floor( LuaL.checknumber(state,2));
+	PlayState.currentPState.remove(sprite, true);
+	PlayState.currentPState.insert(index, sprite);
+      return 0;
+  }//CUMM
   private static var changeAnimFramerateC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(changeAnimFramerate);
   private static var animExistsC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(animExists);
   private static var addSpriteAnimByPrefixC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(addSpriteAnimByPrefix);
@@ -618,6 +641,9 @@ class LuaSprite extends LuaClass {
   private static var playAnimSpriteC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(playAnimSprite);
   private static var tweenC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(tween);
   private static var setCameraC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(setCamera);
+  
+  
+  private static var setDepthC:cpp.Callable<StatePointer->Int> = cpp.Callable.fromStaticFunction(setDepth);
 
   public function new(sprite:FlxSprite,name:String,?addToGlobal:Bool=true){
     super();
@@ -672,6 +698,17 @@ class LuaSprite extends LuaClass {
         defaultValue:sprite.alpha,
         getter:GetNumProperty,
         setter:SetNumProperty
+      },
+      "setDepth"=>{
+        defaultValue:0,
+        getter:function(l:State,data:Any){
+          Lua.pushcfunction(l,setDepthC);
+          return 1;
+        },
+        setter:function(l:State){
+          LuaL.error(l,"shake is read-only.");
+          return 0;
+        }
       },
       "angle"=>{
         defaultValue:sprite.angle,
@@ -766,6 +803,17 @@ class LuaSprite extends LuaClass {
         },
         setter:function(l:State){
           LuaL.error(l,"getProperty is read-only.");
+          return 0;
+        }
+      },
+      "setBlendMode"=>{
+        defaultValue:0,
+        getter:function(l:State,data:Any){
+          Lua.pushcfunction(l,setBlendModeC);
+          return 1;
+        },
+        setter:function(l:State){
+          LuaL.error(l,"setBlendMode is read-only.");
           return 0;
         }
       },
@@ -1156,7 +1204,6 @@ class LuaCharacter extends LuaSprite {
       sprite.addOffset(name,offsetX,offsetY);
       return 0;
   }
-
   private static function playAnim(l:StatePointer):Int{
     // 1 = self
     // 2 = anim
@@ -1281,6 +1328,7 @@ class LuaShaderClass extends LuaClass {
     Convert.toLua(state,Reflect.getProperty(shader,property));
     return 1;
   }
+
 
   private static function setProperty(l:StatePointer):Int{
     // 1 = self

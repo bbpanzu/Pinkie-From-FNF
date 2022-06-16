@@ -1061,6 +1061,7 @@ class PlayState extends MusicBeatState
 			lua.setGlobalVar("X","X");
 			lua.setGlobalVar("Y","Y");
 			lua.setGlobalVar("version",SONG.version);
+			lua.setGlobalVar("GameVersion",1.2);
 			lua.setGlobalVar("isPony",isPony);
 
 			Lua_helper.add_callback(lua.state,"skipCountdown", function(){
@@ -4041,18 +4042,19 @@ class PlayState extends MusicBeatState
 
 		previousHealth=health;
 
+						var altAnim:String = bfaltAnim;
 		//if(!note.isSustainNote){
 		var anim = "";
 		switch (note.noteData)
 		{
 		case 0:
-			anim='singLEFT';
+			anim='singLEFT'+bfaltAnim;
 		case 1:
-			anim='singDOWN';
+			anim='singDOWN'+bfaltAnim;
 		case 2:
-			anim='singUP';
+			anim='singUP'+bfaltAnim;
 		case 3:
-			anim='singRIGHT';
+			anim='singRIGHT'+bfaltAnim;
 		}
 							if(!note.noAnim){
 

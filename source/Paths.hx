@@ -11,6 +11,16 @@ import openfl.utils.Assets as OpenFlAssets;
 import sys.FileSystem;
 import sys.io.File;
 
+#if cpp
+import cpp.vm.Gc;
+#elseif hl
+import hl.Gc;
+#elseif java
+import java.vm.Gc;
+#elseif neko
+import neko.vm.Gc;
+#end
+
 using StringTools;
 class Paths
 {
@@ -216,8 +226,7 @@ class Paths
 			var gra:FlxGraphic;
 			var bmp:BitmapData;
 			
-						trace(TitleState.curDir);
-						trace(pulllfromAssets);
+						//YOU ARE CACHING TO GPU
 			if (pulllfromAssets){
 				bmp = OpenFlAssets.getBitmapData("shared:" + path,false);
 			}else{
@@ -230,6 +239,21 @@ class Paths
 		return imgCache.get(key);
 	}
 	
+
+	
+	public static function compress() {
+		#if cpp
+		Gc.compact();
+		Gc.run(true);
+		//Gc.setMinimumWorkingMemory(totalMemory);
+		#elseif hl
+		Gc.major();
+		#elseif (java || neko)
+		Gc.run(true);
+		#end
+	}
+	
+
 
 	static public function getTextFile(key:String,preload:Bool = false):String{
 		
@@ -263,11 +287,12 @@ class Paths
 	inline static public function getSparrowAtlas(key:String, ?library:String)
 	{
 		
-		
-		
-		
-
 		return FlxAtlasFrames.fromSparrow(image(key, library), file('images/$key.xml', library));
+	}
+
+	inline static public function getPackerAtlasJson(key:String, ?library:String)
+	{
+		return FlxAtlasFrames.fromTexturePackerJson(image(key, library), file('images/$key.json', library));
 	}
 
 	inline static public function getPackerAtlas(key:String, ?library:String)

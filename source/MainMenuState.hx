@@ -117,7 +117,7 @@ class MainMenuState extends MusicBeatState
 		menuItems.members[2].setPosition(645.45, 411);
 		//FlxG.camera.follow(camFollow, null, 0.06);
 
-		var versionShit:FlxText = new FlxText(5, FlxG.height - 36, 0, "Laughter Edition  - Andromeda Engine B6", 18);
+		var versionShit:FlxText = new FlxText(5, FlxG.height - 36, 0, "Laughter Edition [1.0.1] - Andromeda Engine B6", 18);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("Woodrow W00 Reg", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
